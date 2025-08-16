@@ -405,7 +405,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 								key={index}
 								className='relative flex flex-col items-center justify-start rounded-md border border-secondary-700 bg-secondary-800 p-4 transition-transform duration-500 md:hover:scale-105 md:hover:motion-reduce:scale-100'>
 								<div className='relative mb-2 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md bg-secondary-900'>
-									{download.kind === 'image' && (
+									{download.kind === 'image' && (download.previewUrl || download.url) && (
 										<div className='absolute inset-0 opacity-25'>
 											<Image
 												src={getRoot(download.url)}
@@ -474,7 +474,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 								<h2 className='mb-4 flex-grow'>
 									{resolveLocalizableField(download.label, lang)}
 								</h2>
-								{download.kind === 'audio' && (
+								{download.kind === 'audio' && download.url && (
 									<AudioPreview
 										{...download}
 										className='h-13 mb-2 w-full rounded-md bg-white sm:h-12 md:h-9'
