@@ -405,22 +405,23 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 								key={index}
 								className='relative flex flex-col items-center justify-start rounded-md border border-secondary-700 bg-secondary-800 p-4 transition-transform duration-500 md:hover:scale-105 md:hover:motion-reduce:scale-100'>
 								<div className='relative mb-2 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md bg-secondary-900'>
-									{download.kind === 'image' && (download.previewUrl || download.url) && (
-										<div className='absolute inset-0 opacity-25'>
-											<Image
-												src={getRoot(download.url)}
-												alt='Preview Backdrop'
-												fill
-												className='absolute inset-0 rounded-md object-fill blur-md'
-											/>
-											<Image
-												src={getRoot(download.url)}
-												alt='Preview'
-												fill
-												className='absolute inset-0 rounded-md object-contain'
-											/>
-										</div>
-									)}
+									{download.kind === 'image' &&
+										(download.previewUrl || download.url) && (
+											<div className='absolute inset-0 opacity-25'>
+												<Image
+													src={getRoot(download.url)}
+													alt='Preview Backdrop'
+													fill
+													className='absolute inset-0 rounded-md object-fill blur-md'
+												/>
+												<Image
+													src={getRoot(download.url)}
+													alt='Preview'
+													fill
+													className='absolute inset-0 rounded-md object-contain'
+												/>
+											</div>
+										)}
 									{download.kind === 'video' && (
 										<div className='absolute inset-0 opacity-25'>
 											{download.previewUrl ? (
@@ -432,10 +433,12 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 													className='absolute inset-0 my-auto rounded-md'
 												/>
 											) : (
-												<VideoPreview
-													{...download}
-													className='absolute inset-0 my-auto rounded-md'
-												/>
+												download.url && (
+													<VideoPreview
+														{...download}
+														className='absolute inset-0 my-auto rounded-md'
+													/>
+												)
 											)}
 										</div>
 									)}
@@ -633,7 +636,9 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 											{licenseSpecification.license.label}
 										</h3>
 										<div className='mt-3 rounded-md bg-secondary-900 p-4'>
-											<h4 className='font-semibold'>{t.detailLicensingLicenseWorksListName}</h4>
+											<h4 className='font-semibold'>
+												{t.detailLicensingLicenseWorksListName}
+											</h4>
 											{licenseSpecification.targets?.length ? (
 												<ul className='mt-2 flex flex-col space-y-3'>
 													{licenseSpecification.targets.map(
