@@ -33,7 +33,7 @@ export interface AssetPreviewData {
 
 export interface BaseDownloadData {
 	url: string;
-	size: `${number} ${'K' | 'M' | 'G' | ''}${'B' | 'b'}`;
+	size: `${number} ${'K' | 'M' | 'G' | ''}${'B' | 'b'}` | '';
 	label: LocalizableField;
 }
 
