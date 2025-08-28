@@ -5101,6 +5101,25 @@ const items: MusicItem[] = [
 				],
 			},
 		},
+		licensing: [
+			{
+				license: cc4Attrib,
+				targets: [
+					{
+						kind: 'audio',
+						work: '"東方錦上京 〜 Fossilized Wonders." Piano Medley',
+						year: 2025,
+						creators: ['Papita con Puré'],
+					},
+					{
+						kind: 'video',
+						work: '"東方錦上京 〜 Fossilized Wonders." Game Environment Fan-Made Animations',
+						year: 2025,
+						creators: ['Papita con Puré'],
+					},
+				],
+			},
+		],
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -5154,16 +5173,16 @@ const items: MusicItem[] = [
 					ja: 'フルMIDI',
 				},
 				size: '3.85 MB',
-				//This will have to wait til the audio files are ready because it may confuse people
+				//TODO: This will have to wait til the audio files are ready because it may confuse people
 				url: '', //url: '/music-item-misc/th20-piano/th20medley.mid',
 			},
 			{
 				kind: 'image',
 				format: 'png',
 				label: {
-					es: 'Portada (1080p)',
-					en: 'Cover (1080p)',
-					ja: '表紙 (1080p)',
+					es: 'Portada (2k)',
+					en: 'Cover (2k)',
+					ja: '表紙 (2k)',
 				},
 				size: '4.50 MB',
 				url: '/images/music/th20-piano/cover.png',
@@ -5172,9 +5191,9 @@ const items: MusicItem[] = [
 				kind: 'image',
 				format: 'jpg',
 				label: {
-					es: 'Portada (1080p)',
-					en: 'Cover (1080p)',
-					ja: '表紙 (1080p)',
+					es: 'Portada (2k)',
+					en: 'Cover (2k)',
+					ja: '表紙 (2k)',
 				},
 				size: '1.05 MB',
 				url: '/images/music/th20-piano/folder.jpg',
@@ -5194,9 +5213,9 @@ const items: MusicItem[] = [
 				kind: 'image',
 				format: 'webp',
 				label: {
-					es: 'Miniatura (720p)',
-					en: 'Thumbnail (720p)',
-					ja: 'サムネイル (720p)',
+					es: 'Miniatura (4k)',
+					en: 'Thumbnail (4k)',
+					ja: 'サムネイル (4k)',
 				},
 				size: '443 KB',
 				url: '/images/music/th20-piano/thumb.webp',
