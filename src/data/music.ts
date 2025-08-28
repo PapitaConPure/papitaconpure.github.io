@@ -5079,7 +5079,7 @@ const items: MusicItem[] = [
 			es: 'Fossilized Wonders. Piano Medley',
 			ja: '東方錦上京ピアノメドレー',
 		},
-		date: new Date('2025-08-27'),
+		date: new Date('2025-08-28'),
 		categories: ['arrangement', 'piano', 'touhou', 'medley'],
 		coverUrl: '/images/music/th20-piano/cover.png',
 		thumbnailUrl: '/images/music/th20-piano/thumb.webp',
