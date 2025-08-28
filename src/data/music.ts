@@ -5083,7 +5083,7 @@ const items: MusicItem[] = [
 		categories: ['arrangement', 'piano', 'touhou', 'medley'],
 		coverUrl: '/images/music/th20-piano/cover.png',
 		thumbnailUrl: '/images/music/th20-piano/thumb.webp',
-		videoUrl: 'https://youtu.be/VhgP16mJUE8',
+		videoUrl: 'https://www.youtube.com/watch?v=VhgP16mJUE8',
 		credits: {
 			music: {
 				composers: [zunCredit],
