@@ -5130,11 +5130,23 @@ const items: MusicItem[] = [
 		downloadUrls: [
 			{
 				kind: 'audio',
-				format: 'mp3',
+				format: 'flac',
 				label: {
 					es: 'Pista completa (16-bit int)',
 					en: 'Full Track (16-bit int)',
 					ja: 'フルトラック (16-bit int)',
+				},
+				size: '',
+				url: '',
+				external: true,
+			},
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: {
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full Track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
 				},
 				size: '',
 				url: '',
