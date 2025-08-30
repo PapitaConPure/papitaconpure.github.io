@@ -29,9 +29,9 @@ if not "%~2"=="" (
     )
 )
 
-set "VIDEO_BITRATE=500K"
+set "VIDEO_BITRATE=250K"
 set "VIDEO_SCALE=-2:480"
-set "VIDEO_FPS=30"
+set "VIDEO_FPS=15"
 
 :: --- Derived Variable (DO NOT CHANGE) ---
 set "NULL_OUTPUT=NUL"
