@@ -105,7 +105,10 @@ export default async function Header({ lang }: HeaderProps) {
 						height={64}
 						className='my-auto h-8 w-auto text-sm font-light'
 					/>
-					<span className='select-none'>{t.headerName}</span>
+					<div className='flex flex-col justify-center'>
+						<span className='select-none'>{t.headerName}</span>
+						{t.headerClarif && <span className='select-none text-sm font-normal text-secondary-100'>{t.headerClarif}</span>}
+					</div>
 				</Link>
 
 				<nav className='hidden md:block'>
