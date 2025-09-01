@@ -1,11 +1,11 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const colors = {
 	foreground: '#efebec',
 	background: '#0c0909',
 	primary: {
 		main: '#9c162d',
-		50 : '#fce9ec',
+		50: '#fce9ec',
 		100: '#f6bcc6',
 		200: '#ef8fa0',
 		300: '#e9637a',
@@ -18,7 +18,7 @@ const colors = {
 	},
 	secondary: {
 		main: '#3a2c2d',
-		50 : '#f4f1f1',
+		50: '#f4f1f1',
 		100: '#ded4d4',
 		200: '#c8b7b8',
 		300: '#b29a9b',
@@ -31,7 +31,7 @@ const colors = {
 	},
 	accent: {
 		main: '#922050',
-		50 : '#faeaf1',
+		50: '#faeaf1',
 		100: '#f1c0d5',
 		200: '#e896b9',
 		300: '#df6d9d',
@@ -46,7 +46,7 @@ const colors = {
 
 const inbetweenHoverKeyframes = {
 	'glow-nav-desktop-hover': {
-		'color': colors.secondary[300],
+		color: colors.secondary[300],
 		'text-shadow': `0 0 4pt ${colors.secondary[700]}`,
 	},
 	'glow-primary-hover': {
@@ -63,7 +63,7 @@ const inbetweenHoverKeyframes = {
 const keyframes = {
 	'glow-nav-desktop-hover': {
 		from: {
-			'color': colors.secondary[400],
+			color: colors.secondary[400],
 			'text-shadow': `0 0 0 ${colors.secondary.main}`,
 		},
 		to: inbetweenHoverKeyframes['glow-nav-desktop-hover'],
@@ -71,7 +71,7 @@ const keyframes = {
 	'glow-nav-desktop-active': {
 		from: inbetweenHoverKeyframes['glow-nav-desktop-hover'],
 		to: {
-			'color': colors.secondary[200],
+			color: colors.secondary[200],
 			'text-shadow': `0 0 8pt ${colors.secondary[600]}`,
 		},
 	},
@@ -97,9 +97,13 @@ const keyframes = {
 };
 
 const config: Config = {
-	content: [
-	  "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-	  "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+	content: ['./src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
+	safelist: [
+		'text-yellow-200',
+		'text-green-300',
+		'text-purple-400',
+		'text-orange-400',
+		'text-blue-400',
 	],
 	theme: {
 		extend: {
@@ -111,15 +115,17 @@ const config: Config = {
 			},
 			animation: {
 				'glow-nav-desktop-hover': 'glow-nav-desktop-hover 0.15s ease-out forwards',
-				'glow-nav-desktop-active': 'glow-nav-desktop-active 0.4s cubic-bezier(0.23, 1, 0.320, 1) forwards',
+				'glow-nav-desktop-active':
+					'glow-nav-desktop-active 0.4s cubic-bezier(0.23, 1, 0.320, 1) forwards',
 				'glow-primary-hover': 'glow-primary-hover 0.4s ease-out forwards',
-				'glow-primary-active': 'glow-primary-active 0.6s cubic-bezier(0.23, 1, 0.320, 1) forwards',
+				'glow-primary-active':
+					'glow-primary-active 0.6s cubic-bezier(0.23, 1, 0.320, 1) forwards',
 			},
 			keyframes,
 		},
 	},
 	plugins: [],
-}
+};
 
 function minimize(css: string) {
 	return css.replace(/\s+/g, ' ');
