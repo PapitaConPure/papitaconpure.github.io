@@ -6,14 +6,15 @@ export interface ExternalLink {
 	url: string;
 }
 
-export type AudioAssetFormat = 'mp3' | 'flac' | 'wav' | 'other';
-export type ImageAssetFormat = 'jpg' | 'png' | 'gif' | 'webp' | 'other';
-export type VideoAssetFormat = 'mp4' | 'mov' | 'webm' | 'other';
-export type OtherAssetFormat = 'zip' | 'rar' | 'midi' | 'pdf' | 'mscz' | 'other';
+export type AudioAssetFormat = 'mp3' | 'flac' | 'wav';
+export type ImageAssetFormat = 'jpg' | 'png' | 'gif' | 'webp';
+export type VideoAssetFormat = 'mp4' | 'mov' | 'webm';
+export type DocumentAssetFormat = 'pdf' | 'docx' | 'txt';
+export type OtherAssetFormat = 'zip' | 'rar' | 'midi' | 'mscz' | '';
 
-export type AssetFormat = AudioAssetFormat | ImageAssetFormat | VideoAssetFormat | OtherAssetFormat;
+export type AssetFormat = AudioAssetFormat | ImageAssetFormat | VideoAssetFormat | DocumentAssetFormat | OtherAssetFormat;
 
-export type AssetKind = 'audio' | 'image' | 'video' | 'file';
+export type AssetKind = 'audio' | 'image' | 'video' | 'document' | 'file';
 
 interface AssetSpecificationTemplate<TKind extends AssetKind, TFormat extends AssetFormat> {
 	kind: TKind;
@@ -24,6 +25,7 @@ export type AssetSpecification =
 	| AssetSpecificationTemplate<'audio', AudioAssetFormat>
 	| AssetSpecificationTemplate<'image', ImageAssetFormat>
 	| AssetSpecificationTemplate<'video', VideoAssetFormat>
+	| AssetSpecificationTemplate<'document', DocumentAssetFormat>
 	| AssetSpecificationTemplate<'file', OtherAssetFormat>;
 
 export interface AssetPreviewData {

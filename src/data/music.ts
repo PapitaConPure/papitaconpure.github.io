@@ -1,4 +1,28 @@
-import { FullArtistCredit, License, MusicItem } from '@/types/music';
+import { AssetKind, FullArtistCredit, License, MusicItem } from '@/types/music';
+import { faFile, faFileAlt, faImage, faMusic, faVideo, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
+export const assetStyles: Record<AssetKind, { className: string, icon: IconDefinition }> = {
+	audio: {
+		className: 'text-yellow-200',
+		icon: faMusic,
+	},
+	image: {
+		className: 'text-green-300',
+		icon: faImage,
+	},
+	video: {
+		className: 'text-purple-400',
+		icon: faVideo,
+	},
+	document: {
+		className: 'text-orange-400',
+		icon: faFileAlt,
+	},
+	file: {
+		className: 'text-blue-400',
+		icon: faFile,
+	},
+};
 
 const cc0: License = {
 	label: 'CC0 1.0 Universal',
@@ -2980,7 +3004,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/f_th19.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Planilla de Rutas de Historia',
@@ -3342,7 +3366,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p0_title.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de título',
@@ -3375,7 +3399,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p1_reimu.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de Reimu',
@@ -3408,7 +3432,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p2_enoko.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de Enoko',
@@ -3441,7 +3465,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p3_son.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de Biten',
@@ -3474,7 +3498,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p4_marisa.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de Marisa',
@@ -3507,7 +3531,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p5_suika.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de Suika',
@@ -3540,7 +3564,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p6_chiyari.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de Chiyari',
@@ -3573,7 +3597,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p7_hisami.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de Hisami',
@@ -3606,7 +3630,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/p8_zanmu.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de Zanmu',
@@ -6805,7 +6829,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th20-piano/00_title.mid',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de parte de título',
@@ -6838,7 +6862,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de etapa 1',
@@ -6871,7 +6895,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de Ubame',
@@ -6904,7 +6928,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de etapa 2',
@@ -6937,7 +6961,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de Chimi',
@@ -6970,7 +6994,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de etapa 3',
@@ -7003,7 +7027,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de Nareko',
@@ -7036,7 +7060,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de etapa 4',
@@ -7069,7 +7093,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de Yuiman',
@@ -7102,7 +7126,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de etapa 5',
@@ -7135,7 +7159,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de Toyohime',
@@ -7168,7 +7192,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de etapa 6',
@@ -7201,7 +7225,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de Ariya',
@@ -7234,7 +7258,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de etapa extra',
@@ -7267,7 +7291,7 @@ const items: MusicItem[] = [
 				url: '',
 			},
 			{
-				kind: 'file',
+				kind: 'document',
 				format: 'pdf',
 				label: {
 					es: 'Partitura de Nina',

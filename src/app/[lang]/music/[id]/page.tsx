@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import items, { itemsById } from '@/data/music';
+import items, { assetStyles, itemsById } from '@/data/music';
 import Image from 'next/image';
 import { YouTubeVideo } from '@/components/YouTubeVideo';
 import { OlHTMLAttributes } from 'react';
@@ -16,11 +16,7 @@ import {
 	faDownload,
 	faExternalLinkAlt,
 	faEye,
-	faFileAlt,
-	faImage,
-	faMusic,
 	faSpinner,
-	faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
@@ -443,31 +439,11 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 										</div>
 									)}
 									<div className='absolute flex w-full flex-col items-center space-y-1'>
-										{download.kind === 'audio' && (
-											<FontAwesomeIcon
-												icon={faMusic}
-												className='text-7xl text-yellow-200 sm:text-9xl md:text-8xl'
-											/>
-										)}
-										{download.kind === 'image' && (
-											<FontAwesomeIcon
-												icon={faImage}
-												className='text-7xl text-green-300 sm:text-9xl md:text-8xl'
-											/>
-										)}
-										{download.kind === 'video' && (
-											<FontAwesomeIcon
-												icon={faVideo}
-												className='text-7xl text-purple-400 sm:text-9xl md:text-8xl'
-											/>
-										)}
-										{download.kind === 'file' && (
-											<FontAwesomeIcon
-												icon={faFileAlt}
-												className='text-7xl text-blue-400 sm:text-9xl md:text-8xl'
-											/>
-										)}
-										{download.format !== 'other' && (
+										<FontAwesomeIcon
+											icon={assetStyles[download.kind].icon}
+											className={`text-7xl ${assetStyles[download.kind].className} sm:text-9xl md:text-8xl`}
+										/>
+										{download.format !== '' && (
 											<div className='text-2xl font-bold sm:text-4xl md:text-3xl'>
 												{download.format.toUpperCase()}
 											</div>
@@ -524,37 +500,35 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 											<div className='cursor-pointer select-none text-center text-xl font-semibold sm:text-lg md:text-sm'>
 												{download.size}
 											</div>
-											{download.external ? (
+											{download.external && (
 												<FontAwesomeIcon
 													icon={faExternalLinkAlt}
 													size='xs'
 													className='mb-0.5 ml-2 cursor-pointer opacity-80'
 												/>
-											) : null}
+											)}
 										</DirectDownloadButton>
 									)}
-									{download.url &&
-										download.kind === 'file' &&
-										download.format === 'pdf' && (
-											<Link
-												href={download.url}
-												rel='noopener noreferrer'
-												target='_blank'
-												tabIndex={0}
-												className='flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 sm:px-4 sm:py-3 md:px-3 md:py-2'>
+									{download.url && download.kind === 'document' && (
+										<Link
+											href={download.url}
+											rel='noopener noreferrer'
+											target='_blank'
+											tabIndex={0}
+											className='flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 sm:px-4 sm:py-3 md:px-3 md:py-2'>
+											<FontAwesomeIcon
+												icon={faEye}
+												className='text-xl md:text-base'
+											/>
+											{download.external && (
 												<FontAwesomeIcon
-													icon={faEye}
-													className='text-xl md:text-base'
+													icon={faExternalLinkAlt}
+													size='xs'
+													className='mb-0.5 ml-2 cursor-pointer opacity-80'
 												/>
-												{download.external ? (
-													<FontAwesomeIcon
-														icon={faExternalLinkAlt}
-														size='xs'
-														className='mb-0.5 ml-2 cursor-pointer opacity-80'
-													/>
-												) : null}
-											</Link>
-										)}
+											)}
+										</Link>
+									)}
 								</div>
 							</div>
 						))}
@@ -646,30 +620,10 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 															<li
 																key={j}
 																className='flex items-center space-x-2 font-light leading-tight'>
-																{target.kind === 'audio' && (
-																	<FontAwesomeIcon
-																		icon={faMusic}
-																		className='text-yellow-200'
-																	/>
-																)}
-																{target.kind === 'image' && (
-																	<FontAwesomeIcon
-																		icon={faImage}
-																		className='text-green-300'
-																	/>
-																)}
-																{target.kind === 'video' && (
-																	<FontAwesomeIcon
-																		icon={faVideo}
-																		className='text-purple-400'
-																	/>
-																)}
-																{target.kind === 'file' && (
-																	<FontAwesomeIcon
-																		icon={faFileAlt}
-																		className='text-blue-400'
-																	/>
-																)}
+																<FontAwesomeIcon
+																	icon={assetStyles[target.kind].icon}
+																	className={assetStyles[target.kind].className}
+																/>
 																<div>
 																	{target.workUrl ? (
 																		<a
