@@ -6801,8 +6801,8 @@ const items: MusicItem[] = [
 					en: 'Title Part MIDI',
 					ja: 'タイトルパートMIDI',
 				},
-				size: '',
-				url: '',
+				size: '188 KB',
+				url: '/music-item-misc/th20-piano/00_title.mid',
 			},
 			{
 				kind: 'file',
@@ -6812,8 +6812,8 @@ const items: MusicItem[] = [
 					en: 'Title Part Sheet Music',
 					ja: 'タイトルパート楽譜',
 				},
-				size: '',
-				url: '',
+				size: '122 KB',
+				url: '/music-item-misc/th20-piano/00_title.pdf',
 			},
 			{
 				kind: 'file',
@@ -6823,8 +6823,8 @@ const items: MusicItem[] = [
 					en: 'Title Part Sheet Music (MuseScore 4)',
 					ja: 'タイトルパート楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '107 KB',
+				url: '/music-item-misc/th20-piano/00_title.mscz',
 			},
 			{
 				kind: 'file',
