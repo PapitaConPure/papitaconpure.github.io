@@ -5275,7 +5275,6 @@ const items: MusicItem[] = [
 				url: '/images/music/th20-piano/thumb.png',
 				previewFormat: 'webp',
 				previewUrl: '/images/music/th20-piano/thumb.webp',
-
 			},
 			{
 				kind: 'image',
@@ -6861,8 +6860,8 @@ const items: MusicItem[] = [
 					en: 'Stage 1 MIDI',
 					ja: '１面のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '240 KB',
+				url: '/music-item-misc/th20-piano/01_stage1.mid',
 			},
 			{
 				kind: 'document',
@@ -6872,8 +6871,8 @@ const items: MusicItem[] = [
 					en: 'Stage 1 Sheet Music',
 					ja: '１面の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '154 KB',
+				url: '/music-item-misc/th20-piano/01_stage1.pdf',
 			},
 			{
 				kind: 'file',
@@ -6883,8 +6882,8 @@ const items: MusicItem[] = [
 					en: 'Stage 1 Sheet Music (MuseScore 4)',
 					ja: '１面の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '126 KB',
+				url: '/music-item-misc/th20-piano/01_stage1.mscz',
 			},
 			{
 				kind: 'file',
