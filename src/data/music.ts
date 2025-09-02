@@ -5273,6 +5273,9 @@ const items: MusicItem[] = [
 				},
 				size: '1.54 MB',
 				url: '/images/music/th20-piano/thumb.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/th20-piano/thumb.webp',
+
 			},
 			{
 				kind: 'image',
