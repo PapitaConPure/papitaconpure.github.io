@@ -14,8 +14,12 @@ interface TrProps {
 
 const tagRegex = /<(\d+)>(.*?)<\/\1>/g;
 
+export function trStr(t: string, values: Record<string, string> = {}) {
+	return t.replace(/\{\{(.*?)\}\}/g, (_, key) => values[key] ?? '');
+}
+
 function Tr({ t = '', values = {}, components = {} }: TrProps) {
-	const template = t.replace(/\{\{(.*?)\}\}/g, (_, key) => values[key] ?? '');
+	const template = trStr(t, values);
 	const parts: ReactNode[] = [];
 	let lastIndex = 0;
 	let match: RegExpExecArray | null = null;

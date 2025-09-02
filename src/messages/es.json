@@ -104,6 +104,8 @@
         "detailLicensingTitle": "Uso",
         "detailLicensingLicenseWorksListName": "Obras cubiertas por esta licencia:",
         "detailDownloadsTitle": "Descargas",
+        "detailDownloadsDownloadAriaLabel": "Descargar \"{{assetlabel}}\" ({{filesize}})",
+        "detailDownloadsDocumentPreviewAriaLabel": "Abrir documento",
         "detailCreditsTitle": "Créditos extendidos",
         "detailCreditsMusic": "Música",
         "detailCreditsMusicComposers": "Compositores",

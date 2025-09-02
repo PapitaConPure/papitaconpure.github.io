@@ -104,6 +104,8 @@
         "detailLicensingTitle": "使用法",
         "detailLicensingLicenseWorksListName": "このライセンスの対象となる作品：",
         "detailDownloadsTitle": "Download",
+        "detailDownloadsDownloadAriaLabel": "「{{assetlabel}}」をダウンロード（{{filesize}}）",
+        "detailDownloadsDocumentPreviewAriaLabel": "ドキュメントを開く",
         "detailCreditsTitle": "拡張クレジット",
         "detailCreditsMusic": "Music",
         "detailCreditsMusicComposers": "作曲家",

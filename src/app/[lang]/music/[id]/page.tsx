@@ -20,7 +20,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
-import Tr from '@/lib/i18n/Tr';
+import Tr, { trStr } from '@/lib/i18n/Tr';
 import { localizableCategories, resolveLocalizableField } from '@/lib/music';
 import DirectDownloadButton from '@/components/DirectDownloadButton';
 
@@ -473,6 +473,13 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									{download.url && (
 										<DirectDownloadButton
 											href={getRoot(download.url)}
+											aria-label={trStr(t.detailDownloadsDownloadAriaLabel, {
+												assetlabel: resolveLocalizableField(
+													download.label,
+													lang,
+												),
+												filesize: download.size,
+											})}
 											download={!download.external || download.direct}
 											target={download.external ? '_blank' : '_self'}
 											rel='noopener noreferrer'
@@ -512,6 +519,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									{download.url && download.kind === 'document' && (
 										<Link
 											href={download.url}
+											aria-label={t.detailDownloadsDocumentPreviewAriaLabel}
 											rel='noopener noreferrer'
 											target='_blank'
 											tabIndex={0}
@@ -621,8 +629,14 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 																key={j}
 																className='flex items-center space-x-2 font-light leading-tight'>
 																<FontAwesomeIcon
-																	icon={assetStyles[target.kind].icon}
-																	className={assetStyles[target.kind].className}
+																	icon={
+																		assetStyles[target.kind]
+																			.icon
+																	}
+																	className={
+																		assetStyles[target.kind]
+																			.className
+																	}
 																/>
 																<div>
 																	{target.workUrl ? (
