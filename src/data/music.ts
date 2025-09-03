@@ -6849,7 +6849,7 @@ const items: MusicItem[] = [
 					en: 'Title Part Sheet Music (MuseScore 4)',
 					ja: 'タイトルパート楽譜 (MuseScore 4)',
 				},
-				size: '107 KB',
+				size: '101 KB',
 				url: '/music-item-misc/th20-piano/00_title.mscz',
 			},
 			{
@@ -6871,7 +6871,7 @@ const items: MusicItem[] = [
 					en: 'Stage 1 Sheet Music',
 					ja: '１面の楽譜',
 				},
-				size: '154 KB',
+				size: '160 KB',
 				url: '/music-item-misc/th20-piano/01_stage1.pdf',
 			},
 			{
@@ -6882,7 +6882,7 @@ const items: MusicItem[] = [
 					en: 'Stage 1 Sheet Music (MuseScore 4)',
 					ja: '１面の楽譜 (MuseScore 4)',
 				},
-				size: '126 KB',
+				size: '130 KB',
 				url: '/music-item-misc/th20-piano/01_stage1.mscz',
 			},
 			{
