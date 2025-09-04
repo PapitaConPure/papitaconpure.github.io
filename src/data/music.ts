@@ -6893,8 +6893,8 @@ const items: MusicItem[] = [
 					en: 'Ubame MIDI',
 					ja: 'ウバメのMIDI',
 				},
-				size: '',
-				url: '',
+				size: '217 KB',
+				url: '/music-item-misc/th20-piano/02_ubame.mid',
 			},
 			{
 				kind: 'document',
@@ -6904,8 +6904,8 @@ const items: MusicItem[] = [
 					en: 'Ubame Sheet Music',
 					ja: 'ウバメの楽譜',
 				},
-				size: '',
-				url: '',
+				size: '159 KB',
+				url: '/music-item-misc/th20-piano/02_ubame.pdf',
 			},
 			{
 				kind: 'file',
@@ -6915,8 +6915,8 @@ const items: MusicItem[] = [
 					en: 'Ubame Sheet Music (MuseScore 4)',
 					ja: 'ウバメの楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '134 KB',
+				url: '/music-item-misc/th20-piano/02_ubame.mscz',
 			},
 			{
 				kind: 'file',
