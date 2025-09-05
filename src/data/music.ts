@@ -6926,8 +6926,8 @@ const items: MusicItem[] = [
 					en: 'Stage 2 MIDI',
 					ja: '２面のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '276 KB',
+				url: '/music-item-misc/th20-piano/03_stage2.mid',
 			},
 			{
 				kind: 'document',
@@ -6937,8 +6937,8 @@ const items: MusicItem[] = [
 					en: 'Stage 2 Sheet Music',
 					ja: '２面の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '142 KB',
+				url: '/music-item-misc/th20-piano/03_stage2.pdf',
 			},
 			{
 				kind: 'file',
@@ -6948,8 +6948,8 @@ const items: MusicItem[] = [
 					en: 'Stage 2 Sheet Music (MuseScore 4)',
 					ja: '２面の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '123 KB',
+				url: '/music-item-misc/th20-piano/03_stage2.mscz',
 			},
 			{
 				kind: 'file',
