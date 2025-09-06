@@ -6959,8 +6959,8 @@ const items: MusicItem[] = [
 					en: 'Chimi MIDI',
 					ja: 'チミのMIDI',
 				},
-				size: '',
-				url: '',
+				size: '271 KB',
+				url: '/music-item-misc/th20-piano/04_chimi.mid',
 			},
 			{
 				kind: 'document',
@@ -6970,8 +6970,8 @@ const items: MusicItem[] = [
 					en: 'Chimi Sheet Music',
 					ja: 'チミの楽譜',
 				},
-				size: '',
-				url: '',
+				size: '148 KB',
+				url: '/music-item-misc/th20-piano/04_chimi.pdf',
 			},
 			{
 				kind: 'file',
@@ -6981,8 +6981,8 @@ const items: MusicItem[] = [
 					en: 'Chimi Sheet Music (MuseScore 4)',
 					ja: 'チミの楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '132 KB',
+				url: '/music-item-misc/th20-piano/04_chimi.mscz',
 			},
 			{
 				kind: 'file',
