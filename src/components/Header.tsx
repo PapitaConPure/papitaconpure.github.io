@@ -11,6 +11,7 @@ import {
 	faLaptopCode,
 	faMusic,
 	faQuestionCircle,
+	faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import { HTMLAttributes } from 'react';
 import { SectionAcrossLocales } from '@/types/i18n';
@@ -71,7 +72,7 @@ function HeaderMenu<TLocale extends Locale>({
 			/>
 			<HeaderLanguagePicker
 				mobile={mobile}
-				label={(mobile) ? t.langPicker : undefined}
+				label={mobile ? t.langPicker : undefined}
 				langPickerAria={t.langPickerAria}
 			/>
 		</ul>
@@ -95,7 +96,7 @@ export default async function Header({ lang }: HeaderProps) {
 			<div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-4'>
 				<Link
 					href={`/${lang}`}
-					className='flex cursor-pointer space-x-4 text-2xl font-bold text-primary-50'
+					className='flex cursor-pointer space-x-4'
 					aria-label={t.headerAria}>
 					<Image
 						aria-hidden
@@ -106,8 +107,15 @@ export default async function Header({ lang }: HeaderProps) {
 						className='my-auto h-8 w-auto text-sm font-light'
 					/>
 					<div className='flex flex-col justify-center'>
-						<span className='select-none'>{t.headerName}</span>
-						{t.headerClarif && <span className='select-none text-sm font-normal text-secondary-100'>{t.headerClarif}</span>}
+						<span
+							className={`select-none ${t.headerClarif ? 'text-lg' : 'text-2xl'} font-bold text-primary-50`}>
+							{t.headerName}
+						</span>
+						{t.headerClarif && (
+							<span className='select-none text-xs font-normal text-secondary-100'>
+								{t.headerClarif}
+							</span>
+						)}
 					</div>
 				</Link>
 
@@ -119,20 +127,20 @@ export default async function Header({ lang }: HeaderProps) {
 						className='flex list-none items-stretch space-x-1'
 					/>
 				</nav>
-				<div className='md:hidden'>
+				<div className='relative h-6 w-6 md:hidden'>
 					<HeaderNavButton
 						id='menu-reveal'
-						className='h-6 w-6 text-primary-400 focus:text-primary-300 active:text-primary-500'
+						className='absolute inset-0 h-6 w-6 text-primary-400 transition-all duration-150 focus:text-primary-300 active:text-primary-500'
 						aria-label={t.mobileNavShowAria}
 						tabIndex={0}>
 						<FontAwesomeIcon icon={faBars} size='lg' />
 					</HeaderNavButton>
 					<HeaderNavButton
 						id='menu-collapse'
-						className='hidden h-6 w-6 text-primary-50 focus:text-white active:text-primary-100'
+						className='absolute inset-0 h-6 w-6 -rotate-45 text-primary-50 opacity-0 transition-all duration-150 focus:text-white active:text-primary-100'
 						aria-label={t.mobileNavHideAria}
 						tabIndex={0}>
-						<FontAwesomeIcon icon={faBars} size='lg' />
+						<FontAwesomeIcon icon={faXmark} size='lg' />
 					</HeaderNavButton>
 				</div>
 			</div>

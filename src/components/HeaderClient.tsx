@@ -24,10 +24,21 @@ const toggleMenu = () => {
 
 	if (!menu) return;
 
-	menu.classList.toggle('h-screen');
+	menu.classList.toggle('!h-screen');
 
-	document.getElementById('menu-reveal')?.classList.toggle('hidden');
-	document.getElementById('menu-collapse')?.classList.toggle('hidden');
+	const menuReveal = document.getElementById('menu-reveal');
+	const menuCollapse = document.getElementById('menu-collapse');
+	
+	if(menuReveal) {
+		menuReveal.classList.toggle('rotate-45');
+		menuReveal.classList.toggle('opacity-0');
+
+	}
+
+	if(menuCollapse) {
+		menuCollapse.classList.toggle('-rotate-45')
+		menuCollapse.classList.toggle('opacity-0');
+	}
 
 	if (header) {
 		header.classList.toggle('backdrop-blur-md');
