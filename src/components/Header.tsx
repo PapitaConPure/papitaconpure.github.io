@@ -93,10 +93,10 @@ export default async function Header({ lang }: HeaderProps) {
 		<header
 			id='header'
 			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all motion-reduce:bg-opacity-80 motion-reduce:backdrop-blur-lg'>
-			<div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-4'>
+			<div className='mx-auto flex max-w-7xl items-center justify-between px-2 py-2'>
 				<Link
 					href={`/${lang}`}
-					className='flex cursor-pointer space-x-4'
+					className='flex cursor-pointer space-x-4 py-2 pl-2'
 					aria-label={t.headerAria}>
 					<Image
 						aria-hidden
@@ -119,7 +119,7 @@ export default async function Header({ lang }: HeaderProps) {
 					</div>
 				</Link>
 
-				<nav className='hidden md:block'>
+				<nav className='hidden py-2 md:block'>
 					<HeaderMenu
 						role='menubar'
 						lang={lang}
@@ -127,17 +127,17 @@ export default async function Header({ lang }: HeaderProps) {
 						className='flex list-none items-stretch space-x-1'
 					/>
 				</nav>
-				<div className='relative h-8 w-8 overflow-clip rounded-full bg-secondary-400 bg-opacity-0 transition-colors active:bg-opacity-20 md:hidden'>
+				<div className='relative h-10 w-10 rounded-full bg-secondary-400 bg-opacity-0 transition-colors active:bg-opacity-20 md:hidden'>
 					<HeaderNavButton
 						id='menu-reveal'
-						className='absolute inset-1 h-6 w-6 text-primary-400 transition-all duration-150 focus:text-primary-300 active:text-primary-500'
+						className='absolute inset-0 h-10 w-10 text-primary-400 transition-all duration-150 active:text-primary-200 motion-reduce:transition-none'
 						aria-label={t.mobileNavShowAria}
 						tabIndex={0}>
 						<FontAwesomeIcon icon={faBars} size='lg' />
 					</HeaderNavButton>
 					<HeaderNavButton
 						id='menu-collapse'
-						className='absolute inset-1 h-6 w-6 -rotate-45 text-primary-50 opacity-0 transition-all duration-150 focus:text-white active:text-primary-100'
+						className='absolute inset-0 hidden h-10 w-10 -rotate-45 text-primary-50 opacity-0 transition-all duration-150 active:text-primary-200'
 						aria-label={t.mobileNavHideAria}
 						tabIndex={0}>
 						<FontAwesomeIcon icon={faXmark} size='lg' />

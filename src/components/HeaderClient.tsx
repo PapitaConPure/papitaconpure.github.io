@@ -28,16 +28,29 @@ const toggleMenu = () => {
 
 	const menuReveal = document.getElementById('menu-reveal');
 	const menuCollapse = document.getElementById('menu-collapse');
-	
-	if(menuReveal) {
-		menuReveal.classList.toggle('rotate-45');
-		menuReveal.classList.toggle('opacity-0');
 
+	if (menuReveal) {
+		const containsHidden = menuReveal.classList.contains('hidden');
+		if (containsHidden) menuReveal.classList.remove('hidden');
+
+		setTimeout(() => {
+			menuReveal.classList.toggle('rotate-45');
+			menuReveal.classList.toggle('opacity-0');
+
+			if (!containsHidden) setTimeout(() => menuReveal.classList.toggle('hidden'), 150);
+		}, 1);
 	}
 
-	if(menuCollapse) {
-		menuCollapse.classList.toggle('-rotate-45')
-		menuCollapse.classList.toggle('opacity-0');
+	if (menuCollapse) {
+		const containsHidden = menuCollapse.classList.contains('hidden');
+		if (containsHidden) menuCollapse.classList.remove('hidden');
+
+		setTimeout(() => {
+			menuCollapse.classList.toggle('-rotate-45');
+			menuCollapse.classList.toggle('opacity-0');
+
+			if (!containsHidden) setTimeout(() => menuCollapse.classList.toggle('hidden'), 150);
+		}, 1);
 	}
 
 	if (header) {
