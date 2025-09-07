@@ -6992,8 +6992,8 @@ const items: MusicItem[] = [
 					en: 'Stage 3 MIDI',
 					ja: '３面のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '301 KB',
+				url: '/music-item-misc/th20-piano/05_stage3.mid',
 			},
 			{
 				kind: 'document',
@@ -7003,8 +7003,8 @@ const items: MusicItem[] = [
 					en: 'Stage 3 Sheet Music',
 					ja: '３面の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '142 KB',
+				url: '/music-item-misc/th20-piano/05_stage3.pdf',
 			},
 			{
 				kind: 'file',
@@ -7014,8 +7014,8 @@ const items: MusicItem[] = [
 					en: 'Stage 3 Sheet Music (MuseScore 4)',
 					ja: '３面の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '131 KB',
+				url: '/music-item-misc/th20-piano/05_stage3.mscz',
 			},
 			{
 				kind: 'file',
