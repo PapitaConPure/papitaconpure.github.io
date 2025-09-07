@@ -127,17 +127,17 @@ export default async function Header({ lang }: HeaderProps) {
 						className='flex list-none items-stretch space-x-1'
 					/>
 				</nav>
-				<div className='relative h-6 w-6 before:absolute before:-inset-2 before:rounded-full before:bg-secondary-400 before:bg-opacity-0 before:transition-colors before:hover:bg-opacity-10 before:active:bg-opacity-20 md:hidden'>
+				<div className='relative h-8 w-8 overflow-clip rounded-full bg-secondary-400 bg-opacity-0 transition-colors active:bg-opacity-20 md:hidden'>
 					<HeaderNavButton
 						id='menu-reveal'
-						className='absolute inset-0 h-6 w-6 text-primary-400 transition-all duration-150 focus:text-primary-300 active:text-primary-500'
+						className='absolute inset-1 h-6 w-6 text-primary-400 transition-all duration-150 focus:text-primary-300 active:text-primary-500'
 						aria-label={t.mobileNavShowAria}
 						tabIndex={0}>
 						<FontAwesomeIcon icon={faBars} size='lg' />
 					</HeaderNavButton>
 					<HeaderNavButton
 						id='menu-collapse'
-						className='absolute inset-0 h-6 w-6 -rotate-45 text-primary-50 opacity-0 transition-all duration-150 focus:text-white active:text-primary-100'
+						className='absolute inset-1 h-6 w-6 -rotate-45 text-primary-50 opacity-0 transition-all duration-150 focus:text-white active:text-primary-100'
 						aria-label={t.mobileNavHideAria}
 						tabIndex={0}>
 						<FontAwesomeIcon icon={faXmark} size='lg' />
