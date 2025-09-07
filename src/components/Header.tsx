@@ -96,7 +96,7 @@ export default async function Header({ lang }: HeaderProps) {
 			<div className='mx-auto flex max-w-7xl items-center justify-between px-2 py-2'>
 				<Link
 					href={`/${lang}`}
-					className='flex cursor-pointer space-x-4 py-2 pl-2'
+					className='flex cursor-pointer space-x-4 pl-2'
 					aria-label={t.headerAria}>
 					<Image
 						aria-hidden
