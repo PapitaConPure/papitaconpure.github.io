@@ -127,7 +127,7 @@ export default async function Header({ lang }: HeaderProps) {
 						className='flex list-none items-stretch space-x-1'
 					/>
 				</nav>
-				<div className='relative h-6 w-6 md:hidden'>
+				<div className='relative h-6 w-6 before:absolute before:-inset-2 before:rounded-full before:bg-secondary-400 before:bg-opacity-0 before:transition-colors before:hover:bg-opacity-10 before:active:bg-opacity-20 md:hidden'>
 					<HeaderNavButton
 						id='menu-reveal'
 						className='absolute inset-0 h-6 w-6 text-primary-400 transition-all duration-150 focus:text-primary-300 active:text-primary-500'
