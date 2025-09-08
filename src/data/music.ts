@@ -5105,7 +5105,7 @@ const items: MusicItem[] = [
 		},
 		date: new Date('2025-08-28'),
 		categories: ['arrangement', 'piano', 'touhou', 'medley'],
-		coverUrl: '/images/music/th20-piano/cover.png',
+		coverUrl: '/images/music/th20-piano/cover.webp',
 		thumbnailUrl: '/images/music/th20-piano/thumb.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=VhgP16mJUE8',
 		credits: {
@@ -5251,6 +5251,8 @@ const items: MusicItem[] = [
 				},
 				size: '4.50 MB',
 				url: '/images/music/th20-piano/cover.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/th20-piano/cover.webp',
 			},
 			{
 				kind: 'image',
@@ -5262,6 +5264,8 @@ const items: MusicItem[] = [
 				},
 				size: '1.05 MB',
 				url: '/images/music/th20-piano/folder.jpg',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/th20-piano/cover.webp',
 			},
 			{
 				kind: 'image',
