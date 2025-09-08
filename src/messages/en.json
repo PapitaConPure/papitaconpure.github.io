@@ -103,6 +103,8 @@
         "detailDescriptionTitle": "Description",
         "detailLicensingTitle": "Usage",
         "detailLicensingLicenseWorksListName": "Works covered by this License:",
+        "detailLicensingLicenseView": "View Full License",
+        "detailLicensingLicenseViewAriaLabel": "View Full License: \"{{licensename}}\"",
         "detailDownloadsTitle": "Downloads",
         "detailDownloadsDownloadAriaLabel": "Download \"{{assetlabel}}\" ({{filesize}})",
         "detailDownloadsDocumentPreviewAriaLabel": "Open Document",

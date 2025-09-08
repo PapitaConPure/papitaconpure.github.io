@@ -103,6 +103,8 @@
         "detailDescriptionTitle": "説明",
         "detailLicensingTitle": "使用法",
         "detailLicensingLicenseWorksListName": "このライセンスの対象となる作品：",
+        "detailLicensingLicenseView": "完全なライセンスを見る",
+        "detailLicensingLicenseViewAriaLabel": "完全なライセンスを見る：「{{licensename}}」",
         "detailDownloadsTitle": "Download",
         "detailDownloadsDownloadAriaLabel": "「{{assetlabel}}」をダウンロード（{{filesize}}）",
         "detailDownloadsDocumentPreviewAriaLabel": "ドキュメントを開く",

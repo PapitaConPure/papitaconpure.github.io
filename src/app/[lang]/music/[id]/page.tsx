@@ -517,7 +517,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 										</DirectDownloadButton>
 									)}
 									{download.url && download.kind === 'document' && (
-										<Link
+										<a
 											href={download.url}
 											aria-label={t.detailDownloadsDocumentPreviewAriaLabel}
 											rel='noopener noreferrer'
@@ -535,7 +535,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 													className='mb-0.5 ml-2 cursor-pointer opacity-80'
 												/>
 											)}
-										</Link>
+										</a>
 									)}
 								</div>
 							</div>
@@ -608,12 +608,12 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 					{typeof item.licensing === 'string' ? (
 						<p className='mt-2'>{item.licensing}</p>
 					) : (
-						<div className='mt-4 flex flex-col space-y-4 rounded-md'>
+						<ul className='mt-4 flex flex-col space-y-4'>
 							{item.licensing.map((licenseSpecification, i) => (
-								<div
+								<li
 									key={i}
 									className='flex rounded-md border border-secondary-700 bg-secondary-800 p-4'>
-									<div className='flex min-h-10 flex-grow flex-col justify-center pr-4'>
+									<div className='flex min-h-10 flex-grow flex-col justify-center'>
 										<h3 className='section-h3'>
 											{licenseSpecification.license.label}
 										</h3>
@@ -687,14 +687,46 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												</p>
 											)}
 										</div>
+										{licenseSpecification.license.url && (
+											<Link
+												href={licenseSpecification.license.url}
+												aria-label={trStr(
+													t.detailLicensingLicenseViewAriaLabel,
+													{
+														licensename:
+															licenseSpecification.license.label,
+													},
+												)}
+												rel='noopener noreferrer'
+												target='_blank'
+												tabIndex={0}
+												className='mt-4 flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 md:hidden'>
+												<FontAwesomeIcon
+													icon={faEye}
+													className='mr-2 text-xl md:text-base'
+												/>
+												<span className='cursor-pointer select-none text-center'>
+													{t.detailLicensingLicenseView}
+												</span>
+												<FontAwesomeIcon
+													icon={faExternalLinkAlt}
+													size='xs'
+													className='mb-0.5 ml-2 cursor-pointer opacity-80'
+												/>
+											</Link>
+										)}
 									</div>
 									{licenseSpecification.license.url && (
 										<Link
 											href={licenseSpecification.license.url}
+											aria-label={trStr(
+												t.detailLicensingLicenseViewAriaLabel,
+												{ licensename: licenseSpecification.license.label },
+											)}
 											rel='noopener noreferrer'
 											target='_blank'
 											tabIndex={0}
-											className='flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 md:px-4 md:py-3'>
+											className='ml-4 hidden flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-4 py-3 text-white transition-colors duration-100 hover:bg-secondary-600 md:flex'>
 											<FontAwesomeIcon
 												icon={faEye}
 												className='text-xl md:text-base'
@@ -706,9 +738,9 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 											/>
 										</Link>
 									)}
-								</div>
+								</li>
 							))}
-						</div>
+						</ul>
 					)}
 				</section>
 			)}
