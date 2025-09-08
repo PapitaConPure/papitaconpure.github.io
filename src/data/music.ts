@@ -7025,8 +7025,8 @@ const items: MusicItem[] = [
 					en: 'Nareko MIDI',
 					ja: '馴子のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '234 KB',
+				url: '/music-item-misc/th20-piano/06_nareko.mid',
 			},
 			{
 				kind: 'document',
@@ -7036,8 +7036,8 @@ const items: MusicItem[] = [
 					en: 'Nareko Sheet Music',
 					ja: '馴子の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '156 KB',
+				url: '/music-item-misc/th20-piano/06_nareko.pdf',
 			},
 			{
 				kind: 'file',
@@ -7047,8 +7047,8 @@ const items: MusicItem[] = [
 					en: 'Nareko Sheet Music (MuseScore 4)',
 					ja: '馴子の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '129 KB',
+				url: '/music-item-misc/th20-piano/06_nareko.mscz',
 			},
 			{
 				kind: 'file',
