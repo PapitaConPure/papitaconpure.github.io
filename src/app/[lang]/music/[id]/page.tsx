@@ -394,6 +394,9 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			)}
 			{item.downloadUrls && item.downloadUrls.length > 0 && (
 				<section>
+					{
+						//TODO: Añadir filtros, ordenamiento y selector de vista de miniaturas/listado
+					}
 					<h2 className='section-h2'>{t.detailDownloadsTitle}</h2>
 					<div className='mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
 						{item.downloadUrls.map((download, index) => (
