@@ -7062,8 +7062,8 @@ const items: MusicItem[] = [
 					en: 'Stage 4 MIDI',
 					ja: '４面のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '305 KB',
+				url: '/music-item-misc/th20-piano/07_stage4.mid',
 			},
 			{
 				kind: 'document',
@@ -7073,8 +7073,8 @@ const items: MusicItem[] = [
 					en: 'Stage 4 Sheet Music',
 					ja: '４面の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '209 KB',
+				url: '/music-item-misc/th20-piano/07_stage4.pdf',
 			},
 			{
 				kind: 'file',
@@ -7084,8 +7084,8 @@ const items: MusicItem[] = [
 					en: 'Stage 4 Sheet Music (MuseScore 4)',
 					ja: '４面の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '180 KB',
+				url: '/music-item-misc/th20-piano/07_stage4.mscz',
 			},
 			{
 				kind: 'file',
