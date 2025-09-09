@@ -53,6 +53,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 			</head>
 			<body className='w-full bg-background pt-[60px] font-default-sans text-foreground antialiased'>
+				<div className='fixed left-0 top-0 -z-50 h-screen w-screen bg-gradient-to-b from-transparent to-accent-main/10 contrast-more:hidden' />
 				<Header lang={lang} />
 				{children}
 				<Footer lang={lang} />
