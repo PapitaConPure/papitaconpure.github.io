@@ -24,6 +24,7 @@
         "metaSiteName": "Papita con Puré",
         "papitaName": "Papita con Puré",
         "loading": "Cargando...",
+        "scrollToTopButton": "Regresar arriba",
         "backSectionButton": "Volver a <1>Inicio</1>"
     },
     "NotFound": {
