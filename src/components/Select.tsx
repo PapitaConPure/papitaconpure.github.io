@@ -175,7 +175,7 @@ function Select<TValue extends OptionValue = undefined>({
 				aria-label={ariaLabel}
 				aria-labelledby={selectLabelId}
 				onClick={handleButtonClick}
-				className='inline-flex items-center justify-between space-x-2 rounded-md py-2 pl-4 pr-3.5 text-sm shadow-sm focus:outline-none focus:ring-2'
+				className='inline-flex items-center justify-between space-x-2 rounded-md py-2 pl-4 pr-3.5 text-sm shadow-sm ring-0 ring-primary-main transition-all duration-150 focus:outline-none focus:ring-2'
 				onKeyDown={handleButtonKeydown}>
 				{icon}
 				{noPickedDisplay ? (
@@ -209,7 +209,7 @@ function Select<TValue extends OptionValue = undefined>({
 						}
 					}}
 					onKeyDown={handleListKeyDown}
-					className='absolute right-0 z-10 mt-1 max-h-60 w-full min-w-[150px] overflow-auto rounded-md border border-secondary-800 bg-background'
+					className='absolute right-0 z-10 mt-1 max-h-60 min-w-20 overflow-auto rounded-md border border-secondary-800 bg-background'
 					tabIndex={-1}>
 					{options.map((option, i) => (
 						<li
