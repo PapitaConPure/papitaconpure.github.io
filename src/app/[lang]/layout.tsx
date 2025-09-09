@@ -4,6 +4,7 @@ import { defaultLocale, isValidLocale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BackToTopButton from '@/components/BackToTopButton';
 
 const outfit = Outfit({
 	subsets: ['latin', 'latin-ext'],
@@ -57,6 +58,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
 				<Header lang={lang} />
 				{children}
 				<Footer lang={lang} />
+				<BackToTopButton lang={lang} />
 			</body>
 		</html>
 	);
