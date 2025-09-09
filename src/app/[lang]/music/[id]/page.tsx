@@ -233,13 +233,26 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			<section>
 				<div className='flex flex-col items-start justify-start sm:flex-row sm:space-x-8'>
 					<div className='mx-auto mb-8 w-[90%] max-w-[30rem] flex-shrink-0 sm:mx-0 sm:mb-0 sm:w-80 sm:max-w-[50%] md:w-96'>
-						<Image
-							src={getRoot(item.coverUrl || item.thumbnailUrl)}
-							alt='Cover Art'
-							width={500}
-							height={500}
-							priority
-							className='w-full rounded-lg'></Image>
+						<div className='relative w-full rounded-lg'>
+							<Image
+								src={getRoot(item.coverUrl || item.thumbnailUrl)}
+								alt='Cover Art Bleed'
+								width={500}
+								height={500}
+								priority
+								aria-hidden
+								className='absolute inset-0 -z-10 hidden w-full rounded-lg opacity-25 blur-3xl motion-safe:animate-pulse md:block md:contrast-more:hidden lg:scale-110'
+								style={{ animationDuration: '20s' }}
+							/>
+							<Image
+								src={getRoot(item.coverUrl || item.thumbnailUrl)}
+								alt='Cover Art'
+								width={500}
+								height={500}
+								priority
+								className='relative w-full rounded-lg'
+							/>
+						</div>
 					</div>
 					<div className='flex-grow'>
 						<p className='mb-1.5 mt-[0.0625rem] flex flex-wrap text-xl text-foreground text-opacity-90'>
