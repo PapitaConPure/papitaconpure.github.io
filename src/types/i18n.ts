@@ -25,3 +25,13 @@ export type TranslationIdsOf<T extends LocaleMap<string>> =
 export interface LocalizedComponentProps<TLocale extends Locale = Locale> {
 	lang: TLocale;
 }
+
+export interface SectionComponentProps<TSectionKey extends AnySectionKey> {
+	t: SectionAcrossLocales<TSectionKey>;
+}
+
+export interface LocalizedSectionComponentProps<
+	TSectionKey extends AnySectionKey,
+	TLocale extends Locale = Locale,
+> extends LocalizedComponentProps<TLocale>,
+		SectionComponentProps<TSectionKey> {}
