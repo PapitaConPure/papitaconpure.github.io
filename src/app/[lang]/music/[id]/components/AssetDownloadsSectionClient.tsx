@@ -87,20 +87,6 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 		setMaxDisplayedAssets(() => MAX_DISPLAYED_ASSETS_DEFAULT);
 	}, []);
 
-	useEffect(() => {
-		const showMoreButton = document.getElementById('asset-downloads-show-more');
-		const showAllButton = document.getElementById('asset-downloads-show-all');
-
-		if (showMoreButton)
-			showMoreButton.style.display =
-				maxDisplayedAssets + MAX_DISPLAYED_ASSETS_INCREASE > trueMaximum
-					? 'hidden'
-					: 'block';
-
-		if (showAllButton)
-			showAllButton.style.display = maxDisplayedAssets === trueMaximum ? 'hidden' : 'block';
-	}, [maxDisplayedAssets, item.downloadUrls, trueMaximum]);
-
 	if (!allDownloads || allDownloads.length <= 0) return;
 
 	//TODO: Añadir filtros, ordenamiento y selector de vista de miniaturas/listado
@@ -116,18 +102,26 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 			</div>
 			{maxDisplayedAssets < allDownloads.length && (
 				<div className='mt-6 flex flex-col justify-center sm:flex-row sm:space-x-2'>
-					<AssetDownloadsBrowserDisplayIncreaseButton
-						id='asset-downloads-show-more'
-						onClick={showMore}
-						className='bg-primary-main duration-150 hover:bg-primary-700'>
-						{t.detailDownloadsShowMore}
-					</AssetDownloadsBrowserDisplayIncreaseButton>
-					<AssetDownloadsBrowserDisplayIncreaseButton
-						id='asset-downloads-show-all'
-						onClick={showAll}
-						className='border border-secondary-800 bg-secondary-900 duration-100 hover:bg-secondary-800'>
-						{t.detailDownloadsShowAll}
-					</AssetDownloadsBrowserDisplayIncreaseButton>
+					{maxDisplayedAssets + MAX_DISPLAYED_ASSETS_INCREASE <= trueMaximum && (
+						<AssetDownloadsBrowserDisplayIncreaseButton
+							id='asset-downloads-show-more'
+							onClick={showMore}
+							className='bg-primary-main duration-150 hover:bg-primary-700'>
+							{t.detailDownloadsShowMore}
+						</AssetDownloadsBrowserDisplayIncreaseButton>
+					)}
+					{maxDisplayedAssets < trueMaximum && (
+						<AssetDownloadsBrowserDisplayIncreaseButton
+							id='asset-downloads-show-all'
+							onClick={showAll}
+							className={
+								maxDisplayedAssets + MAX_DISPLAYED_ASSETS_INCREASE <= trueMaximum
+									? 'border border-secondary-800 bg-secondary-900 duration-100 hover:bg-secondary-800'
+									: 'bg-primary-main duration-150 hover:bg-primary-700'
+							}>
+							{t.detailDownloadsShowAll}
+						</AssetDownloadsBrowserDisplayIncreaseButton>
+					)}
 				</div>
 			)}
 		</div>
