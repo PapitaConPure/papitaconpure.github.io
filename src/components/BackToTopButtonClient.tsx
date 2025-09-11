@@ -19,18 +19,13 @@ export default function BackToTopButtonClient({
 			setScrollY(window.pageYOffset);
 		}
 
-		window.addEventListener('scroll', ev);
+		window.addEventListener('scroll', ev, { passive: true });
 		ev();
-        
+
 		return () => window.removeEventListener('scroll', ev);
 	}, []);
 
-	React.useEffect(() => {
-		const button = document.getElementById('back-to-top-button');
-		if (button) {
-			button.style.display = scrollY > 600 ? 'flex' : 'none';
-		}
-	}, [scrollY]);
+	if (scrollY < 600) return;
 
 	return (
 		<button id='back-to-top-button' onClick={scrollToTop} {...props}>

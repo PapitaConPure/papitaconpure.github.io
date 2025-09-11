@@ -61,8 +61,9 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 							alt='Cover Art Bleed'
 							width={500}
 							height={500}
-							priority
 							aria-hidden
+							priority
+							fetchPriority='high'
 							className='absolute inset-0 -z-10 hidden w-full rounded-lg opacity-25 blur-3xl motion-safe:animate-pulse md:block md:contrast-more:hidden lg:scale-110'
 							style={{ animationDuration: '20s' }}
 						/>
@@ -72,6 +73,7 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 							width={500}
 							height={500}
 							priority
+							fetchPriority='high'
 							className='relative w-full rounded-lg'
 						/>
 					</div>
