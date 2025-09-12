@@ -13,7 +13,6 @@ interface VideoMockProps extends React.HTMLAttributes<HTMLDivElement> {
 function YouTubeVideoMock({ thumbnailUrl, className = '', ...props }: VideoMockProps) {
 	return (
 		<div
-			tabIndex={0}
 			className={`group relative cursor-pointer outline-none ring-0 ring-primary-main transition-all focus:ring-2 ${className}`}
 			{...props}>
 			{thumbnailUrl && (
@@ -70,6 +69,9 @@ export function YouTubeVideo({ src, thumbnailUrl, className = '', ...props }: Vi
 	if (!clicked) {
 		return (
 			<YouTubeVideoMock
+				role='button'
+				tabIndex={0}
+				aria-label={'Play YouTube video'}
 				onClick={beginLoading}
 				onKeyDown={handleKeyDown}
 				thumbnailUrl={thumbnailUrl}
