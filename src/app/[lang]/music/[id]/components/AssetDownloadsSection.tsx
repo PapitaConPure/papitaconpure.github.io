@@ -50,7 +50,7 @@ function AssetDownloadCardThumbnail({
 						src={getRoot(download.url)}
 						alt='Preview Backdrop'
 						fill
-						className='absolute inset-0 rounded-md object-fill blur-md'
+						className='absolute inset-0 rounded-md object-cover blur-md'
 					/>
 					<Image
 						src={getRoot(download.url)}
