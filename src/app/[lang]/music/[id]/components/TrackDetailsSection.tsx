@@ -28,7 +28,7 @@ const TrackListItem = ({ n, children, className, digits = 2, ...props }: TrackLi
 		{...props}
 		className={`flex items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900 ${className || ''}`}>
 		{digits > 0 && (
-			<span className='w-6 flex-shrink-0 select-none text-right text-secondary-600'>
+			<span className='w-6 flex-shrink-0 select-none text-right text-secondary-400'>
 				{`${n}`.padStart(digits, '0')}.
 			</span>
 		)}
