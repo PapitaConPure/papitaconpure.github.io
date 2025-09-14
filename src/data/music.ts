@@ -7095,8 +7095,8 @@ const items: MusicItem[] = [
 					en: 'Yuiman MIDI',
 					ja: 'ユイマンのMIDI',
 				},
-				size: '',
-				url: '',
+				size: '376 KB',
+				url: '/music-item-misc/th20-piano/08_yuiman.mid',
 			},
 			{
 				kind: 'document',
@@ -7106,8 +7106,8 @@ const items: MusicItem[] = [
 					en: 'Yuiman Sheet Music',
 					ja: 'ユイマンの楽譜',
 				},
-				size: '',
-				url: '',
+				size: '179 KB',
+				url: '/music-item-misc/th20-piano/08_yuiman.pdf',
 			},
 			{
 				kind: 'file',
@@ -7117,8 +7117,8 @@ const items: MusicItem[] = [
 					en: 'Yuiman Sheet Music (MuseScore 4)',
 					ja: 'ユイマンの楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '162 KB',
+				url: '/music-item-misc/th20-piano/08_yuiman.mscz',
 			},
 			{
 				kind: 'file',
