@@ -7128,8 +7128,8 @@ const items: MusicItem[] = [
 					en: 'Stage 5 MIDI',
 					ja: '５面のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '234 KB',
+				url: '/music-item-misc/th20-piano/09_stage5.mid',
 			},
 			{
 				kind: 'document',
@@ -7139,8 +7139,8 @@ const items: MusicItem[] = [
 					en: 'Stage 5 Sheet Music',
 					ja: '５面の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '147 KB',
+				url: '/music-item-misc/th20-piano/09_stage5.pdf',
 			},
 			{
 				kind: 'file',
@@ -7150,8 +7150,8 @@ const items: MusicItem[] = [
 					en: 'Stage 5 Sheet Music (MuseScore 4)',
 					ja: '５面の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '129 KB',
+				url: '/music-item-misc/th20-piano/09_stage5.mscz',
 			},
 			{
 				kind: 'file',
