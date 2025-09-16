@@ -7194,8 +7194,8 @@ const items: MusicItem[] = [
 					en: 'Stage 6 MIDI',
 					ja: '６面のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '191 KB',
+				url: '/music-item-misc/th20-piano/11_stage6.mid',
 			},
 			{
 				kind: 'document',
@@ -7205,8 +7205,8 @@ const items: MusicItem[] = [
 					en: 'Stage 6 Sheet Music',
 					ja: '６面の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '99 KB',
+				url: '/music-item-misc/th20-piano/11_stage6.pdf',
 			},
 			{
 				kind: 'file',
@@ -7216,8 +7216,8 @@ const items: MusicItem[] = [
 					en: 'Stage 6 Sheet Music (MuseScore 4)',
 					ja: '６面の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '114 KB',
+				url: '/music-item-misc/th20-piano/11_stage6.mscz',
 			},
 			{
 				kind: 'file',
