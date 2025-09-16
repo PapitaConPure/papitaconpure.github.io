@@ -7161,8 +7161,8 @@ const items: MusicItem[] = [
 					en: 'Toyohime MIDI',
 					ja: '豊姫のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '324 KB',
+				url: '/music-item-misc/th20-piano/10_toyohime.mid',
 			},
 			{
 				kind: 'document',
@@ -7172,8 +7172,8 @@ const items: MusicItem[] = [
 					en: 'Toyohime Sheet Music',
 					ja: '豊姫の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '177 KB',
+				url: '/music-item-misc/th20-piano/10_toyohime.pdf',
 			},
 			{
 				kind: 'file',
@@ -7183,8 +7183,8 @@ const items: MusicItem[] = [
 					en: 'Toyohime Sheet Music (MuseScore 4)',
 					ja: '豊姫の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '152 KB',
+				url: '/music-item-misc/th20-piano/10_toyohime.mscz',
 			},
 			{
 				kind: 'file',
