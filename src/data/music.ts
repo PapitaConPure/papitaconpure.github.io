@@ -7073,7 +7073,7 @@ const items: MusicItem[] = [
 					en: 'Stage 4 Sheet Music',
 					ja: '４面の楽譜',
 				},
-				size: '209 KB',
+				size: '207 KB',
 				url: '/music-item-misc/th20-piano/07_stage4.pdf',
 			},
 			{
@@ -7084,7 +7084,7 @@ const items: MusicItem[] = [
 					en: 'Stage 4 Sheet Music (MuseScore 4)',
 					ja: '４面の楽譜 (MuseScore 4)',
 				},
-				size: '180 KB',
+				size: '178 KB',
 				url: '/music-item-misc/th20-piano/07_stage4.mscz',
 			},
 			{
@@ -7106,7 +7106,7 @@ const items: MusicItem[] = [
 					en: 'Yuiman Sheet Music',
 					ja: 'ユイマンの楽譜',
 				},
-				size: '179 KB',
+				size: '182 KB',
 				url: '/music-item-misc/th20-piano/08_yuiman.pdf',
 			},
 			{
@@ -7117,7 +7117,7 @@ const items: MusicItem[] = [
 					en: 'Yuiman Sheet Music (MuseScore 4)',
 					ja: 'ユイマンの楽譜 (MuseScore 4)',
 				},
-				size: '162 KB',
+				size: '165 KB',
 				url: '/music-item-misc/th20-piano/08_yuiman.mscz',
 			},
 			{
