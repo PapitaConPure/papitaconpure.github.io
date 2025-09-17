@@ -11,7 +11,8 @@ function AudioPreview({ url, format, className }: AudioPreviewProps) {
     return (
         <audio
             controls
-            controlsList='nodownload noremoteplayback nofullscreen'
+            controlsList='noremoteplayback nofullscreen'
+            preload='none'
             className={className}>
             <source
                 src={getRoot(url)}

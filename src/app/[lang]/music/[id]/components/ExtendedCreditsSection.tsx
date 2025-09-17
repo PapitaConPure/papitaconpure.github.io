@@ -30,7 +30,7 @@ function ExtendedCreditsCategory({
 						className={
 							arr.length % 2 !== 0 && i === arr.length - 1 ? 'lg:col-span-full' : ''
 						}>
-						<h4 className='section-h4 mb-3'>{title}</h4>
+						<h4 className='section-h4 mb-2.5'>{title}</h4>
 						<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 							{creditsField.map((artist, index) => (
 								<li key={index}>
