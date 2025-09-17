@@ -7260,8 +7260,8 @@ const items: MusicItem[] = [
 					en: 'Ending 1 MIDI',
 					ja: 'エンディング１のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '8 KB',
+				url: '/music-item-misc/th20-piano/13_ed1.mid',
 			},
 			{
 				kind: 'document',
@@ -7271,8 +7271,8 @@ const items: MusicItem[] = [
 					en: 'Ending 1 Sheet Music',
 					ja: 'エンディング１の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '60 KB',
+				url: '/music-item-misc/th20-piano/13_ed1.pdf',
 			},
 			{
 				kind: 'file',
@@ -7282,8 +7282,8 @@ const items: MusicItem[] = [
 					en: 'Ending 1 Sheet Music (MuseScore 4)',
 					ja: 'エンディング１の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '50 KB',
+				url: '/music-item-misc/th20-piano/13_ed1.mscz',
 			},
 			{
 				kind: 'file',
