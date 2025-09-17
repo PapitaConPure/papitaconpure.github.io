@@ -7227,8 +7227,8 @@ const items: MusicItem[] = [
 					en: 'Ariya MIDI',
 					ja: '阿梨夜のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '102 KB',
+				url: '/music-item-misc/th20-piano/12_ariya.mid',
 			},
 			{
 				kind: 'document',
@@ -7238,8 +7238,8 @@ const items: MusicItem[] = [
 					en: 'Ariya Sheet Music',
 					ja: '阿梨夜の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '213 KB',
+				url: '/music-item-misc/th20-piano/12_ariya.pdf',
 			},
 			{
 				kind: 'file',
@@ -7249,8 +7249,8 @@ const items: MusicItem[] = [
 					en: 'Ariya Sheet Music (MuseScore 4)',
 					ja: '阿梨夜の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '179 KB',
+				url: '/music-item-misc/th20-piano/12_ariya.mscz',
 			},
 			{
 				kind: 'file',
@@ -7258,7 +7258,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'MIDI de final 1',
 					en: 'Ending 1 MIDI',
-					ja: 'エンヂング１のMIDI',
+					ja: 'エンディング１のMIDI',
 				},
 				size: '',
 				url: '',
@@ -7269,7 +7269,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'Partitura de final 1',
 					en: 'Ending 1 Sheet Music',
-					ja: 'エンヂング１の楽譜',
+					ja: 'エンディング１の楽譜',
 				},
 				size: '',
 				url: '',
@@ -7280,7 +7280,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'Partitura de final 1 (MuseScore 4)',
 					en: 'Ending 1 Sheet Music (MuseScore 4)',
-					ja: 'エンヂング１の楽譜 (MuseScore 4)',
+					ja: 'エンディング１の楽譜 (MuseScore 4)',
 				},
 				size: '',
 				url: '',
@@ -7291,7 +7291,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'MIDI de final 2',
 					en: 'Ending 2 MIDI',
-					ja: 'エンヂング２のMIDI',
+					ja: 'エンディング２のMIDI',
 				},
 				size: '',
 				url: '',
@@ -7302,7 +7302,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'Partitura de final 2',
 					en: 'Ending 2 Sheet Music',
-					ja: 'エンヂング２の楽譜',
+					ja: 'エンディング２の楽譜',
 				},
 				size: '',
 				url: '',
@@ -7313,7 +7313,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'Partitura de final 2 (MuseScore 4)',
 					en: 'Ending 2 Sheet Music (MuseScore 4)',
-					ja: 'エンヂング２の楽譜 (MuseScore 4)',
+					ja: 'エンディング２の楽譜 (MuseScore 4)',
 				},
 				size: '',
 				url: '',
