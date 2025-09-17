@@ -9,6 +9,8 @@ import React from 'react';
 import { CredittedArtist } from './CredittedArtist';
 import { itemsById } from '@/data/music';
 import { SectionAcrossLocales } from '@/types/i18n';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCompactDisc } from '@fortawesome/free-solid-svg-icons';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -53,8 +55,8 @@ interface TrackDetailsSectionProps {
 function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProps>) {
 	return (
 		<section>
-			<div className='flex flex-col items-start justify-start sm:flex-row sm:space-x-8'>
-				<div className='mx-auto mb-8 w-[90%] max-w-[30rem] flex-shrink-0 sm:mx-0 sm:mb-0 sm:w-80 sm:max-w-[50%] md:w-96'>
+			<div className='flex flex-col items-start justify-start md:flex-row md:space-x-8'>
+				<div className='mx-auto mb-8 flex w-[90%] max-w-[30rem] flex-shrink-0 flex-col self-stretch sm:w-96 md:mx-0 md:mb-0 md:w-96 md:max-w-[50%]'>
 					<div className='relative w-full rounded-lg'>
 						<Image
 							src={getRoot(item.coverUrl || item.thumbnailUrl)}
@@ -77,8 +79,17 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 							className='relative w-full rounded-lg'
 						/>
 					</div>
+					{(item.kind === 'album' || item.kind === 'compilation') && (
+						<div className='mt-4 hidden flex-grow items-center justify-center md:flex'>
+							<FontAwesomeIcon
+								icon={faCompactDisc}
+								size='10x'
+								className='text-accent-main opacity-30'
+							/>
+						</div>
+					)}
 				</div>
-				<div className='flex-grow'>
+				<div className='mx-auto flex-grow md:mx-0'>
 					<p className='mb-1.5 mt-[0.0625rem] flex flex-wrap text-xl text-foreground text-opacity-90'>
 						{item.artists.map((artist, index, arr) => (
 							<span key={index + 1} className='flex'>
