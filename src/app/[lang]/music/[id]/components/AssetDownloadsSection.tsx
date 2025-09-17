@@ -49,12 +49,14 @@ function AssetDownloadCardThumbnail({
 					<Image
 						src={getRoot(download.url)}
 						alt='Preview Backdrop'
+						loading='lazy'
 						fill
 						className='absolute inset-0 rounded-md object-cover blur-md'
 					/>
 					<Image
 						src={getRoot(download.url)}
 						alt='Preview'
+						loading='lazy'
 						fill
 						className='absolute inset-0 rounded-md object-contain'
 					/>
