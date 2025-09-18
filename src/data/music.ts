@@ -7205,7 +7205,7 @@ const items: MusicItem[] = [
 					en: 'Stage 6 Sheet Music',
 					ja: '６面の楽譜',
 				},
-				size: '99 KB',
+				size: '98.8 KB',
 				url: '/music-item-misc/th20-piano/11_stage6.pdf',
 			},
 			{
@@ -7260,7 +7260,7 @@ const items: MusicItem[] = [
 					en: 'Ending 1 MIDI',
 					ja: 'エンディング１のMIDI',
 				},
-				size: '8 KB',
+				size: '7.81 KB',
 				url: '/music-item-misc/th20-piano/13_ed1.mid',
 			},
 			{
@@ -7271,7 +7271,7 @@ const items: MusicItem[] = [
 					en: 'Ending 1 Sheet Music',
 					ja: 'エンディング１の楽譜',
 				},
-				size: '60 KB',
+				size: '59.3 KB',
 				url: '/music-item-misc/th20-piano/13_ed1.pdf',
 			},
 			{
@@ -7282,7 +7282,7 @@ const items: MusicItem[] = [
 					en: 'Ending 1 Sheet Music (MuseScore 4)',
 					ja: 'エンディング１の楽譜 (MuseScore 4)',
 				},
-				size: '50 KB',
+				size: '49.5 KB',
 				url: '/music-item-misc/th20-piano/13_ed1.mscz',
 			},
 			{
@@ -7293,8 +7293,8 @@ const items: MusicItem[] = [
 					en: 'Ending 2 MIDI',
 					ja: 'エンディング２のMIDI',
 				},
-				size: '',
-				url: '',
+				size: '39.2 KB',
+				url: '/music-item-misc/th20-piano/14_ed2.mid',
 			},
 			{
 				kind: 'document',
@@ -7304,8 +7304,8 @@ const items: MusicItem[] = [
 					en: 'Ending 2 Sheet Music',
 					ja: 'エンディング２の楽譜',
 				},
-				size: '',
-				url: '',
+				size: '69.6 KB',
+				url: '/music-item-misc/th20-piano/14_ed2.pdf',
 			},
 			{
 				kind: 'file',
@@ -7315,8 +7315,8 @@ const items: MusicItem[] = [
 					en: 'Ending 2 Sheet Music (MuseScore 4)',
 					ja: 'エンディング２の楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '84.9 KB',
+				url: '/music-item-misc/th20-piano/14_ed2.mscz',
 			},
 			{
 				kind: 'file',
