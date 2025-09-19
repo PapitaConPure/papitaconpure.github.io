@@ -7326,8 +7326,8 @@ const items: MusicItem[] = [
 					en: 'Extra Stage MIDI',
 					ja: 'エキストラステージのMIDI',
 				},
-				size: '',
-				url: '',
+				size: '316 KB',
+				url: '/music-item-misc/th20-piano/15_stagex.mid',
 			},
 			{
 				kind: 'document',
@@ -7337,8 +7337,8 @@ const items: MusicItem[] = [
 					en: 'Extra Stage Sheet Music',
 					ja: 'エキストラステージの楽譜',
 				},
-				size: '',
-				url: '',
+				size: '195 KB',
+				url: '/music-item-misc/th20-piano/15_stagex.pdf',
 			},
 			{
 				kind: 'file',
@@ -7348,8 +7348,8 @@ const items: MusicItem[] = [
 					en: 'Extra Stage Sheet Music (MuseScore 4)',
 					ja: 'エキストラステージの楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '221 KB',
+				url: '/music-item-misc/th20-piano/15_stagex.mscz',
 			},
 			{
 				kind: 'file',
