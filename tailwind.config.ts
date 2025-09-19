@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import TailwindCSSAnimatePlugin from 'tailwindcss-animate';
 
 const colors = {
 	foreground: '#efebec',
@@ -41,6 +42,32 @@ const colors = {
 		700: '#691739',
 		800: '#3f0e22',
 		900: '#15050b',
+	},
+	card: {
+		DEFAULT: 'hsl(var(--card))',
+		foreground: 'hsl(var(--card-foreground))',
+	},
+	popover: {
+		DEFAULT: 'hsl(var(--popover))',
+		foreground: 'hsl(var(--popover-foreground))',
+	},
+	muted: {
+		DEFAULT: 'hsl(var(--muted))',
+		foreground: 'hsl(var(--muted-foreground))',
+	},
+	destructive: {
+		DEFAULT: 'hsl(var(--destructive))',
+		foreground: 'hsl(var(--destructive-foreground))',
+	},
+	border: 'hsl(var(--border))',
+	input: 'hsl(var(--input))',
+	ring: 'hsl(var(--ring))',
+	chart: {
+		'1': 'hsl(var(--chart-1))',
+		'2': 'hsl(var(--chart-2))',
+		'3': 'hsl(var(--chart-3))',
+		'4': 'hsl(var(--chart-4))',
+		'5': 'hsl(var(--chart-5))',
 	},
 };
 
@@ -124,7 +151,7 @@ const config: Config = {
 			keyframes,
 		},
 	},
-	plugins: [],
+	plugins: [TailwindCSSAnimatePlugin],
 };
 
 function minimize(css: string) {
