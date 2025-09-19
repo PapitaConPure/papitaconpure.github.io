@@ -5141,8 +5141,25 @@ const items: MusicItem[] = [
 						year: 2025,
 						creators: ['Papita con Puré'],
 					},
+					{
+						kind: 'file',
+						work: '"東方錦上京 〜 Fossilized Wonders." Piano Medley MIDI files',
+						year: 2025,
+						creators: ['Papita con Puré'],
+					},
 				],
 			},
+			{
+				license: cc0,
+				targets: [
+					{
+						kind: 'file',
+						work: '"東方錦上京 〜 Fossilized Wonders." Piano Medley Sheet Music',
+						year: 2025,
+						creators: ['Papita con Puré'],
+					},
+				]
+			}
 		],
 		externalLinks: [
 			{
