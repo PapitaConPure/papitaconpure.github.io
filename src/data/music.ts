@@ -7376,8 +7376,8 @@ const items: MusicItem[] = [
 					en: 'Nina MIDI',
 					ja: 'ニナのMIDI',
 				},
-				size: '',
-				url: '',
+				size: '265 KB',
+				url: '/music-item-misc/th20-piano/16_nina.mid',
 			},
 			{
 				kind: 'document',
@@ -7387,8 +7387,8 @@ const items: MusicItem[] = [
 					en: 'Nina Sheet Music',
 					ja: 'ニナの楽譜',
 				},
-				size: '',
-				url: '',
+				size: '190 KB',
+				url: '/music-item-misc/th20-piano/16_nina.pdf',
 			},
 			{
 				kind: 'file',
@@ -7398,8 +7398,8 @@ const items: MusicItem[] = [
 					en: 'Nina Sheet Music (MuseScore 4)',
 					ja: 'ニナの楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '172 KB',
+				url: '/music-item-misc/th20-piano/16_nina.mscz',
 			},
 			{
 				kind: 'file',
