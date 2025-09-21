@@ -7409,8 +7409,8 @@ const items: MusicItem[] = [
 					en: 'Staff Roll MIDI',
 					ja: 'スタッフロールのMIDI',
 				},
-				size: '',
-				url: '',
+				size: '84.9 KB',
+				url: '/music-item-misc/th20-piano/17_staffroll.mid',
 			},
 			{
 				kind: 'document',
@@ -7420,8 +7420,8 @@ const items: MusicItem[] = [
 					en: 'Staff Roll Sheet Music',
 					ja: 'スタッフロールの楽譜',
 				},
-				size: '',
-				url: '',
+				size: '88.2 KB',
+				url: '/music-item-misc/th20-piano/17_staffroll.pdf',
 			},
 			{
 				kind: 'file',
@@ -7431,8 +7431,8 @@ const items: MusicItem[] = [
 					en: 'Staff Roll Sheet Music (MuseScore 4)',
 					ja: 'スタッフロールの楽譜 (MuseScore 4)',
 				},
-				size: '',
-				url: '',
+				size: '72.7 KB',
+				url: '/music-item-misc/th20-piano/17_staffroll.mscz',
 			},
 			{
 				kind: 'file',
