@@ -68,13 +68,13 @@ function AssetDownloadCardThumbnail({
 						<VideoPreview
 							url={download.previewUrl}
 							format={download.previewFormat || download.format}
-							className='absolute inset-0 my-auto rounded-md'
+							className='absolute inset-0 my-auto'
 						/>
 					) : (
 						download.url && (
 							<VideoPreview
 								{...download}
-								className='absolute inset-0 my-auto rounded-md'
+								className='absolute inset-0 my-auto'
 							/>
 						)
 					)}
@@ -150,7 +150,8 @@ export function AssetDownloadCard({
 			{...props}>
 			<AssetDownloadCardThumbnail download={download} />
 			<AssetDownloadCardLabel>
-				{resolveLocalizableField(download.label, lang)}
+				<span>{resolveLocalizableField(download.label, lang)}</span>
+				{download.external && download.provider && <span className='text-foreground/70 font-light text-sm'> ({download.provider})</span>}
 			</AssetDownloadCardLabel>
 			{download.kind === 'audio' && download.url && (
 				<AudioPreview

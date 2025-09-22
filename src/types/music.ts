@@ -42,6 +42,7 @@ export interface BaseDownloadData {
 interface ExternalDownloadData {
 	external: true;
 	direct?: boolean;
+	provider?: string;
 }
 
 export interface InternalDownloadData {
