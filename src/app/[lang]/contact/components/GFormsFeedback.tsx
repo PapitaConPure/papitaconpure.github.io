@@ -14,7 +14,7 @@ function GFormsFeedback({ t, className }: GFormsFeedbackProps) {
 
 	if (!loaded) {
 		return (
-			<div className='h-full w-full p-4'>
+			<div className='h-full min-h-[50vh] w-full p-4 md:min-h-96'>
 				<button
 					onClick={() => setLoaded(true)}
 					className={`group h-full w-full overflow-hidden rounded-md bg-secondary-main transition-colors duration-100 hover:bg-secondary-700 active:bg-secondary-600 ${className}`}>
