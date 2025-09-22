@@ -14,10 +14,10 @@ function GFormsFeedback({ t, className }: GFormsFeedbackProps) {
 
 	if (!loaded) {
 		return (
-			<div className='h-full min-h-[50vh] w-full p-4 md:min-h-96'>
+			<div className='flex h-full w-full items-stretch justify-items-stretch p-4'>
 				<button
 					onClick={() => setLoaded(true)}
-					className={`group h-full w-full overflow-hidden rounded-md bg-secondary-main transition-colors duration-100 hover:bg-secondary-700 active:bg-secondary-600 ${className}`}>
+					className={`group h-full min-h-[50vh] w-full overflow-hidden rounded-md bg-secondary-main transition-colors duration-100 hover:bg-secondary-700 active:bg-secondary-600 lg:min-h-0 ${className}`}>
 					<FontAwesomeIcon
 						icon={faClipboardList}
 						size='5x'
