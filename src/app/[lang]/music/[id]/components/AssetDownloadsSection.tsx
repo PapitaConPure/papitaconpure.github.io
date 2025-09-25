@@ -45,7 +45,7 @@ function AssetDownloadCardThumbnail({
 			className={`relative mb-2 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md bg-secondary-900 ${className}`}
 			{...props}>
 			{download.kind === 'audio' && download.previewUrl && (
-				<div className='absolute inset-0 opacity-25'>
+				<div className='absolute inset-0 opacity-50'>
 					<Image
 						src={getRoot(download.previewUrl)}
 						alt='Preview'
