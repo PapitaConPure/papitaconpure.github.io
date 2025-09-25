@@ -132,6 +132,8 @@
         "businessCard": "スペイン語と英語のみ。",
         "businessCardMailCTA": "Send Email",
         "socialCardTitle": "Social",
-        "socialCard": "ほとんどのソーシャルメディアで私に話しかけることができますが、これらのアカウントの方が早く返信できるかもしれません。"
+        "socialCard": "ほとんどのソーシャルメディアで私に話しかけることができますが、これらのアカウントの方が早く返信できるかもしれません。",
+        "feedbackFormCTA": "フィードバック",
+        "feedbackFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc15z69JutHRy7CA4BXX1mGcazmP8nFHiVvrVmJQXU-mqRSrA/viewform?embedded=true"
     }
 }

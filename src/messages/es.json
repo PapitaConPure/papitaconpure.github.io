@@ -132,6 +132,8 @@
         "businessCard": "Solamente español e inglés.",
         "businessCardMailCTA": "Enviar correo",
         "socialCardTitle": "Social y Otros",
-        "socialCard": "Puedes hablarme en la mayoría de mis redes sin problemas, pero en estas puede que responda más rápido."
+        "socialCard": "Puedes hablarme en la mayoría de mis redes sin problemas, pero en estas puede que responda más rápido.",
+        "feedbackFormCTA": "Retroalimentación",
+        "feedbackFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLScWdp2EoOMnusLKOqA01fmREs_pqZFoG2HLWZ_-dwUEumbO8A/viewform?embedded=true"
     }
 }

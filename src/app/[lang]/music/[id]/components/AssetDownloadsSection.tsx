@@ -44,6 +44,17 @@ function AssetDownloadCardThumbnail({
 		<div
 			className={`relative mb-2 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md bg-secondary-900 ${className}`}
 			{...props}>
+			{download.kind === 'audio' && download.previewUrl && (
+				<div className='absolute inset-0 opacity-50'>
+					<Image
+						src={getRoot(download.previewUrl)}
+						alt='Preview'
+						loading='lazy'
+						fill
+						className='absolute inset-0 rounded-md object-fill'
+					/>
+				</div>
+			)}
 			{download.kind === 'image' && (download.previewUrl || download.url) && (
 				<div className='absolute inset-0 opacity-25'>
 					<Image
@@ -68,13 +79,13 @@ function AssetDownloadCardThumbnail({
 						<VideoPreview
 							url={download.previewUrl}
 							format={download.previewFormat || download.format}
-							className='absolute inset-0 my-auto rounded-md'
+							className='absolute inset-0 my-auto'
 						/>
 					) : (
 						download.url && (
 							<VideoPreview
 								{...download}
-								className='absolute inset-0 my-auto rounded-md'
+								className='absolute inset-0 my-auto'
 							/>
 						)
 					)}
@@ -150,7 +161,8 @@ export function AssetDownloadCard({
 			{...props}>
 			<AssetDownloadCardThumbnail download={download} />
 			<AssetDownloadCardLabel>
-				{resolveLocalizableField(download.label, lang)}
+				<span>{resolveLocalizableField(download.label, lang)}</span>
+				{download.external && download.provider && <span className='text-foreground/70 font-light text-sm'> ({download.provider})</span>}
 			</AssetDownloadCardLabel>
 			{download.kind === 'audio' && download.url && (
 				<AudioPreview
