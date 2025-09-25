@@ -129,7 +129,7 @@ const Contact = async ({ params }: ContactProps) => {
 						</div>
 					</section>
 				</div>
-				<section className='w-full lg:w-1/2'>
+				<section className='w-full lg:w-1/2 lg:mb-0'>
 					<div className='h-full overflow-hidden rounded-md border border-secondary-800'>
 						<GFormsFeedback t={t} />
 					</div>

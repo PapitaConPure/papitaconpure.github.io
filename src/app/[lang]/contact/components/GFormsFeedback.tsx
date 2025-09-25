@@ -33,7 +33,7 @@ function GFormsFeedback({ t, className }: GFormsFeedbackProps) {
 
 	return (
 		<iframe
-			className={`h-full min-h-[50vh] w-full md:min-h-96 ${className}`}
+			className={`h-full min-h-[50vh] w-full lg:min-h-96 ${className}`}
 			src={t.feedbackFormUrl}></iframe>
 	);
 }
