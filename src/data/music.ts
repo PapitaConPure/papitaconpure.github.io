@@ -8204,7 +8204,7 @@ const items: MusicItem[] = [
 					en: 'Music Pack',
 					ja: '音楽パック',
 				},
-				size: '729 MB',
+				size: '877 MB',
 				url: 'https://archive.org/compress/th20-piano-medley/formats=PNG,JPEG,FLAC,VBR%20MP3,METADATA',
 				external: true,
 				direct: true,
