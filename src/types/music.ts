@@ -1,4 +1,5 @@
 import { LocalizableField } from './i18n';
+import { Digit } from './utils';
 
 export interface ExternalLink {
 	source: 'youtube' | 'soundcloud' | 'spotify' | 'other';
@@ -33,9 +34,12 @@ export interface AssetPreviewData {
 	previewFormat?: AssetFormat;
 }
 
+type DownloadSizeMagnitude = `${Digit}${Digit}${Digit}` | `${Digit}.${Digit}${Digit}` | `${Digit}${Digit}.${Digit}`;
+type DownloadSizeUnit =  `${'K' | 'M' | 'G' | ''}${'B' | 'b'}`;
+
 export interface BaseDownloadData {
 	url: string;
-	size: `${number} ${'K' | 'M' | 'G' | ''}${'B' | 'b'}` | '';
+	size: `${DownloadSizeMagnitude} ${DownloadSizeUnit}` | '';
 	label: LocalizableField;
 }
 
