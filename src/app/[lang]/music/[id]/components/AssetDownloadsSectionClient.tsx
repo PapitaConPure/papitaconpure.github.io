@@ -236,7 +236,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 											/>
 											<FontAwesomeIcon
 												icon={assetStyle.icon}
-												className={`absolute inset-0 blur-md transition-all duration-200 mix-blend-plus-lighter ${assetStyle.className} ${isDownloadKindDisplayed(assetStyle.key) ? '' : 'opacity-0'}`}
+												className={`absolute inset-0 mix-blend-plus-lighter blur-md transition-all duration-200 ${assetStyle.className} ${isDownloadKindDisplayed(assetStyle.key) ? '' : 'opacity-0'}`}
 												size='lg'
 											/>
 										</div>
@@ -245,7 +245,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 						</div>
 						{activeKindFilters.size > 0 && (
 							<div
-								className={`grid rounded-md bg-background/70 p-2 ${allKinds.size <= 2 ? 'grid-cols-2' : allKinds.size === 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-2`}>
+								className={`grid rounded-md bg-background/70 p-2 ${allKinds.size <= 1 ? 'grid-cols-1' : allKinds.size === 2 ? 'grid-cols-2' : allKinds.size === 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-2`}>
 								{allAssetFormats
 									.filter(
 										(assetFormat) =>
@@ -265,7 +265,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 												{assetFormat.toUpperCase()}
 											</div>
 											<div
-												className={`absolute blur-md rounded-md text-sm font-medium transition-all duration-75 mix-blend-plus-lighter ${isDownloadFormatDisplayed(assetFormat) ? '' : 'opacity-0'}`}>
+												className={`absolute rounded-md text-sm font-medium mix-blend-plus-lighter blur-md transition-all duration-75 ${isDownloadFormatDisplayed(assetFormat) ? '' : 'opacity-0'}`}>
 												{assetFormat.toUpperCase()}
 											</div>
 										</button>
