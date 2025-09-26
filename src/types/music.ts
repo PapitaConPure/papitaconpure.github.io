@@ -1,5 +1,6 @@
+import { assetMappings, audioAssetFormats, documentAssetFormats, imageAssetFormats, otherAssetFormats, videoAssetFormats } from '@/lib/music';
 import { LocalizableField } from './i18n';
-import { Digit } from './utils';
+import { Digit, ElementsOf } from './utils';
 
 export interface ExternalLink {
 	source: 'youtube' | 'soundcloud' | 'spotify' | 'other';
@@ -7,15 +8,15 @@ export interface ExternalLink {
 	url: string;
 }
 
-export type AudioAssetFormat = 'mp3' | 'flac' | 'wav';
-export type ImageAssetFormat = 'jpg' | 'png' | 'gif' | 'webp';
-export type VideoAssetFormat = 'mp4' | 'mov' | 'webm';
-export type DocumentAssetFormat = 'pdf' | 'docx' | 'txt';
-export type OtherAssetFormat = 'zip' | 'rar' | 'midi' | 'mscz' | '';
+export type AudioAssetFormat = ElementsOf<typeof audioAssetFormats>;
+export type ImageAssetFormat = ElementsOf<typeof imageAssetFormats>;
+export type VideoAssetFormat = ElementsOf<typeof videoAssetFormats>;
+export type DocumentAssetFormat = ElementsOf<typeof documentAssetFormats>;
+export type OtherAssetFormat = ElementsOf<typeof otherAssetFormats> | '';
 
 export type AssetFormat = AudioAssetFormat | ImageAssetFormat | VideoAssetFormat | DocumentAssetFormat | OtherAssetFormat;
 
-export type AssetKind = 'audio' | 'image' | 'video' | 'document' | 'file';
+export type AssetKind = keyof typeof assetMappings;
 
 interface AssetSpecificationTemplate<TKind extends AssetKind, TFormat extends AssetFormat> {
 	kind: TKind;
