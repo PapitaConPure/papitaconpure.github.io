@@ -125,7 +125,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 
 	return (
 		<section>
-			<div className='flex items-center justify-between md:justify-start md:space-x-4'>
+			<div className='flex items-center justify-between'>
 				<h2 className='section-h2'>
 					<span>{t.detailDownloadsTitle}</span>{' '}
 					<span className='text-sm font-normal text-foreground/70'>
