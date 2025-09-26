@@ -1,6 +1,13 @@
 'use client';
 
-import React, { AnchorHTMLAttributes, HTMLAttributes, ReactNode, useEffect, useState } from 'react';
+import React, {
+	AnchorHTMLAttributes,
+	HTMLAttributes,
+	ReactNode,
+	useCallback,
+	useEffect,
+	useState,
+} from 'react';
 import { AssetDownloadCard } from './AssetDownloadsSection';
 import { AssetFormat, AssetKind, MusicItem } from '@/types/music';
 import { SectionComponentProps } from '@/types/i18n';
@@ -9,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { assetStylesArray } from '@/data/music';
-import { allAssetFormats, assetFormatKindsIndex } from '@/lib/music';
+import { allAssetFormats, assetFormatKindsIndex, assetKinds } from '@/lib/music';
 
 interface DirectDownloadButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	downloadStageChildren: ReactNode;
@@ -77,6 +84,20 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 
 	const allDownloads = item.downloadUrls;
 	const trueMaximum = allDownloads?.length || 0;
+	const allKinds = new Set(
+		allDownloads
+			? assetKinds.filter((assetKind) =>
+					allDownloads.some((download) => download.kind === assetKind),
+				)
+			: [],
+	);
+	const allFormats = new Set(
+		allDownloads
+			? allAssetFormats.filter((assetFormat) =>
+					allDownloads.some((download) => download.format === assetFormat),
+				)
+			: [],
+	);
 
 	const [filteredAssetsCount, setFilteredAssetsCount] = useState(trueMaximum);
 
@@ -124,26 +145,32 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 		return activeKindFilters.has(downloadKind);
 	}
 
+	const areActiveFormatsWithinActiveKinds = useCallback(() => {
+		for (const activeFormatFilter of activeFormatFilters) {
+			const activeFormatKind = assetFormatKindsIndex[activeFormatFilter];
+			if (activeFormatKind && activeKindFilters.has(activeFormatKind)) return true;
+		}
+	}, [activeFormatFilters, activeKindFilters]);
+
 	function isDownloadFormatDisplayed(downloadFormat: AssetFormat | null = null) {
 		if (activeKindFilters.size === 0) return true;
 		if (downloadFormat == null) return true;
+		if (!areActiveFormatsWithinActiveKinds()) return true;
 
 		return activeFormatFilters.has(downloadFormat);
 	}
 
-	const isDownloadDisplayed = (downloadKind: AssetKind, downloadFormat: AssetFormat) => {
-		if (activeKindFilters.size === 0) return true;
-		if (!activeKindFilters.has(downloadKind)) return false;
-		if (activeFormatFilters.size === 0) return true;
+	const isDownloadDisplayed = useCallback(
+		(downloadKind: AssetKind, downloadFormat: AssetFormat) => {
+			if (activeKindFilters.size === 0) return true;
+			if (!activeKindFilters.has(downloadKind)) return false;
+			if (activeFormatFilters.size === 0) return true;
+			if (!areActiveFormatsWithinActiveKinds()) return true;
 
-		for (const activeFormatFilter of activeFormatFilters) {
-			const activeFormatKind = assetFormatKindsIndex[activeFormatFilter];
-			if (activeFormatKind && activeKindFilters.has(activeFormatKind))
-				return activeFormatFilters.has(downloadFormat);
-		}
-
-		return true;
-	};
+			return activeFormatFilters.has(downloadFormat);
+		},
+		[activeFormatFilters, activeKindFilters, areActiveFormatsWithinActiveKinds],
+	);
 
 	useEffect(() => {
 		setMaxDisplayedAssets(() => MAX_DISPLAYED_ASSETS_DEFAULT);
@@ -154,13 +181,11 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 		else
 			setFilteredAssetsCount(
 				() =>
-					allDownloads?.filter(
-						(download) =>
-							activeKindFilters.has(download.kind) &&
-							activeFormatFilters.has(download.format),
+					allDownloads?.filter((download) =>
+						isDownloadDisplayed(download.kind, download.format),
 					).length ?? 0,
 			);
-	}, [allDownloads, activeKindFilters, activeFormatFilters, trueMaximum]);
+	}, [allDownloads, activeKindFilters, activeFormatFilters, trueMaximum, isDownloadDisplayed]);
 
 	if (!allDownloads || allDownloads.length <= 0) return;
 
@@ -190,30 +215,37 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 							/>
 						</button>
 					</PopoverTrigger>
-					<PopoverContent className='flex flex-col space-y-6'>
-						<div className='flex space-x-4'>
-							{assetStylesArray.map((assetStyle) => (
-								<button
-									key={assetStyle.key}
-									onClick={() => toggleKindFilter(assetStyle.key)}
-									className={`w-full rounded-md p-4 text-left outline-none ring-primary-main transition-all duration-100 hover:bg-secondary-800 focus-visible:ring-2 active:bg-secondary-700`}>
-									<div className='relative h-6 w-6'>
-										<FontAwesomeIcon
-											icon={assetStyle.icon}
-											className={`absolute inset-0 blur-md transition-all duration-200 ${assetStyle.className} ${isDownloadKindDisplayed(assetStyle.key) ? '' : 'opacity-0'}`}
-											size='lg'
-										/>
-										<FontAwesomeIcon
-											icon={assetStyle.icon}
-											className={`absolute inset-0 transition-all duration-75 ${assetStyle.className} ${isDownloadKindDisplayed(assetStyle.key) ? '' : 'scale-75 opacity-70'}`}
-											size='lg'
-										/>
-									</div>
-								</button>
-							))}
+					<PopoverContent className='flex flex-col space-y-6' align='end'>
+						<div className='flex justify-center space-x-4'>
+							{assetStylesArray
+								.filter((assetStyle) =>
+									allDownloads.some(
+										(download) => download.kind === assetStyle.key,
+									),
+								)
+								.map((assetStyle) => (
+									<button
+										key={assetStyle.key}
+										onClick={() => toggleKindFilter(assetStyle.key)}
+										className={`w-full rounded-md p-4 text-center outline-none ring-primary-main transition-all duration-100 hover:bg-secondary-800 focus-visible:ring-2 active:bg-secondary-700`}>
+										<div className='relative mx-auto h-6 w-6'>
+											<FontAwesomeIcon
+												icon={assetStyle.icon}
+												className={`absolute inset-0 transition-all duration-75 ${assetStyle.className} ${isDownloadKindDisplayed(assetStyle.key) ? '' : 'scale-75 opacity-60'}`}
+												size='lg'
+											/>
+											<FontAwesomeIcon
+												icon={assetStyle.icon}
+												className={`absolute inset-0 blur-md transition-all duration-200 mix-blend-plus-lighter ${assetStyle.className} ${isDownloadKindDisplayed(assetStyle.key) ? '' : 'opacity-0'}`}
+												size='lg'
+											/>
+										</div>
+									</button>
+								))}
 						</div>
 						{activeKindFilters.size > 0 && (
-							<div className='grid grid-cols-4 gap-2'>
+							<div
+								className={`grid rounded-md bg-background/70 p-2 ${allKinds.size <= 2 ? 'grid-cols-2' : allKinds.size === 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-2`}>
 								{allAssetFormats
 									.filter(
 										(assetFormat) =>
@@ -221,17 +253,19 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 											activeKindFilters.has(
 												assetFormatKindsIndex[assetFormat],
 											) &&
-											allDownloads.some(
-												(download) => download.format === assetFormat,
-											),
+											allFormats.has(assetFormat),
 									)
 									.map((assetFormat) => (
 										<button
 											key={assetFormat}
 											onClick={() => toggleFormatFilter(assetFormat)}
-											className={`flex aspect-video w-full items-center justify-center rounded-md p-2 outline-none ring-primary-main transition-all duration-100 hover:bg-secondary-800 focus-visible:ring-2 active:bg-secondary-700`}>
+											className={`relative flex aspect-[3/2] w-full items-center justify-center rounded-md px-1 outline-none ring-primary-main transition-all duration-100 hover:bg-secondary-800 focus-visible:ring-2 active:bg-secondary-700`}>
 											<div
-												className={`rounded-md text-sm font-medium transition-all duration-75 ${isDownloadFormatDisplayed(assetFormat) ? '' : 'scale-75 opacity-70'}`}>
+												className={`absolute rounded-md text-sm font-medium transition-all duration-75 ${isDownloadFormatDisplayed(assetFormat) ? '' : 'scale-75 opacity-70'}`}>
+												{assetFormat.toUpperCase()}
+											</div>
+											<div
+												className={`absolute blur-md rounded-md text-sm font-medium transition-all duration-75 mix-blend-plus-lighter ${isDownloadFormatDisplayed(assetFormat) ? '' : 'opacity-0'}`}>
 												{assetFormat.toUpperCase()}
 											</div>
 										</button>
