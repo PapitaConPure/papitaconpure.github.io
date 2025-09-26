@@ -1,28 +1,51 @@
 import { AssetKind, FullArtistCredit, License, MusicItem } from '@/types/music';
-import { faFile, faFileAlt, faImage, faMusic, faVideo, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import {
+	faFile,
+	faFileAlt,
+	faImage,
+	faMusic,
+	faVideo,
+	IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 
-export const assetStyles: Record<AssetKind, { className: string, icon: IconDefinition }> = {
-	audio: {
+export interface AssetStyle {
+	key: AssetKind;
+	className: string;
+	icon: IconDefinition;
+}
+
+export const assetStylesArray: AssetStyle[] = [
+	{
+		key: 'audio',
 		className: 'text-yellow-200',
 		icon: faMusic,
 	},
-	image: {
+	{
+		key: 'image',
 		className: 'text-green-300',
 		icon: faImage,
 	},
-	video: {
+	{
+		key: 'video',
 		className: 'text-purple-400',
 		icon: faVideo,
 	},
-	document: {
+	{
+		key: 'document',
 		className: 'text-orange-400',
 		icon: faFileAlt,
 	},
-	file: {
+	{
+		key: 'file',
 		className: 'text-blue-400',
 		icon: faFile,
 	},
-};
+];
+
+export const assetStyles: Record<AssetKind, AssetStyle> = assetStylesArray.reduce((acc, style) => {
+	acc[style.key] = style
+	return acc;
+}, {} as Record<AssetKind, AssetStyle>);
 
 const cc0: License = {
 	label: 'CC0 1.0 Universal',
@@ -5236,8 +5259,8 @@ const items: MusicItem[] = [
 						year: 2025,
 						creators: ['Papita con Puré'],
 					},
-				]
-			}
+				],
+			},
 		],
 		externalLinks: [
 			{
@@ -5325,7 +5348,7 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_rh.png'
+				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_rh.png',
 			},
 			{
 				kind: 'audio',
@@ -5341,7 +5364,7 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_rh.png'
+				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_rh.png',
 			},
 			{
 				kind: 'file',
