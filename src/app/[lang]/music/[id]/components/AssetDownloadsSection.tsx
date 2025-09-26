@@ -249,15 +249,5 @@ export default function AssetDownloadsSection({
 }: Readonly<AssetDownloadsSectionProps>) {
 	if (!item.downloadUrls || item.downloadUrls.length === 0) return;
 
-	return (
-		<section>
-			<h2 className='section-h2'>
-				<span>{t.detailDownloadsTitle}</span>{' '}
-				<span className='text-sm font-normal text-foreground/70'>
-					({item.downloadUrls.length})
-				</span>
-			</h2>
-			<AssetDownloadsBrowser item={item} lang={lang} t={t} className='mt-4' />
-		</section>
-	);
+	return <AssetDownloadsBrowser item={item} lang={lang} t={t} className='mt-4' />;
 }
