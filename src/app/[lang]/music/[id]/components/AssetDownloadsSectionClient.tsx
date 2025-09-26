@@ -1,6 +1,6 @@
 'use client';
 
-import React, { AnchorHTMLAttributes, HTMLAttributes, ReactNode, useEffect, useState } from 'react';
+import React, { AnchorHTMLAttributes, HTMLAttributes, ReactNode, useCallback, useEffect, useState } from 'react';
 import { AssetDownloadCard } from './AssetDownloadsSection';
 import { AssetFormat, AssetKind, MusicItem } from '@/types/music';
 import { SectionComponentProps } from '@/types/i18n';
@@ -131,7 +131,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 		return activeFormatFilters.has(downloadFormat);
 	}
 
-	const isDownloadDisplayed = (downloadKind: AssetKind, downloadFormat: AssetFormat) => {
+	const isDownloadDisplayed = useCallback((downloadKind: AssetKind, downloadFormat: AssetFormat) => {
 		if (activeKindFilters.size === 0) return true;
 		if (!activeKindFilters.has(downloadKind)) return false;
 		if (activeFormatFilters.size === 0) return true;
@@ -143,7 +143,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 		}
 
 		return true;
-	};
+	}, [activeFormatFilters, activeKindFilters]);
 
 	useEffect(() => {
 		setMaxDisplayedAssets(() => MAX_DISPLAYED_ASSETS_DEFAULT);
@@ -154,13 +154,11 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 		else
 			setFilteredAssetsCount(
 				() =>
-					allDownloads?.filter(
-						(download) =>
-							activeKindFilters.has(download.kind) &&
-							activeFormatFilters.has(download.format),
+					allDownloads?.filter((download) =>
+						isDownloadDisplayed(download.kind, download.format),
 					).length ?? 0,
 			);
-	}, [allDownloads, activeKindFilters, activeFormatFilters, trueMaximum]);
+	}, [allDownloads, activeKindFilters, activeFormatFilters, trueMaximum, isDownloadDisplayed]);
 
 	if (!allDownloads || allDownloads.length <= 0) return;
 
