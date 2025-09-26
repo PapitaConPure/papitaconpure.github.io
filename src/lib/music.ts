@@ -1,6 +1,6 @@
 import { LocalizableField } from '@/types/i18n';
 import { defaultLocale, Locale } from './i18n';
-import { CategoryKey, MusicItem } from '@/types/music';
+import { AssetFormat, CategoryKey, MusicItem } from '@/types/music';
 
 export function resolveLocalizableField(field: LocalizableField | undefined, lang: Locale): string {
 	if (field == undefined) return '';
@@ -48,3 +48,36 @@ export const localizableCategories: Record<CategoryKey, LocalizableField> = {
 		ja: '東方',
 	},
 };
+
+export const assetMappings = {
+	audio: [ 'mp3', 'flac', 'wav' ] as const,
+	image: [ 'jpg', 'png', 'gif', 'webp' ] as const,
+	video: [ 'mp4', 'mov', 'webm' ] as const,
+	document: [ 'pdf', 'docx', 'txt' ] as const,
+	file: [ 'zip', 'rar', 'midi', 'mscz' ] as const,
+} as const;
+
+//Make an index that helps retrieval of the family a format belongs to
+export const assetFormatKindsIndex = Object.entries(assetMappings).reduce((acc, [kind, formats]) => {
+	formats.forEach((format) => {
+		acc[format] = kind as keyof typeof assetMappings;
+	});
+	return acc;
+}, {} as Record<AssetFormat, keyof typeof assetMappings>);
+
+export const assetKinds = Object.keys(assetMappings) as Array<keyof typeof assetMappings>;
+
+export const audioAssetFormats = assetMappings.audio;
+export const imageAssetFormats = assetMappings.image;
+export const videoAssetFormats = assetMappings.video;
+export const documentAssetFormats = assetMappings.document;
+export const otherAssetFormats = assetMappings.file;
+
+export const allAssetFormats = [
+	...audioAssetFormats,
+	...imageAssetFormats,
+	...videoAssetFormats,
+	...documentAssetFormats,
+	...otherAssetFormats,
+];
+

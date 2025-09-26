@@ -84,7 +84,8 @@ function AssetDownloadCardThumbnail({
 					) : (
 						download.url && (
 							<VideoPreview
-								{...download}
+								url={download.url}
+								format={download.format}
 								className='absolute inset-0 my-auto'
 							/>
 						)
