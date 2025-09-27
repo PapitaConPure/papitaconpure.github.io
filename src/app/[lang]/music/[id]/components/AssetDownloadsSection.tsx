@@ -22,7 +22,7 @@ import {
 	faExternalLinkAlt,
 	faEye,
 	faFile,
-	faFileCircleQuestion,
+	faHand,
 	faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -38,7 +38,6 @@ import {
 } from '@/components/ui/table';
 import { cn } from '@/lib/utils';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface PropsWithDownload {
 	download: DownloadUrl;
@@ -292,13 +291,15 @@ export function AssetDownloadDetail({
 }: Readonly<AssetDownloadCardProps>) {
 	return (
 		<TableRow {...props}>
-			<TableCell className={cn('text-center', assetStyles[download.kind].className)}>
-				<FontAwesomeIcon icon={assetStyles[download.kind].icon} />
-			</TableCell>
 			<TableCell className='text-center text-xs font-medium md:text-sm'>
-				<span className='rounded-md bg-secondary-900 px-2 py-1 hover:bg-secondary-700'>
-					{download.format.toUpperCase()}
-				</span>
+				<div className='flex items-center justify-center space-x-2 rounded-md bg-secondary-900 py-1 pl-2.5 pr-3'>
+					<span className={cn('mt-[0.5px]', assetStyles[download.kind].className)}>
+						<FontAwesomeIcon icon={assetStyles[download.kind].icon} />
+					</span>
+					<span className='mb-[0.5px] flex-grow select-none'>
+						{download.format.toUpperCase()}
+					</span>
+				</div>
 			</TableCell>
 			<TableCell>
 				<span>{resolveLocalizableField(download.label, lang)}</span>
@@ -309,96 +310,90 @@ export function AssetDownloadDetail({
 					</span>
 				)}
 			</TableCell>
+			<TableCell className='text-right'>{download.size}</TableCell>
 			<TableCell className='text-center'>
-				{download.kind === 'document' ? (
-					<a
-						href={download.url}
-						aria-label={t.detailDownloadsDocumentPreviewAriaLabel}
-						rel='noopener noreferrer'
-						target='_blank'
-						tabIndex={0}
-						className='flex h-10 flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-3 py-2 text-white transition-colors duration-100 hover:bg-secondary-600'>
-						<FontAwesomeIcon icon={faEye} className='text-sm sm:text-base' />
-						<FontAwesomeIcon
-							icon={faExternalLinkAlt}
-							size='xs'
-							className='mb-0.5 ml-2 cursor-pointer opacity-80'
-						/>
-					</a>
-				) : (
-					<Popover>
-						<PopoverTrigger asChild>
-							<button className='h-10 items-center justify-center rounded-md bg-secondary-700 px-3 py-2 text-white transition-colors duration-100 hover:bg-secondary-600'>
-								<FontAwesomeIcon icon={faEye} className='text-sm sm:text-base' />
-							</button>
-						</PopoverTrigger>
-						<PopoverContent className='flex flex-col space-y-6' side='left'>
-							<div className='min-w-80 sm:min-w-96'>
-								{download.kind === 'audio' ? (
-									download.url && (
-										<AudioPreview
-											{...download}
-											className='h-12 w-full rounded-md bg-white'
-										/>
-									)
-								) : (
-									<AssetDownloadCardThumbnail noOverlay download={download} />
-								)}
-							</div>
-						</PopoverContent>
-					</Popover>
-				)}
-			</TableCell>
-			<TableCell className='text-center'>
-				{!download.url && (
-					<UnavailableDownloadButton className='text-sm sm:text-base' t={t}>
-						<UnavailableDownloadIcon />
-					</UnavailableDownloadButton>
-				)}
-				{download.url && (
-					<TooltipProvider>
-						<Tooltip delayDuration={100}>
-							<TooltipTrigger asChild>
-								<DirectDownloadButton
-									href={getRoot(download.url)}
-									aria-label={trStr(t.detailDownloadsDownloadAriaLabel, {
-										assetlabel: resolveLocalizableField(download.label, lang),
-										filesize: download.size,
-									})}
-									download={!download.external || download.direct}
-									target={download.external ? '_blank' : '_self'}
-									rel='noopener noreferrer'
-									className='flex h-10 flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-main px-3 py-2 text-white transition-colors duration-200 hover:bg-primary-700'
-									downloadStageChildren={
-										<>
-											<FontAwesomeIcon
-												icon={faCheck}
-												className='mr-2 cursor-not-allowed'
-											/>
-											<FontAwesomeIcon
-												icon={faSpinner}
-												size='xs'
-												className='ml-2 animate-spin opacity-80'
-											/>
-										</>
-									}>
+				<AssetDownloadActionRow>
+					{!download.url && (
+						<UnavailableDownloadButton className='text-sm sm:text-base' t={t}>
+							<UnavailableDownloadIcon />
+						</UnavailableDownloadButton>
+					)}
+					{download.url && (
+						<DirectDownloadButton
+							href={getRoot(download.url)}
+							aria-label={trStr(t.detailDownloadsDownloadAriaLabel, {
+								assetlabel: resolveLocalizableField(download.label, lang),
+								filesize: download.size,
+							})}
+							download={!download.external || download.direct}
+							target={download.external ? '_blank' : '_self'}
+							rel='noopener noreferrer'
+							className='flex h-10 flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-main px-3 py-2 text-white transition-colors duration-200 hover:bg-primary-700'
+							downloadStageChildren={
+								<>
 									<FontAwesomeIcon
-										icon={faDownload}
-										className='cursor-pointer text-sm'
+										icon={faCheck}
+										className='mr-2 cursor-not-allowed'
 									/>
-									{download.external && (
-										<FontAwesomeIcon
-											icon={faExternalLinkAlt}
-											size='xs'
-											className='mb-0.5 ml-2 cursor-pointer opacity-80'
-										/>
+									<FontAwesomeIcon
+										icon={faSpinner}
+										size='xs'
+										className='ml-2 animate-spin opacity-80'
+									/>
+								</>
+							}>
+							<FontAwesomeIcon icon={faDownload} className='cursor-pointer text-sm' />
+							{download.external && (
+								<FontAwesomeIcon
+									icon={faExternalLinkAlt}
+									size='xs'
+									className='mb-0.5 ml-2 cursor-pointer opacity-80'
+								/>
+							)}
+						</DirectDownloadButton>
+					)}
+					{download.kind === 'document' ? (
+						<a
+							href={download.url}
+							aria-label={t.detailDownloadsDocumentPreviewAriaLabel}
+							rel='noopener noreferrer'
+							target='_blank'
+							tabIndex={0}
+							className='flex h-10 flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-3 py-2 text-white transition-colors duration-100 hover:bg-secondary-600'>
+							<FontAwesomeIcon icon={faEye} className='text-sm sm:text-base' />
+							<FontAwesomeIcon
+								icon={faExternalLinkAlt}
+								size='xs'
+								className='mb-0.5 ml-2 cursor-pointer opacity-80'
+							/>
+						</a>
+					) : (
+						<Popover>
+							<PopoverTrigger asChild>
+								<button className='h-10 items-center justify-center rounded-md bg-secondary-700 px-3 py-2 text-white transition-colors duration-100 hover:bg-secondary-600'>
+									<FontAwesomeIcon
+										icon={faEye}
+										className='text-sm sm:text-base'
+									/>
+								</button>
+							</PopoverTrigger>
+							<PopoverContent className='flex flex-col space-y-6' side='left'>
+								<div className='min-w-72 sm:min-w-80 md:min-w-96'>
+									{download.kind === 'audio' ? (
+										download.url && (
+											<AudioPreview
+												{...download}
+												className='h-12 w-full rounded-md bg-white'
+											/>
+										)
+									) : (
+										<AssetDownloadCardThumbnail noOverlay download={download} />
 									)}
-								</DirectDownloadButton>
-							</TooltipTrigger>
-							<TooltipContent>{download.size}</TooltipContent>
-						</Tooltip>
-					</TooltipProvider>
-				)}
+								</div>
+							</PopoverContent>
+						</Popover>
+					)}
+				</AssetDownloadActionRow>
 			</TableCell>
 		</TableRow>
 	);
@@ -418,26 +413,29 @@ export function AssetBrowserPortal({
 	...props
 }: AssetBrowserPortalProps) {
 	return detailView ? (
-		<Table className={className} {...props}>
-			<TableHeader>
-				<TableRow>
-					<TableHead className='w-1 text-center'>
-						<FontAwesomeIcon icon={faFile} />
-					</TableHead>
-					<TableHead className='w-20 text-center'>
-						<FontAwesomeIcon icon={faFileCircleQuestion} />
-					</TableHead>
-					<TableHead>{t.detailDownloadsDetailHeaderLabel}</TableHead>
-					<TableHead className='w-1 text-center'>
-						<FontAwesomeIcon icon={faEye} />
-					</TableHead>
-					<TableHead className='w-1 text-center'>
-						<FontAwesomeIcon icon={faDownload} />
-					</TableHead>
-				</TableRow>
-			</TableHeader>
-			<TableBody>{children}</TableBody>
-		</Table>
+		<div
+			className={cn('overflow-hidden rounded-md border border-secondary-800', className)}
+			{...props}>
+			<Table className={className}>
+				<TableHeader className='bg-secondary-800 text-secondary-300'>
+					<TableRow className='border-secondary-700'>
+						<TableHead className='w-1 text-center'>
+							<FontAwesomeIcon icon={faFile} />
+						</TableHead>
+						<TableHead className='select-none text-sm'>
+							{t.detailDownloadsDetailHeaderLabel}
+						</TableHead>
+						<TableHead className='select-none text-right text-sm'>
+							{t.detailDownloadsDetailHeaderSize}
+						</TableHead>
+						<TableHead className='w-1 text-center'>
+							<FontAwesomeIcon icon={faHand} />
+						</TableHead>
+					</TableRow>
+				</TableHeader>
+				<TableBody>{children}</TableBody>
+			</Table>
+		</div>
 	) : (
 		<div
 			className={cn(
