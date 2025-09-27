@@ -8,15 +8,21 @@ import React, {
 	useEffect,
 	useState,
 } from 'react';
-import { AssetDownloadCard } from './AssetDownloadsSection';
+import { AssetBrowserPortal, AssetDownloadCard, AssetDownloadDetail } from './AssetDownloadsSection';
 import { AssetFormat, AssetKind, MusicItem } from '@/types/music';
 import { SectionComponentProps } from '@/types/i18n';
 import { Locale } from '@/lib/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faFilter } from '@fortawesome/free-solid-svg-icons';
+import {
+	faEye,
+	faFilter,
+	faRefresh,
+	faTableCellsLarge,
+} from '@fortawesome/free-solid-svg-icons';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { assetStylesArray } from '@/data/music';
 import { allAssetFormats, assetFormatKindsIndex, assetKinds } from '@/lib/music';
+import { faTableList } from '@fortawesome/free-solid-svg-icons/faTableList';
 
 interface DirectDownloadButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	downloadStageChildren: ReactNode;
@@ -66,7 +72,7 @@ function AssetDownloadsBrowserDisplayIncreaseButton({
 	);
 }
 
-const MAX_DISPLAYED_ASSETS_DEFAULT = 6;
+const MAX_DISPLAYED_ASSETS_DEFAULT = 9;
 
 const MAX_DISPLAYED_ASSETS_INCREASE = 12;
 
@@ -81,6 +87,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 	const [activeKindFilters, setActiveKindFilters] = useState(() => new Set<AssetKind>());
 	const [activeFormatFilters, setActiveFormatFilters] = useState(() => new Set<AssetFormat>());
 	const [maxDisplayedAssets, setMaxDisplayedAssets] = useState(MAX_DISPLAYED_ASSETS_DEFAULT);
+	const [detailView, setDetailView] = useState(false);
 
 	const allDownloads = item.downloadUrls;
 	const trueMaximum = allDownloads?.length || 0;
@@ -101,6 +108,12 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 
 	const [filteredAssetsCount, setFilteredAssetsCount] = useState(trueMaximum);
 
+	const resetAssetBrowser = () => {
+		setActiveKindFilters(() => new Set<AssetKind>());
+		setActiveFormatFilters(() => new Set<AssetFormat>());
+		setMaxDisplayedAssets(() => MAX_DISPLAYED_ASSETS_DEFAULT);
+	};
+
 	const showMore = () => {
 		setMaxDisplayedAssets((prev) =>
 			Math.min(trueMaximum, prev + MAX_DISPLAYED_ASSETS_INCREASE),
@@ -109,6 +122,10 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 
 	const showAll = () => {
 		setMaxDisplayedAssets(trueMaximum);
+	};
+
+	const toggleDetailView = () => {
+		setDetailView(!detailView);
 	};
 
 	const toggleKindFilter = (kind: AssetKind) => {
@@ -193,7 +210,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 
 	return (
 		<section>
-			<div className='flex items-center justify-between'>
+			<div className='flex items-center justify-between space-x-2'>
 				<h2 className='section-h2'>
 					<span>{t.detailDownloadsTitle}</span>{' '}
 					<span className='text-sm font-normal text-foreground/70'>
@@ -205,12 +222,39 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 						{allDownloads.length})
 					</span>
 				</h2>
+				<div className='flex-grow' />
+				<button
+					onClick={toggleDetailView}
+					className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'>
+					{detailView ? (
+						<FontAwesomeIcon
+							icon={faTableList}
+							className='aspect-square h-4 w-4 text-foreground/80 transition-all duration-150 group-hover:text-foreground group-focus:text-foreground group-active:text-secondary-300'
+							size='lg'
+						/>
+					) : (
+						<FontAwesomeIcon
+							icon={faTableCellsLarge}
+							className='aspect-square h-4 w-4 text-foreground/80 transition-all duration-150 group-hover:text-foreground group-focus:text-foreground group-active:text-secondary-300'
+							size='lg'
+						/>
+					)}
+				</button>
+				<button
+					onClick={resetAssetBrowser}
+					className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'>
+					<FontAwesomeIcon
+						icon={faRefresh}
+						className='aspect-square h-4 w-4 text-foreground/80 transition-colors duration-150 group-hover:rotate-180 group-hover:text-foreground group-hover:transition-all group-focus:rotate-180 group-focus:text-foreground group-focus:transition-all group-active:text-secondary-300'
+						size='lg'
+					/>
+				</button>
 				<Popover>
 					<PopoverTrigger asChild>
-						<button className='rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2'>
+						<button className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'>
 							<FontAwesomeIcon
 								icon={faFilter}
-								className='aspect-square h-4 w-4 text-foreground/70'
+								className='aspect-square h-4 w-4 text-accent-400 transition-all duration-150 group-hover:text-accent-100 group-focus:text-foreground group-active:text-accent-500'
 								size='lg'
 							/>
 						</button>
@@ -276,21 +320,28 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 				</Popover>
 			</div>
 			<div {...props}>
-				<div
-					id='asset-downloads-browser-view'
-					className='grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2 md:grid-cols-3'>
+				<AssetBrowserPortal detailView={detailView} t={t}>
 					{allDownloads
 						.filter((download) => isDownloadDisplayed(download.kind, download.format))
 						.slice(0, maxDisplayedAssets)
-						.map((download) => (
-							<AssetDownloadCard
-								key={`${download.kind}-${download.format}-${download.url}`}
-								download={download}
-								lang={lang}
-								t={t}
-							/>
-						))}
-				</div>
+						.map((download) =>
+							detailView ? (
+								<AssetDownloadDetail
+									key={`${download.kind}-${download.format}-${download.url}`}
+									download={download}
+									lang={lang}
+									t={t}
+								/>
+							) : (
+								<AssetDownloadCard
+									key={`${download.kind}-${download.format}-${download.url}`}
+									download={download}
+									lang={lang}
+									t={t}
+								/>
+							),
+						)}
+				</AssetBrowserPortal>
 				{maxDisplayedAssets < filteredAssetsCount && (
 					<div className='mt-6 flex flex-col justify-center sm:flex-row sm:space-x-2'>
 						{maxDisplayedAssets + MAX_DISPLAYED_ASSETS_INCREASE <= trueMaximum && (
