@@ -289,7 +289,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 						</div>
 						{activeKindFilters.size > 0 && (
 							<div
-								className={`grid rounded-md bg-background/70 p-2 ${allKinds.size <= 2 ? 'grid-cols-2' : allKinds.size === 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-2`}>
+								className={`grid rounded-md bg-background/70 p-2 ${allKinds.size <= 1 ? 'grid-cols-1' : allKinds.size === 2 ? 'grid-cols-2' : allKinds.size === 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-2`}>
 								{allAssetFormats
 									.filter(
 										(assetFormat) =>
