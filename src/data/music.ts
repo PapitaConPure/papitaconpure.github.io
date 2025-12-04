@@ -998,9 +998,9 @@ const items: MusicItem[] = [
 				kind: 'audio',
 				format: 'mp3',
 				label: {
-					es: 'Pista completa (16-bit int)',
-					en: 'Full Track (16-bit int)',
-					ja: 'フルトラック (16-bit int)',
+					es: 'Pista completa (320kbps)',
+					en: 'Full Track (320kbps)',
+					ja: 'フルトラック (320kbps)',
 				},
 				size: '15.2 MB',
 				url: '/audio/music/pateka-1/PaTeKa1.mp3',
