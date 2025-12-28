@@ -72,7 +72,7 @@
 }
 
 .title {
-	@apply mb-0 text-center font-default-sans text-4xl font-black text-foreground;
+	@apply mb-2 text-center font-default-sans text-4xl font-black text-foreground;
 }
 
 .subtitle {

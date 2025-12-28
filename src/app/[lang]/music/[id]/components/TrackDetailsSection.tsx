@@ -90,7 +90,7 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 					)}
 				</div>
 				<div className='mx-auto flex-grow md:mx-0'>
-					<p className='mb-1.5 mt-[0.0625rem] flex flex-wrap text-xl text-foreground text-opacity-90'>
+					<p className='mb-1.5 mt-0.5 flex flex-wrap text-xl text-foreground text-opacity-90'>
 						{item.artists.map((artist, index, arr) => (
 							<span key={index + 1} className='flex'>
 								<CredittedArtist artist={artist} lang={lang} />
@@ -117,10 +117,10 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 							</div>
 						))}
 					</div>
+					<SmallSeparator />
 
 					{item.externalLinks && item.externalLinks.length > 0 && (
 						<>
-							<SmallSeparator />
 							<h2 className='section-h3 mb-2'>{t.detailLinksTitle}</h2>
 							<ul className='list-disc pl-6'>
 								{item.externalLinks.map((link, index) => (
@@ -140,8 +140,7 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 
 					{(item.kind === 'album' || item.kind === 'ep') && (
 						<>
-							<SmallSeparator />
-							<h2 className='section-h3 mb-2'>{t.detailTracklistTitle}</h2>
+							<h2 className='section-h3 mt-4 mb-2'>{t.detailTracklistTitle}</h2>
 							<TrackList>
 								{item.children.map((child, index) => {
 									if (child.kind === 'name')
@@ -181,8 +180,7 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 
 					{item.kind === 'compilation' && (
 						<>
-							<SmallSeparator />
-							<h2 className='section-h3 mb-2'>{t.detailTracklistTitle}</h2>
+							<h2 className='section-h3 mt-5 mb-2'>{t.detailTracklistTitle}</h2>
 							<TrackList>
 								{item.childrenTitles.map((childTitle, index) => {
 									return (
