@@ -6,7 +6,7 @@ import { MusicItem } from '@/types/music';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { CredittedArtist } from './CredittedArtist';
+import { CreditedArtist } from './CreditedArtist';
 import { itemsById } from '@/data/music';
 import { SectionAcrossLocales } from '@/types/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -93,7 +93,7 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 					<p className='mb-1.5 mt-0.5 flex flex-wrap text-xl text-foreground text-opacity-90'>
 						{item.artists.map((artist, index, arr) => (
 							<span key={index + 1} className='flex'>
-								<CredittedArtist artist={artist} lang={lang} />
+								<CreditedArtist artist={artist} lang={lang} />
 								{index < arr.length - 1 && (
 									<span className='mx-2 self-center text-base text-secondary-500'>
 										&

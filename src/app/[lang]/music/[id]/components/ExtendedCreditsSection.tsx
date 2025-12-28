@@ -2,7 +2,7 @@ import { Locale } from '@/lib/i18n';
 import { SectionAcrossLocales } from '@/types/i18n';
 import { CreditsField, MusicItem } from '@/types/music';
 import React from 'react';
-import { CredittedArtist } from './CredittedArtist';
+import { CreditedArtist } from './CreditedArtist';
 
 interface CreditsFieldDescriptor {
 	title: string;
@@ -34,7 +34,7 @@ function ExtendedCreditsCategory({
 						<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 							{creditsField.map((artist, index) => (
 								<li key={index}>
-									{<CredittedArtist artist={artist} lang={lang} />}
+									{<CreditedArtist artist={artist} lang={lang} />}
 								</li>
 							))}
 						</ul>

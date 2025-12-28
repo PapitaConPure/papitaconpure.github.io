@@ -3,47 +3,47 @@ import { resolveLocalizableField } from "@/lib/music";
 import { FullArtistCredit } from "@/types/music";
 
 
-interface FullCredittedArtistProps extends React.HTMLAttributes<HTMLSpanElement> {
+interface FullCreditedArtistProps extends React.HTMLAttributes<HTMLSpanElement> {
 	artist: FullArtistCredit;
 	lang: Locale;
 }
 
-export const CredittedArtistName = ({
+export const CreditedArtistName = ({
 	artist,
 	lang,
 	className = '',
 	...props
-}: FullCredittedArtistProps) => (
+}: FullCreditedArtistProps) => (
 	<span className={`self-start leading-tight ${className}`} {...props}>
 		{resolveLocalizableField(artist.name, lang)}
 	</span>
 );
 
-export const CredittedArtistClarification = ({
+export const CreditedArtistClarification = ({
 	artist,
 	lang,
 	className = '',
 	...props
-}: FullCredittedArtistProps) =>
+}: FullCreditedArtistProps) =>
 	artist.clarification && (
 		<span className={`self-end text-xs ${className}`} {...props}>
 			({resolveLocalizableField(artist.clarification, lang)})
 		</span>
 	);
 
-interface CredittedArtistProps {
+interface CreditedArtistProps {
 	artist: string | FullArtistCredit;
 	lang: Locale;
 }
 
-export const CredittedArtist = ({ artist, lang }: CredittedArtistProps) => {
+export const CreditedArtist = ({ artist, lang }: CreditedArtistProps) => {
 	if (typeof artist === 'string') return <span>{artist}</span>;
 
 	if (!artist.url)
 		return (
 			<span className='flex flex-wrap space-x-1 sm:justify-center'>
-				<CredittedArtistName artist={artist} lang={lang} />
-				<CredittedArtistClarification
+				<CreditedArtistName artist={artist} lang={lang} />
+				<CreditedArtistClarification
 					artist={artist}
 					lang={lang}
 					className='text-secondary-300'
@@ -57,8 +57,8 @@ export const CredittedArtist = ({ artist, lang }: CredittedArtistProps) => {
 			target='_blank'
 			rel='noopener noreferrer'
 			className='text-link group flex flex-wrap space-x-1 sm:justify-center'>
-			<CredittedArtistName artist={artist} lang={lang} />
-			<CredittedArtistClarification
+			<CreditedArtistName artist={artist} lang={lang} />
+			<CreditedArtistClarification
 				artist={artist}
 				lang={lang}
 				className='text-accent-400 group-hover:text-accent-500 group-active:text-accent-600'
