@@ -8367,6 +8367,25 @@ const items: MusicItem[] = [
 		coverUrl: '/images/music/dream-satellite/cover.png',
 		thumbnailUrl: '/images/music/dream-satellite/thumb.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=6nK-R6cCG7U',
+		credits: {
+			music: {
+				composers: [papitaCredit],
+			},
+			visuals: {
+				background: [papitaCredit],
+				thumbnail: [
+					{
+						name: 'Nyong_Nyong',
+						url: 'https://www.pixiv.net/artworks/85896681',
+					},
+				],
+			},
+		},
+		licensing: [
+			{
+				license: cc4Attrib,
+			},
+		],
 		externalLinks: [
 			{
 				source: 'youtube',
