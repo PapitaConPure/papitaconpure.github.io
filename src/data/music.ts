@@ -8352,6 +8352,98 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano medley'],
 	},
+
+	//Hippocampus Facility ~ Dream Satellite
+	{
+		id: 'dream-satellite',
+		kind: 'single',
+		artists: [papitaCredit],
+		title: {
+			es: 'Hippocampus Facility ~ Dream Satellite',
+			ja: '海馬施設　～ Dream Satellite',
+		},
+		date: new Date('2026-01-27'),
+		categories: ['original', 'touhou'],
+		coverUrl: '/images/music/dream-satellite/cover.png',
+		thumbnailUrl: '/images/music/dream-satellite/thumb.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=6nK-R6cCG7U',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=6nK-R6cCG7U',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
+				size: '',
+				url: '',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: {
+					es: 'Portada (2k)',
+					en: 'Cover (2k)',
+					ja: '表紙 (2k)',
+				},
+				size: '5.65 MB',
+				url: '/images/music/dream-satellite/cover.png',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: {
+					es: 'Animación (Bucle) (h.264 / 4k@60)',
+					en: 'Animation (Loop) (h.264 / 4k@60)',
+					ja: 'アニメーション (ループ) (h.264 / 4k@60)',
+				},
+				size: '',
+				url: '',
+			},
+			{
+				kind: 'video',
+				format: 'mov',
+				label: {
+					es: 'Animación (Bucle) (DNxHR HQ / 4k@60)',
+					en: 'Animation (Loop) (DNxHR HQ / 4k@60)',
+					ja: 'アニメーション (ループ) (DNxHR HQ / 4k@60)',
+				},
+				size: '',
+				url: '',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
+				size: '1.46 MB',
+				url: '/images/music/dream-satellite/thumb.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
+				size: '169 KB',
+				url: '/images/music/dream-satellite/thumb.webp',
+			},
+		],
+		tags: ['legacy of lunatic kingdom', 'touhou style'],
+	},
 ];
 
 const itemsById: Record<string, MusicItem> = {};
