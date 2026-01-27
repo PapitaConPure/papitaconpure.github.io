@@ -305,7 +305,7 @@ const items: MusicItem[] = [
 		childrenTitles: [
 			{
 				es: 'Entrusting this World to Idols ~ Idolatrize World',
-				ja: '偶像に世界を委ねて ～ Idolatrize World',
+				ja: '偶像に世界を委ねて　～ Idolatrize World',
 			},
 			{
 				es: 'Jelly Stone',
@@ -313,7 +313,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Secret God Matara ~ Hidden Star in All Seasons',
-				ja: '秘神マターラ ～ Hidden Star in All Seasons.',
+				ja: '秘神マターラ　～ Hidden Star in All Seasons.',
 			},
 			{
 				es: 'No More Going Through Doors',
@@ -321,7 +321,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Pure Furies ~ Whereabouts of the Heart',
-				ja: 'ピュアヒューリーズ ～ 心の在処',
+				ja: 'ピュアヒューリーズ　～ 心の在処',
 			},
 			{
 				es: 'Pandemonic Planet',
@@ -333,7 +333,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Primordial Beat ~ Pristine Beat',
-				ja: '始原のビート ～ Pristine Beat',
+				ja: '始原のビート　～ Pristine Beat',
 			},
 			{
 				es: 'Mysterious Purification Rod',
@@ -341,7 +341,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Shoutoku Legend ~ True Administrator',
-				ja: '聖徳伝説 ～ True Administrator',
+				ja: '聖徳伝説　～ True Administrator',
 			},
 			{
 				es: 'Night Sakura of Dead Spirits',
@@ -349,7 +349,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Emotional Skyscraper ~ Cosmic Mind',
-				ja: '感情の摩天楼 ～ Cosmic Mind',
+				ja: '感情の摩天楼　～ Cosmic Mind',
 			},
 			{
 				es: 'Rural Makai City Esoteria',
@@ -361,11 +361,11 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'The Sealed Away Youkai ~ Lost Place',
-				ja: '封じられた妖怪 ～ Lost Place',
+				ja: '封じられた妖怪　～ Lost Place',
 			},
 			{
 				es: 'The Venerable Ancient Battlefield ~ Suwa Foughten Field',
-				ja: '神さびた古戦場 ～ Suwa Foughten Field',
+				ja: '神さびた古戦場　～ Suwa Foughten Field',
 			},
 			{
 				es: 'Faith is for the Transient People',
@@ -377,15 +377,15 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Eastern Judgement of the Sixtieth Year ~ Fate of Sixty Years',
-				ja: '六十年目の東方裁判 ～ Fate of Sixty Years',
+				ja: '六十年目の東方裁判　～ Fate of Sixty Years',
 			},
 			{
 				es: 'Kaeidzuka ~ Higan Retour',
-				ja: '花映塚 ～ Higan Retour',
+				ja: '花映塚　～ Higan Retour',
 			},
 			{
 				es: 'Eternal Dream ~ Mystic Maple',
-				ja: 'Eternal Dream ～ 幽玄の槭樹',
+				ja: 'Eternal Dream　～ 幽玄の槭樹',
 			},
 			{
 				es: 'Voyage 1969',
@@ -393,11 +393,11 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Flight of the Bamboo Cutter ~ Lunatic Princess',
-				ja: '竹取飛翔 ～ Lunatic Princess',
+				ja: '竹取飛翔　～ Lunatic Princess',
 			},
 			{
 				es: 'Gensokyo Millennium ~ History of the Moon',
-				ja: '千年幻想郷 ～ History of the Moon',
+				ja: '千年幻想郷　～ History of the Moon',
 			},
 			{
 				es: 'Bloom Nobly, Ink-Black Cherry Blossoms ~ Border of Life',
@@ -425,7 +425,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Onigashima in the Fairyland ~ Missing Power',
-				ja: '御伽の国の鬼が島 ～ Missing Power',
+				ja: '御伽の国の鬼が島　～ Missing Power',
 			},
 			{
 				es: 'Swift Battle',
@@ -433,11 +433,11 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Wind Circulation ~ Wind Tour',
-				ja: '風の循環 ～ Wind Tour',
+				ja: '風の循環　～ Wind Tour',
 			},
 			{
 				es: 'Tengu is Watching ~ Black Eyes',
-				ja: '天狗が見ている ～ Black Eyes',
+				ja: '天狗が見ている　～ Black Eyes',
 			},
 			{
 				es: 'Broken Moon',
@@ -457,11 +457,11 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Bell of Avici ~ Infinite Nightmare',
-				ja: '無間の鐘 ～ Infinite Nightmare',
+				ja: '無間の鐘　～ Infinite Nightmare',
 			},
 			{
 				es: 'The Youkai Mountain ~ Mysterious Mountain',
-				ja: '妖怪の山 ～ Mysterious Mountain',
+				ja: '妖怪の山　～ Mysterious Mountain',
 			},
 			{
 				es: 'Magus Night',
@@ -469,7 +469,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Great Fairy Wars ~ Fairy Wars',
-				ja: '妖精大戦争 ～ Fairy Wars',
+				ja: '妖精大戦争　～ Fairy Wars',
 			},
 			{
 				es: 'Shinkirou Orchestra',
@@ -497,7 +497,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Tonight Stars an Easygoing Egoist ~ Egoistic Flowers.',
-				ja: '今宵は飄逸なエゴイスト(Live ver) ～ Egoistic Flowers.',
+				ja: '今宵は飄逸なエゴイスト(Live ver)　～ Egoistic Flowers.',
 			},
 			{
 				es: 'Spirit Possession Flowers in Full Bloom',
@@ -505,7 +505,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: "The Ground's Color is Yellow ~ Primrose",
-				ja: '地の色は黄色 ～ Primrose',
+				ja: '地の色は黄色　～ Primrose',
 			},
 			{
 				es: 'The Palanquin Ship Flies in the Sky',
@@ -525,7 +525,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: "Kid's Festival ~ Innocent Treasures",
-				ja: '童祭 ～ Innocent Treasures',
+				ja: '童祭　～ Innocent Treasures',
 			},
 		],
 		tags: ['piano medley', 'low quality'],
@@ -916,7 +916,7 @@ const items: MusicItem[] = [
 		title: {
 			es: 'Conejo del Bar ~ Tubérculo Rojo y Blanco',
 			en: 'Rabbit of the Bar ~ Red and White Tubercle',
-			ja: '居酒屋の兎 ～ Red and White Tubercle',
+			ja: '居酒屋の兎　～ Red and White Tubercle',
 		},
 		description: {
 			es: 'Composición:\n• Papita con Puré (I. Z.) [Piano; guitarra acústica]\n• Karl Zuñiga [Batería; cuerdas; bajo]\n• Tewi [Violín; trompeta]\n\nMezcla: Karl Zuñiga',
@@ -1869,7 +1869,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: 'Where is that Bustling Marketplace now ~ Immemorial Marketeers',
-				ja: 'あの賑やかな市場は今どこに ～ Immemorial Marketeers',
+				ja: 'あの賑やかな市場は今どこに　～ Immemorial Marketeers',
 			},
 			{
 				es: 'The Sunday after the Storm',
@@ -2365,7 +2365,7 @@ const items: MusicItem[] = [
 		title: {
 			es: 'Buen Presagio ~ Travesía Inhóspita',
 			en: 'Good Omens ~ Inhospitable Crossing',
-			ja: 'Good Omens ～ 不親切な交差点',
+			ja: 'Good Omens　～ 不親切な交差点',
 		},
 		description: {
 			es: 'Composición:\n• Tewi [Piano; guitarra acústica; leads]\n• Karl Zuñiga [Batería; bajo; detalles]\n• Papita con Puré [Piano; violín; detalles]\n\nMezcla: Karl Zuñiga',
@@ -2439,7 +2439,7 @@ const items: MusicItem[] = [
 		artists: [zunCredit, papitaCredit],
 		title: {
 			es: 'Cemetery of Onbashira ~ Suwa Foughten Field',
-			ja: '御柱の墓場 ～ Suwa Foughten Field',
+			ja: '御柱の墓場　～ Suwa Foughten Field',
 		},
 		description: {
 			es: 'Temas de nivel 6 y Yasaka Kanako de Mountain of Faith mezclados en uno, en forma de arreglo de piano.',
@@ -2615,7 +2615,7 @@ const items: MusicItem[] = [
 		artists: [papitaCredit, karlCredit],
 		title: {
 			es: 'Gyptos ~ Symphony of Opposing Forces',
-			ja: 'Gyptos ～ 対抗勢力のシンフォニー',
+			ja: 'Gyptos　～ 対抗勢力のシンフォニー',
 		},
 		description: {
 			es: 'Base y composición general: Papita con Puré (I. Z.)\n\nArreglo y composición extendida: Karl Zuñiga\n\nMezcla base: Papita con Puré (I. Z.)\n\nMezcla final y masterización: Karl Zuñiga',
@@ -3760,7 +3760,7 @@ const items: MusicItem[] = [
 			},
 			{
 				es: "The Deviants' Unobstructed Light ~ Kingdam of Nothingness",
-				ja: '逸脱者達の無礙光 ～ Kingdam of Nothingness',
+				ja: '逸脱者達の無礙光　～ Kingdam of Nothingness',
 			},
 			{
 				es: 'Do Beasts Have Intelligence?',
@@ -3863,7 +3863,7 @@ const items: MusicItem[] = [
 		title: {
 			es: "Maiden's Step ~ Arboleda Renaciente",
 			en: "Maiden's Step ~ Reborn Grove",
-			ja: '乙女の足音 ～ Reborn Grove',
+			ja: '乙女の足音　～ Reborn Grove',
 		},
 		description: {
 			es: 'Composición:\n• Karl Zuñiga [Base; composición general]\n• Tewi [Sax; detalles]\n• Papita con Puré [1:07 ~ 2:14]\n\nMezcla: Karl Zuñiga',
@@ -8402,8 +8402,8 @@ const items: MusicItem[] = [
 					en: 'Full Track (16-bit int)',
 					ja: 'フルトラック (16-bit int)',
 				},
-				size: '',
-				url: '',
+				size: '42.6 MB',
+				url: '/audio/music/dream-satellite/hippocampus_facility.flac',
 			},
 			{
 				kind: 'audio',
@@ -8413,8 +8413,8 @@ const items: MusicItem[] = [
 					en: 'Full Track (320 Kbps)',
 					ja: 'フルトラック (320 Kbps)',
 				},
-				size: '',
-				url: '',
+				size: '14.6 MB',
+				url: '/audio/music/dream-satellite/hippocampus_facility.flac',
 			},
 			{
 				kind: 'image',
@@ -8472,7 +8472,7 @@ const items: MusicItem[] = [
 				url: '/images/music/dream-satellite/thumb.webp',
 			},
 		],
-		tags: ['legacy of lunatic kingdom', 'touhou style'],
+		tags: ['dateless bar old adam', 'dr. latency\'s freak report', 'zun style'],
 	},
 ];
 
