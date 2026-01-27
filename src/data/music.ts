@@ -8372,7 +8372,13 @@ const items: MusicItem[] = [
 				composers: [papitaCredit],
 			},
 			visuals: {
-				background: [papitaCredit],
+				background: [
+					{
+						name: 'k1osma',
+						url: 'https://sketchfab.com/3d-models/satellite-plate-a3379517d4d04bba917fae4c09a1b79e',
+					},
+					papitaCredit,
+				],
 				thumbnail: [
 					{
 						name: 'Nyong_Nyong',
