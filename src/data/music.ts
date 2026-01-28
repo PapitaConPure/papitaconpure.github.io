@@ -8420,7 +8420,7 @@ const items: MusicItem[] = [
 					ja: 'フルトラック (320 Kbps)',
 				},
 				size: '14.6 MB',
-				url: '/audio/music/dream-satellite/hippocampus_facility.flac',
+				url: '/audio/music/dream-satellite/hippocampus_facility.mp3',
 			},
 			{
 				kind: 'image',
