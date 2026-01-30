@@ -8384,6 +8384,7 @@ const items: MusicItem[] = [
 						name: 'Nyong_Nyong',
 						url: 'https://www.pixiv.net/artworks/85896681',
 					},
+					papitaCredit,
 				],
 			},
 		},
