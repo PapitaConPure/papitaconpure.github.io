@@ -1,7 +1,7 @@
-import AudioPreview from '@/components/AudioPreview';
 import {
 	DirectDownloadButton,
 	AssetDownloadsBrowser,
+	AssetDownloadAudioPreviewButton,
 } from '@/app/[lang]/music/[id]/components/AssetDownloadsSectionClient';
 import VideoPreview from '@/components/VideoPreview';
 import { assetStyles } from '@/data/music';
@@ -23,6 +23,8 @@ import {
 	faEye,
 	faFile,
 	faHand,
+	faHeadphonesAlt,
+	faMusic,
 	faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -44,8 +46,7 @@ interface PropsWithDownload {
 }
 
 interface AssetDownloadCardThumbnailProps
-	extends React.HTMLAttributes<HTMLDivElement>,
-		PropsWithDownload {
+	extends React.HTMLAttributes<HTMLDivElement>, PropsWithDownload {
 	noOverlay?: boolean;
 }
 
@@ -205,12 +206,6 @@ export function AssetDownloadCard({
 					</span>
 				)}
 			</AssetDownloadCardLabel>
-			{download.kind === 'audio' && download.url && (
-				<AudioPreview
-					{...download}
-					className='h-13 mb-2 w-full rounded-md bg-white sm:h-12 md:h-9'
-				/>
-			)}
 			<AssetDownloadActionRow>
 				{!download.url && (
 					<UnavailableDownloadButton t={t}>
@@ -277,6 +272,22 @@ export function AssetDownloadCard({
 							/>
 						)}
 					</a>
+				)}
+				{download.url && download.kind === 'audio' && (
+					<AssetDownloadAudioPreviewButton
+						download={download}
+						lang={lang}
+						t={t}
+						idleContent={
+							<FontAwesomeIcon
+								icon={faHeadphonesAlt}
+								className='text-xl md:text-base'
+							/>
+						}
+						playingContent={
+							<FontAwesomeIcon icon={faMusic} className='text-xl md:text-base' />
+						}
+					/>
 				)}
 			</AssetDownloadActionRow>
 		</div>
@@ -352,7 +363,7 @@ export function AssetDownloadDetail({
 							)}
 						</DirectDownloadButton>
 					)}
-					{download.kind === 'document' ? (
+					{download.kind === 'document' && (
 						<a
 							href={download.url}
 							aria-label={t.detailDownloadsDocumentPreviewAriaLabel}
@@ -367,7 +378,25 @@ export function AssetDownloadDetail({
 								className='mb-0.5 ml-2 cursor-pointer opacity-80'
 							/>
 						</a>
-					) : (
+					)}
+					{download.kind === 'audio' && (
+						<AssetDownloadAudioPreviewButton
+							className='h-10 px-3 py-2'
+							idleContent={
+								<FontAwesomeIcon
+									icon={faHeadphonesAlt}
+									className='text-sm sm:text-base'
+								/>
+							}
+							playingContent={
+								<FontAwesomeIcon icon={faMusic} className='text-sm sm:text-base' />
+							}
+							download={download}
+							lang={lang}
+							t={t}
+						/>
+					)}
+					{download.kind !== 'document' && download.kind !== 'audio' && (
 						<Popover>
 							<PopoverTrigger asChild>
 								<button className='h-10 items-center justify-center rounded-md bg-secondary-700 px-3 py-2 text-white transition-colors duration-100 hover:bg-secondary-600'>
@@ -379,16 +408,7 @@ export function AssetDownloadDetail({
 							</PopoverTrigger>
 							<PopoverContent className='flex flex-col space-y-6' side='left'>
 								<div className='min-w-72 sm:min-w-80 md:min-w-96'>
-									{download.kind === 'audio' ? (
-										download.url && (
-											<AudioPreview
-												{...download}
-												className='h-12 w-full rounded-md bg-white'
-											/>
-										)
-									) : (
-										<AssetDownloadCardThumbnail noOverlay download={download} />
-									)}
+									<AssetDownloadCardThumbnail noOverlay download={download} />
 								</div>
 							</PopoverContent>
 						</Popover>
@@ -400,8 +420,7 @@ export function AssetDownloadDetail({
 }
 
 interface AssetBrowserPortalProps
-	extends HTMLAttributes<HTMLDivElement>,
-		SectionComponentProps<'Music'> {
+	extends HTMLAttributes<HTMLDivElement>, SectionComponentProps<'Music'> {
 	detailView: boolean;
 }
 
