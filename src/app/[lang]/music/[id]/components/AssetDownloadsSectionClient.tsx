@@ -2,27 +2,40 @@
 
 import React, {
 	AnchorHTMLAttributes,
+	ButtonHTMLAttributes,
 	HTMLAttributes,
 	ReactNode,
 	useCallback,
 	useEffect,
 	useState,
 } from 'react';
-import { AssetBrowserPortal, AssetDownloadCard, AssetDownloadDetail } from './AssetDownloadsSection';
-import { AssetFormat, AssetKind, MusicItem } from '@/types/music';
+import {
+	AssetBrowserPortal,
+	AssetDownloadCard,
+	AssetDownloadDetail,
+} from './AssetDownloadsSection';
+import { AssetFormat, AssetKind, DownloadUrl, MusicItem } from '@/types/music';
 import { SectionComponentProps } from '@/types/i18n';
 import { Locale } from '@/lib/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faEye,
 	faFilter,
+	faHeadphonesAlt,
+	faMusic,
 	faRefresh,
 	faTableCellsLarge,
 } from '@fortawesome/free-solid-svg-icons';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { assetStylesArray } from '@/data/music';
-import { allAssetFormats, assetFormatKindsIndex, assetKinds } from '@/lib/music';
+import {
+	allAssetFormats,
+	assetFormatKindsIndex,
+	assetKinds,
+	resolveLocalizableField,
+} from '@/lib/music';
 import { faTableList } from '@fortawesome/free-solid-svg-icons/faTableList';
+import { AudioPlayerTrack, usePlayerTrack } from '@/components/AudioPlayer';
 
 interface DirectDownloadButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	downloadStageChildren: ReactNode;
@@ -50,6 +63,54 @@ export function DirectDownloadButton({
 			}}>
 			{downloading ? downloadStageChildren : children}
 		</a>
+	);
+}
+
+interface AssetDownloadAudioPreviewButtonProps
+	extends ButtonHTMLAttributes<HTMLButtonElement>,
+		SectionComponentProps<'Music'> {
+	download: DownloadUrl;
+	lang: Locale;
+}
+
+export function AssetDownloadAudioPreviewButton({
+	className = '',
+	download,
+	lang,
+	t,
+}: AssetDownloadAudioPreviewButtonProps) {
+	const { audioPlayerTrack, setAudioPlayerTrack } = usePlayerTrack();
+
+	function sendTrackToPlayer() {
+		if (audioPlayerTrack?.url === download.url) {
+			setAudioPlayerTrack(null);
+			return;
+		}
+
+		setAudioPlayerTrack(targetTrack);
+	}
+
+	const targetTrack: AudioPlayerTrack = {
+		url: download.url,
+		format: download.format,
+		name: `{${download.format.toUpperCase()}} ${download.external ? `[${download.provider}] ` : ''}${resolveLocalizableField(download.label, lang)}`,
+		external: download.external,
+	};
+
+	const isPlayingThisTrack = audioPlayerTrack?.url === download.url;
+
+	return (
+		<button
+			onClick={sendTrackToPlayer}
+			aria-label={t.detailDownloadsPreviewAriaLabel}
+			tabIndex={0}
+			className={`flex flex-shrink-0 items-center justify-center rounded-md ${isPlayingThisTrack ? 'bg-accent-400' : 'bg-secondary-700'} px-5 py-4 text-white transition-colors duration-100 ${isPlayingThisTrack ? 'hover:bg-red-600' : 'hover:bg-secondary-600'} sm:px-4 sm:py-3 md:px-3 md:py-2 ${className}`}>
+			{isPlayingThisTrack ? (
+				<FontAwesomeIcon icon={faMusic} className='text-xl md:text-base' />
+			) : (
+				<FontAwesomeIcon icon={faHeadphonesAlt} className='text-xl md:text-base' />
+			)}
+		</button>
 	);
 }
 
