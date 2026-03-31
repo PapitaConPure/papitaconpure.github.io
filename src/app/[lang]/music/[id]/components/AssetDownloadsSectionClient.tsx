@@ -18,14 +18,7 @@ import { AssetFormat, AssetKind, DownloadUrl, MusicItem } from '@/types/music';
 import { SectionComponentProps } from '@/types/i18n';
 import { Locale } from '@/lib/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faEye,
-	faFilter,
-	faHeadphonesAlt,
-	faMusic,
-	faRefresh,
-	faTableCellsLarge,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEye, faFilter, faRefresh, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { assetStylesArray } from '@/data/music';
 import {
@@ -67,17 +60,20 @@ export function DirectDownloadButton({
 }
 
 interface AssetDownloadAudioPreviewButtonProps
-	extends ButtonHTMLAttributes<HTMLButtonElement>,
-		SectionComponentProps<'Music'> {
+	extends ButtonHTMLAttributes<HTMLButtonElement>, SectionComponentProps<'Music'> {
 	download: DownloadUrl;
 	lang: Locale;
+	idleContent: React.ReactNode;
+	playingContent: React.ReactNode;
 }
 
 export function AssetDownloadAudioPreviewButton({
-	className = '',
 	download,
 	lang,
 	t,
+	idleContent,
+	playingContent,
+	className = '',
 }: AssetDownloadAudioPreviewButtonProps) {
 	const { audioPlayerTrack, setAudioPlayerTrack } = usePlayerTrack();
 
@@ -105,11 +101,7 @@ export function AssetDownloadAudioPreviewButton({
 			aria-label={t.detailDownloadsPreviewAriaLabel}
 			tabIndex={0}
 			className={`flex flex-shrink-0 items-center justify-center rounded-md ${isPlayingThisTrack ? 'bg-accent-400' : 'bg-secondary-700'} px-5 py-4 text-white transition-colors duration-100 ${isPlayingThisTrack ? 'hover:bg-red-600' : 'hover:bg-secondary-600'} sm:px-4 sm:py-3 md:px-3 md:py-2 ${className}`}>
-			{isPlayingThisTrack ? (
-				<FontAwesomeIcon icon={faMusic} className='text-xl md:text-base' />
-			) : (
-				<FontAwesomeIcon icon={faHeadphonesAlt} className='text-xl md:text-base' />
-			)}
+			{isPlayingThisTrack ? <>{playingContent}</> : <>{idleContent}</>}
 		</button>
 	);
 }
@@ -138,8 +130,7 @@ const MAX_DISPLAYED_ASSETS_DEFAULT = 9;
 const MAX_DISPLAYED_ASSETS_INCREASE = 12;
 
 interface AssetDownloadsBrowserProps
-	extends SectionComponentProps<'Music'>,
-		HTMLAttributes<HTMLDivElement> {
+	extends SectionComponentProps<'Music'>, HTMLAttributes<HTMLDivElement> {
 	item: MusicItem;
 	lang: Locale;
 }
