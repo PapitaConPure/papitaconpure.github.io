@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BackToTopButton from '@/components/BackToTopButton';
+import { AudioPlayer, AudioPlayerTrackProvider } from '@/components/AudioPlayer';
 
 const outfit = Outfit({
 	subsets: ['latin', 'latin-ext'],
@@ -56,7 +57,10 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
 			<body className='w-full bg-background pt-[60px] font-default-sans text-foreground antialiased'>
 				<div className='fixed bottom-0 left-0 -z-50 h-screen w-screen bg-gradient-to-t from-accent-main/15 to-background contrast-more:hidden' />
 				<Header lang={lang} />
-				{children}
+				<AudioPlayerTrackProvider>
+					{children}
+					<AudioPlayer />
+				</AudioPlayerTrackProvider>
 				<Footer lang={lang} />
 				<BackToTopButton lang={lang} />
 			</body>
