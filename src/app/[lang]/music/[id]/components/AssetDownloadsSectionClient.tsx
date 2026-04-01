@@ -28,7 +28,7 @@ import {
 	resolveLocalizableField,
 } from '@/lib/music';
 import { faTableList } from '@fortawesome/free-solid-svg-icons/faTableList';
-import { AudioPlayerTrack, usePlayerTrack } from '@/components/AudioPlayer';
+import { AudioPlayerTrack, sendTrackToAudioPlayer, stopAudioPlayer, usePlayerTrack } from '@/components/AudioPlayer';
 
 interface DirectDownloadButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	downloadStageChildren: ReactNode;
@@ -75,16 +75,8 @@ export function AssetDownloadAudioPreviewButton({
 	playingContent,
 	className = '',
 }: AssetDownloadAudioPreviewButtonProps) {
-	const { audioPlayerTrack, setAudioPlayerTrack } = usePlayerTrack();
-
-	function sendTrackToPlayer() {
-		if (audioPlayerTrack?.url === download.url) {
-			setAudioPlayerTrack(null);
-			return;
-		}
-
-		setAudioPlayerTrack(targetTrack);
-	}
+	const { audioPlayerTrack } = usePlayerTrack();
+	const isPlayingThisTrack = audioPlayerTrack?.url === download.url;
 
 	const targetTrack: AudioPlayerTrack = {
 		url: download.url,
@@ -93,11 +85,9 @@ export function AssetDownloadAudioPreviewButton({
 		external: download.external,
 	};
 
-	const isPlayingThisTrack = audioPlayerTrack?.url === download.url;
-
 	return (
 		<button
-			onClick={sendTrackToPlayer}
+			onClick={() => isPlayingThisTrack ? stopAudioPlayer() : sendTrackToAudioPlayer(targetTrack)}
 			aria-label={t.detailDownloadsPreviewAriaLabel}
 			tabIndex={0}
 			className={`flex flex-shrink-0 items-center justify-center rounded-md ${isPlayingThisTrack ? 'bg-accent-400' : 'bg-secondary-700'} px-5 py-4 text-white transition-colors duration-100 ${isPlayingThisTrack ? 'hover:bg-red-600' : 'hover:bg-secondary-600'} sm:px-4 sm:py-3 md:px-3 md:py-2 ${className}`}>
