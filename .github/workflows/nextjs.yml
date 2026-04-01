@@ -41,6 +41,16 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: bun install
+      - name: Cache Next.js
+        id: cache-nextjs
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-
       - name: Build with Next.js
         run: bunx next build
         env:
