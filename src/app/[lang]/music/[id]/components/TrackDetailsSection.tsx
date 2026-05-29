@@ -129,7 +129,7 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 									<li className='' key={index}>
 										<a
 											tabIndex={0}
-											href='https://www.youtube.com/channel/UCRXbJiF9G6D0nqq3mU38-gw'
+											href={link.url}
 											rel='noopener noreferrer'
 											target='_blank'
 											className={`social-btn flex border-transparent transition-colors duration-75 !mx-0 sm:gap-x-2 md:px-4 ${sourceStyles[link.source].className} !w-full`}
