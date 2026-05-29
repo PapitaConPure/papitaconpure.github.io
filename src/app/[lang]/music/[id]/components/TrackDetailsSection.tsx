@@ -10,8 +10,7 @@ import { CreditedArtist } from './CreditedArtist';
 import { itemsById } from '@/data/music';
 import { SectionAcrossLocales } from '@/types/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCompactDisc, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import { faSoundcloud, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faCompactDisc } from '@fortawesome/free-solid-svg-icons';
 import { sourceStyles } from '@/data/sources';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
