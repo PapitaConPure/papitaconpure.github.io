@@ -125,6 +125,10 @@
         "detailCreditsVisualsBackground": "Fondo",
         "detailCreditsVisualsCover": "Portada",
         "detailCreditsVisualsThumbnail": "Miniatura",
+        "detailCreditsLocalization": "Localización",
+        "detailCreditsMisc": "Misceláneo",
+        "detailCreditsMiscWriting": "Guión",
+        "detailCreditsMiscQA": "Control de calidad",
         "detailTagsTitle": "Etiquetas",
         "backSectionButton": "Volver a <1>Música</1>"
     },

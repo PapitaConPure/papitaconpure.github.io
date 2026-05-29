@@ -363,7 +363,7 @@ export function AssetDownloadDetail({
 							)}
 						</DirectDownloadButton>
 					)}
-					{download.kind === 'document' && (
+					{download.url && download.kind === 'document' && (
 						<a
 							href={download.url}
 							aria-label={t.detailDownloadsDocumentPreviewAriaLabel}
@@ -379,7 +379,7 @@ export function AssetDownloadDetail({
 							/>
 						</a>
 					)}
-					{download.kind === 'audio' && (
+					{download.url && download.kind === 'audio' && (
 						<AssetDownloadAudioPreviewButton
 							className='h-10 px-3 py-2'
 							idleContent={
@@ -396,7 +396,7 @@ export function AssetDownloadDetail({
 							t={t}
 						/>
 					)}
-					{download.kind !== 'document' && download.kind !== 'audio' && (
+					{download.url && download.kind !== 'document' && download.kind !== 'audio' && (
 						<Popover>
 							<PopoverTrigger asChild>
 								<button className='h-10 items-center justify-center rounded-md bg-secondary-700 px-3 py-2 text-white transition-colors duration-100 hover:bg-secondary-600'>

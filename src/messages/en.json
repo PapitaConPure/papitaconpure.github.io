@@ -125,6 +125,10 @@
         "detailCreditsVisualsBackground": "Background",
         "detailCreditsVisualsCover": "Cover",
         "detailCreditsVisualsThumbnail": "Thumbnail",
+        "detailCreditsLocalization": "Localization",
+        "detailCreditsMisc": "Miscellaneous",
+        "detailCreditsMiscWriting": "Script",
+        "detailCreditsMiscQA": "Quality Assurance",
         "detailTagsTitle": "Tags",
         "backSectionButton": "Back to <1>Music</1>"
     },

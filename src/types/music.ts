@@ -138,9 +138,24 @@ export interface ExtendedMusicItemVisualsCredits {
 	};
 }
 
+export interface ExtendedMusicItemLocalizationCredits {
+	localization?: {
+		[K: string]: CreditsField;
+	};
+}
+
+export interface ExtendedMusicItemMiscellaneousCredits {
+	misc?: {
+		writing?: CreditsField;
+		qa?: CreditsField;
+	};
+}
+
 export interface ExtendedMusicItemCredits
 	extends ExtendedMusicItemMusicCredits,
-		ExtendedMusicItemVisualsCredits {}
+		ExtendedMusicItemVisualsCredits,
+		ExtendedMusicItemLocalizationCredits,
+		ExtendedMusicItemMiscellaneousCredits {}
 
 export type SingleMusicItem = {
 	kind: 'single';

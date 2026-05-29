@@ -29,6 +29,7 @@ import {
 } from '@/lib/music';
 import { faTableList } from '@fortawesome/free-solid-svg-icons/faTableList';
 import { AudioPlayerTrack, sendTrackToAudioPlayer, stopAudioPlayer, usePlayerTrack } from '@/components/AudioPlayer';
+import { simpleHash } from '@/lib/utils';
 
 interface DirectDownloadButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	downloadStageChildren: ReactNode;
@@ -369,14 +370,14 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 						.map((download) =>
 							detailView ? (
 								<AssetDownloadDetail
-									key={`${download.kind}-${download.format}-${download.url}`}
+									key={`${download.kind}-${download.format}-${simpleHash(resolveLocalizableField(download.label, lang))}`}
 									download={download}
 									lang={lang}
 									t={t}
 								/>
 							) : (
 								<AssetDownloadCard
-									key={`${download.kind}-${download.format}-${download.url}`}
+									key={`${download.kind}-${download.format}-${simpleHash(resolveLocalizableField(download.label, lang))}`}
 									download={download}
 									lang={lang}
 									t={t}

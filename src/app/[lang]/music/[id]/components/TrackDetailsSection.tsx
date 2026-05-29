@@ -10,12 +10,14 @@ import { CreditedArtist } from './CreditedArtist';
 import { itemsById } from '@/data/music';
 import { SectionAcrossLocales } from '@/types/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCompactDisc } from '@fortawesome/free-solid-svg-icons';
+import { faCompactDisc, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSoundcloud, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { sourceStyles } from '@/data/sources';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
 const TrackList = ({ children }: React.OlHTMLAttributes<HTMLDataListElement>) => (
-	<ol className='flex flex-col space-y-0.5 rounded-sm border border-secondary-800 px-6 py-3'>
+	<ol className='flex flex-col space-y-0.5 rounded-md border border-secondary-800 px-6 py-3'>
 		{children}
 	</ol>
 );
@@ -122,14 +124,17 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 					{item.externalLinks && item.externalLinks.length > 0 && (
 						<>
 							<h2 className='section-h3 mb-2'>{t.detailLinksTitle}</h2>
-							<ul className='list-disc pl-6'>
+							<ul className='list-none flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-2'>
 								{item.externalLinks.map((link, index) => (
-									<li key={index}>
+									<li className='' key={index}>
 										<a
-											href={link.url}
-											target='_blank'
+											tabIndex={0}
+											href='https://www.youtube.com/channel/UCRXbJiF9G6D0nqq3mU38-gw'
 											rel='noopener noreferrer'
-											className='text-link'>
+											target='_blank'
+											className={`social-btn flex border-transparent transition-colors duration-75 !mx-0 sm:gap-x-2 md:px-4 ${sourceStyles[link.source].className} !w-full`}
+											aria-label={resolveLocalizableField(link.label, lang)}>
+											<FontAwesomeIcon icon={sourceStyles[link.source].icon} fontSize={24} />
 											{resolveLocalizableField(link.label, lang)}
 										</a>
 									</li>

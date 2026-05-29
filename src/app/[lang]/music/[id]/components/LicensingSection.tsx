@@ -59,22 +59,28 @@ function LicensingSection({ item, lang, t }: LicensingSectionProps) {
 																<i>{target.work}</i>
 															)}{' '}
 															© {target.year} by{' '}
-															{target.creators.map((creator, k) =>
-																typeof creator === 'string' ? (
-																	<strong key={k}>{creator}</strong>
-																) : creator.url ? (
-																	<a
-																		href={creator.url}
-																		className='text-link'
-																		key={k}>
-																		{creator.name}
-																	</a>
-																) : (
-																	<strong key={k}>
-																		{creator.name}
-																	</strong>
-																),
-															)}
+															{target.creators.map(
+																(creator, k) => <span key={k}>
+																	{typeof creator === 'string' ? (
+																		<strong>{creator}</strong>
+																	) : creator.url ? (
+																		<a
+																			href={creator.url}
+																			className='text-link'>
+																			{creator.name}
+																		</a>
+																	) : (
+																		<strong>
+																			{creator.name}
+																		</strong>
+																	)}
+																	{
+																		k < (target.creators.length - 1)
+																			? <span className='text-foreground/70'> & </span>
+																			: undefined
+																	}
+																</span>)
+															}
 															.
 														</div>
 													</li>

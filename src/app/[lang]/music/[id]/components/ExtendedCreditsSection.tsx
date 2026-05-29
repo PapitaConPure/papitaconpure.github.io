@@ -110,6 +110,40 @@ function ExtendedCreditsSection({ item, lang, t }: ExtendedCreditsSectionProps) 
 						lang={lang}
 					/>
 				)}
+				{item.credits.localization && (
+					<ExtendedCreditsCategory
+						localizedCategoryTitle={t.detailCreditsLocalization}
+						creditsFieldDescriptors={
+							Object.getOwnPropertyNames(item.credits.localization).map(name => ({
+								title: name,
+								creditsField: item.credits?.localization?.[name],
+							})).filter(
+								(cfd) => cfd.creditsField != undefined,
+							) as CreditsFieldDescriptor[]
+						}
+						lang={lang}
+					/>
+				)}
+				{item.credits.misc && (
+					<ExtendedCreditsCategory
+						localizedCategoryTitle={t.detailCreditsMisc}
+						creditsFieldDescriptors={
+							[
+								{
+									title: t.detailCreditsMiscWriting,
+									creditsField: item.credits.misc.writing,
+								},
+								{
+									title: t.detailCreditsMiscQA,
+									creditsField: item.credits.misc.qa,
+								},
+							].filter(
+								(cfd) => cfd.creditsField != undefined,
+							) as CreditsFieldDescriptor[]
+						}
+						lang={lang}
+					/>
+				)}
 			</div>
 		</section>
 	);

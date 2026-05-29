@@ -125,6 +125,10 @@
         "detailCreditsVisualsBackground": "背景",
         "detailCreditsVisualsCover": "表紙",
         "detailCreditsVisualsThumbnail": "サムネイル",
+        "detailCreditsLocalization": "翻訳",
+        "detailCreditsMisc": "雑多",
+        "detailCreditsMiscWriting": "脚本",
+        "detailCreditsMiscQA": "品質保証",
         "detailTagsTitle": "Tag",
         "backSectionButton": "<1>Music</1>に戻る"
     },
