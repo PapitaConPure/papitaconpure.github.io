@@ -8503,7 +8503,7 @@ const items: MusicItem[] = [
 		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/shinjidai/cover.jpg',
 		thumbnailUrl: '/images/music/shinjidai/thumb1.webp',
-		videoUrl: 'https://youtu.be/qmyuzag_nd0',
+		videoUrl: 'https://www.youtube.com/watch?v=qmyuzag_nd0',
 		credits: {
 			music: {
 				composers: [karlCredit, tewaCredit, papitaCredit],
