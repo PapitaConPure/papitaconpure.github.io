@@ -8493,6 +8493,7 @@ const items: MusicItem[] = [
 	{
 		id: 'shinjidai',
 		kind: 'album',
+		displayArtist: 'Shrine of Legacy',
 		artists: [karlCredit, tewaCredit, papitaCredit],
 		title: {
 			es: "Touhou Shinjidai ~ New Era",
