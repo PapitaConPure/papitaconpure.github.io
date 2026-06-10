@@ -8519,6 +8519,10 @@ const items: MusicItem[] = [
 						url: 'https://x.com/ONI_Alpha94',
 					},
 					papitaCredit,
+					{
+						name: 'dairi',
+						url: 'https://www.pixiv.net/users/4920496',
+					},
 				],
 				background: [
 					papitaCredit,
@@ -8597,7 +8601,7 @@ const items: MusicItem[] = [
 				targets: [
 					{
 						kind: 'image',
-						work: '"東方羊皮紙兆　〜 New Era" Boss Portrait, Good Ending & Extra Ending Illustrations',
+						work: '"東方羊皮紙兆　〜 New Era" 4~X Boss Portrait, Good Ending & Extra Ending Illustrations',
 						year: 2026,
 						creators: ['BillGP'],
 					},
