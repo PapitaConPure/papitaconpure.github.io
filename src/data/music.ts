@@ -8496,8 +8496,8 @@ const items: MusicItem[] = [
 		displayArtist: 'Shrine of Legacy',
 		artists: [karlCredit, tewaCredit, papitaCredit],
 		title: {
-			es: "Touhou Youhishi Chou ~ New Era",
-			en: "Touhou Youhishi Chou ~ New Era",
+			es: "Touhou Shinjidai ~ New Era",
+			en: "Touhou Shinjidai ~ New Era",
 			ja: '東方羊皮紙兆　～ New Era',
 		},
 		date: new Date('2026-06-03'),
