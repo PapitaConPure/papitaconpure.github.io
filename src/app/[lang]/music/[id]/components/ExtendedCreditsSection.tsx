@@ -1,7 +1,7 @@
+import React from 'react';
 import { Locale } from '@/lib/i18n';
 import { SectionAcrossLocales } from '@/types/i18n';
 import { CreditsField, MusicItem } from '@/types/music';
-import React from 'react';
 import { CreditedArtist } from './CreditedArtist';
 
 interface CreditsFieldDescriptor {

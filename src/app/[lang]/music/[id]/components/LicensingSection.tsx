@@ -1,13 +1,13 @@
+import { faExternalLinkAlt, faEye } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import React from 'react';
 import { assetStyles } from '@/data/music';
 import { Locale } from '@/lib/i18n';
 import { trStr } from '@/lib/i18n/Tr';
 import { getLocalizedArtistNames, resolveLocalizableField } from '@/lib/music';
 import { SectionAcrossLocales } from '@/types/i18n';
 import { MusicItem } from '@/types/music';
-import { faExternalLinkAlt, faEye } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
-import React from 'react';
 
 interface LicensingSectionProps {
 	item: MusicItem;
