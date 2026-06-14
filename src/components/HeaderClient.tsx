@@ -1,5 +1,11 @@
 'use client';
 
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faAngleDown, faLanguage, faListDots } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Url } from 'next/dist/shared/lib/router/router';
+import Link from 'next/link';
+import { redirect, usePathname } from 'next/navigation';
 import React, {
 	AnchorHTMLAttributes,
 	ButtonHTMLAttributes,
@@ -11,12 +17,6 @@ import React, {
 	useState,
 } from 'react';
 import Select from './Select';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { redirect, usePathname } from 'next/navigation';
-import { faAngleDown, faLanguage, faListDots } from '@fortawesome/free-solid-svg-icons';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import Link from 'next/link';
-import { Url } from 'next/dist/shared/lib/router/router';
 
 const toggleMenu = () => {
 	const header = document.getElementById('header');
@@ -88,7 +88,8 @@ export function MenuItem({
 					href={href as Url}
 					className='flex self-stretch rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
 					tabIndex={0}
-					{...props}>
+					{...props}
+				>
 					{label}
 				</Link>
 			</li>
@@ -107,7 +108,8 @@ export function MenuItem({
 				onClick={performLinkWithAction}
 				className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
 				tabIndex={0}
-				{...props}>
+				{...props}
+			>
 				<FontAwesomeIcon icon={icon ?? faListDots} className='mr-3 w-6' />
 				{label}
 			</Link>
@@ -147,7 +149,8 @@ export function MobileMenuSubMenu({
 				aria-controls={subMenuId}
 				onClick={handleButtonClick}
 				className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-left text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
-				{...props}>
+				{...props}
+			>
 				<FontAwesomeIcon icon={icon ?? faListDots} className='mr-3 w-6' />
 				{label}
 				<FontAwesomeIcon
@@ -157,12 +160,14 @@ export function MobileMenuSubMenu({
 				/>
 			</button>
 			<div
-				className={`relative ${isOpen ? 'my-1 max-h-48 scale-y-100 opacity-100' : 'max-h-0 scale-y-75 opacity-30'} flex items-stretch justify-start overflow-hidden px-5 transition-all duration-500 motion-reduce:transition-none`}>
+				className={`relative ${isOpen ? 'my-1 max-h-48 scale-y-100 opacity-100' : 'max-h-0 scale-y-75 opacity-30'} flex items-stretch justify-start overflow-hidden px-5 transition-all duration-500 motion-reduce:transition-none`}
+			>
 				<div className='mr-1 w-1 rounded-sm bg-foreground opacity-10'></div>
 				<ul
 					role='menu'
 					id={subMenuId}
-					className={`${subMenu.length > 3 ? 'overflow-y-scroll' : ''} flex-grow pr-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-secondary-400 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-secondary-900 [&::-webkit-scrollbar]:w-1`}>
+					className={`${subMenu.length > 3 ? 'overflow-y-scroll' : ''} flex-grow pr-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-secondary-400 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-secondary-900 [&::-webkit-scrollbar]:w-1`}
+				>
 					{subMenu}
 				</ul>
 			</div>

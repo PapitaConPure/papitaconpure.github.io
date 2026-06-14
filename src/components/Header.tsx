@@ -1,9 +1,3 @@
-import getRoot from '@/lib/getroot';
-import { getMessages, Locale } from '@/lib/i18n';
-import Image from 'next/image';
-import Link from 'next/link';
-import { HeaderLanguagePicker, HeaderNavButton, MenuItem } from './HeaderClient';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBars,
 	faEnvelope,
@@ -13,8 +7,14 @@ import {
 	faQuestionCircle,
 	faXmark,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+import Link from 'next/link';
 import { HTMLAttributes } from 'react';
+import getRoot from '@/lib/getroot';
+import { getMessages, Locale } from '@/lib/i18n';
 import { SectionAcrossLocales } from '@/types/i18n';
+import { HeaderLanguagePicker, HeaderNavButton, MenuItem } from './HeaderClient';
 
 interface HeaderMenuProps<TLocale extends Locale> extends HTMLAttributes<HTMLUListElement> {
 	mobile?: boolean;
@@ -92,12 +92,14 @@ export default async function Header({ lang }: HeaderProps) {
 	return (
 		<header
 			id='header'
-			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all motion-reduce:bg-opacity-80 motion-reduce:backdrop-blur-lg'>
+			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all motion-reduce:bg-opacity-80 motion-reduce:backdrop-blur-lg'
+		>
 			<div className='mx-auto flex max-w-7xl items-center justify-between px-2 py-2'>
 				<Link
 					href={`/${lang}`}
 					className='flex cursor-pointer space-x-4 pl-2'
-					aria-label={t.headerAria}>
+					aria-label={t.headerAria}
+				>
 					<Image
 						aria-hidden
 						src={getRoot('/potato.webp')}
@@ -108,7 +110,8 @@ export default async function Header({ lang }: HeaderProps) {
 					/>
 					<div className='flex flex-col justify-center'>
 						<span
-							className={`select-none ${t.headerClarif ? 'text-lg' : 'text-2xl'} font-bold text-primary-50`}>
+							className={`select-none ${t.headerClarif ? 'text-lg' : 'text-2xl'} font-bold text-primary-50`}
+						>
 							{t.headerName}
 						</span>
 						{t.headerClarif && (
@@ -132,14 +135,16 @@ export default async function Header({ lang }: HeaderProps) {
 						id='menu-reveal'
 						className='absolute inset-0 h-10 w-10 text-primary-400 transition-all duration-150 active:text-primary-200 motion-reduce:transition-none'
 						aria-label={t.mobileNavShowAria}
-						tabIndex={0}>
+						tabIndex={0}
+					>
 						<FontAwesomeIcon icon={faBars} size='lg' />
 					</HeaderNavButton>
 					<HeaderNavButton
 						id='menu-collapse'
 						className='absolute inset-0 hidden h-10 w-10 -rotate-45 text-primary-50 opacity-0 transition-all duration-150 active:text-primary-200'
 						aria-label={t.mobileNavHideAria}
-						tabIndex={0}>
+						tabIndex={0}
+					>
 						<FontAwesomeIcon icon={faXmark} size='lg' />
 					</HeaderNavButton>
 				</div>
@@ -147,7 +152,8 @@ export default async function Header({ lang }: HeaderProps) {
 
 			<nav
 				id='mobile-menu'
-				className='flex h-0 list-none flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none md:hidden'>
+				className='flex h-0 list-none flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none md:hidden'
+			>
 				<HeaderMenu mobile role='menu' lang={lang} t={t} />
 			</nav>
 		</header>
