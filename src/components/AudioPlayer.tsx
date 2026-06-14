@@ -1,6 +1,5 @@
 'use client';
 
-import getRoot from '@/lib/getroot';
 import {
 	faHeadphonesAlt,
 	faPause,
@@ -19,8 +18,9 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import { Slider } from './ui/slider';
+import getRoot from '@/lib/getroot';
 import { clamp, linearToExponential } from '@/lib/utils';
+import { Slider } from './ui/slider';
 
 export interface AudioPlayerTrack {
 	url: string;
