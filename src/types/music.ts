@@ -1,6 +1,13 @@
-import { assetMappings, audioAssetFormats, documentAssetFormats, imageAssetFormats, otherAssetFormats, videoAssetFormats } from '@/lib/music';
-import { LocalizableField } from './i18n';
-import { Digit, ElementsOf } from './utils';
+import type {
+	assetMappings,
+	audioAssetFormats,
+	documentAssetFormats,
+	imageAssetFormats,
+	otherAssetFormats,
+	videoAssetFormats,
+} from '@/lib/music';
+import type { LocalizableField } from './i18n';
+import type { Digit, ElementsOf } from './utils';
 
 export interface ExternalLink {
 	source: 'youtube' | 'soundcloud' | 'spotify' | 'other';
@@ -14,7 +21,12 @@ export type VideoAssetFormat = ElementsOf<typeof videoAssetFormats>;
 export type DocumentAssetFormat = ElementsOf<typeof documentAssetFormats>;
 export type OtherAssetFormat = ElementsOf<typeof otherAssetFormats> | '';
 
-export type AssetFormat = AudioAssetFormat | ImageAssetFormat | VideoAssetFormat | DocumentAssetFormat | OtherAssetFormat;
+export type AssetFormat =
+	| AudioAssetFormat
+	| ImageAssetFormat
+	| VideoAssetFormat
+	| DocumentAssetFormat
+	| OtherAssetFormat;
 
 export type AssetKind = keyof typeof assetMappings;
 
@@ -35,8 +47,11 @@ export interface AssetPreviewData {
 	previewFormat?: AssetFormat;
 }
 
-type DownloadSizeMagnitude = `${Digit}${Digit}${Digit}` | `${Digit}.${Digit}${Digit}` | `${Digit}${Digit}.${Digit}`;
-type DownloadSizeUnit =  `${'K' | 'M' | 'G' | ''}${'B' | 'b'}`;
+type DownloadSizeMagnitude =
+	| `${Digit}${Digit}${Digit}`
+	| `${Digit}.${Digit}${Digit}`
+	| `${Digit}${Digit}.${Digit}`;
+type DownloadSizeUnit = `${'K' | 'M' | 'G' | ''}${'B' | 'b'}`;
 
 export interface BaseDownloadData {
 	url: string;
@@ -157,7 +172,7 @@ export interface ExtendedMusicItemCredits
 		ExtendedMusicItemLocalizationCredits,
 		ExtendedMusicItemMiscellaneousCredits {}
 
-export type SingleMusicItem = {
+export interface SingleMusicItem {
 	kind: 'single';
 	parentId?: string;
 };
@@ -171,12 +186,12 @@ export type AnyChildMusicItem =
 	| ChildMusicItemData<'id', string>
 	| ChildMusicItemData<'name', LocalizableField>;
 
-export type AlbumMusicItem = {
+export interface AlbumMusicItem {
 	kind: 'album' | 'ep';
 	children: AnyChildMusicItem[];
 };
 
-export type CompilationMusicItem = {
+export interface CompilationMusicItem {
 	kind: 'compilation';
 	parentId?: string;
 	childrenTitles: LocalizableField[];
