@@ -15,6 +15,7 @@ export default function VideoPreviewSection({ item, t }: VideoPreviewSectionProp
 			<h2 className='section-h2'>{t.detailVideoTitle}</h2>
 			<div className='mt-4 w-full'>
 				<YouTubeVideo
+					id='video-preview-player'
 					title={`${t.detailVideoTitle} - ${item.title} (YouTube)`}
 					src={item.videoUrl}
 					thumbnailUrl={item.thumbnailUrl || undefined}

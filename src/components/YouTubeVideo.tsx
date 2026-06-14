@@ -1,10 +1,10 @@
 'use client';
 
-import getRoot from '@/lib/getroot';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import { useState } from 'react';
+import getRoot from '@/lib/getroot';
 
 interface VideoMockProps extends React.HTMLAttributes<HTMLDivElement> {
 	thumbnailUrl?: string;
@@ -14,7 +14,8 @@ function YouTubeVideoMock({ thumbnailUrl, className = '', ...props }: VideoMockP
 	return (
 		<div
 			className={`group relative cursor-pointer outline-none ring-0 ring-primary-main transition-all focus:ring-2 ${className}`}
-			{...props}>
+			{...props}
+		>
 			{thumbnailUrl && (
 				<div className='absolute h-full w-full rounded-md transition-opacity group-hover:opacity-80 group-active:opacity-60'>
 					<Image
@@ -27,7 +28,8 @@ function YouTubeVideoMock({ thumbnailUrl, className = '', ...props }: VideoMockP
 				</div>
 			)}
 			<div
-				className={`absolute flex h-full w-full items-center justify-center rounded-md ${thumbnailUrl ? '' : 'border'} border-secondary-main`}>
+				className={`absolute flex h-full w-full items-center justify-center rounded-md ${thumbnailUrl ? '' : 'border'} border-secondary-main`}
+			>
 				<div className='relative'>
 					<div className='absolute ml-6 mt-4 h-8 w-8 bg-white' />
 					<FontAwesomeIcon
@@ -46,7 +48,13 @@ interface VideoProps extends React.IframeHTMLAttributes<HTMLIFrameElement> {
 	thumbnailUrl?: string;
 }
 
-export function YouTubeVideo({ src, thumbnailUrl, className = '', ...props }: VideoProps) {
+export function YouTubeVideo({
+	src,
+	thumbnailUrl,
+	className = '',
+	id = undefined,
+	...props
+}: VideoProps) {
 	const [clicked, setClicked] = useState(false);
 	const [loading, setLoading] = useState(true);
 
@@ -69,6 +77,7 @@ export function YouTubeVideo({ src, thumbnailUrl, className = '', ...props }: Vi
 	if (!clicked) {
 		return (
 			<YouTubeVideoMock
+				id={id}
 				role='button'
 				tabIndex={0}
 				aria-label={'Play YouTube video'}
@@ -98,11 +107,13 @@ export function YouTubeVideo({ src, thumbnailUrl, className = '', ...props }: Vi
 			)}
 			{loading && (
 				<div
-					className={`absolute flex h-full w-full animate-pulse items-center justify-center rounded-md ${thumbnailUrl ? '' : 'border'} border-secondary-main`}>
+					className={`absolute flex h-full w-full animate-pulse items-center justify-center rounded-md ${thumbnailUrl ? '' : 'border'} border-secondary-main`}
+				>
 					<FontAwesomeIcon icon={faYoutube} size='4x' className='text-secondary-700' />
 				</div>
 			)}
 			<iframe
+				id={id}
 				loading='lazy'
 				className={`absolute inset-0 h-full w-full rounded-md transition-opacity duration-300 ${
 					loading ? 'opacity-0' : 'opacity-100'

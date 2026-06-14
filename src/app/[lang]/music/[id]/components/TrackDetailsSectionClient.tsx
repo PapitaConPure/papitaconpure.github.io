@@ -5,18 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 function scrollToVideo() {
-	const videoPreview = document.getElementById('video-preview');
+	const videoPreviewSection = document.getElementById('video-preview');
+	const videoPreviewPlayer = document.getElementById('video-preview-player');
 
-	videoPreview?.focus();
+	setTimeout(() => videoPreviewPlayer?.focus(), 200);
 
-	if(!videoPreview) {
+	if (!videoPreviewSection) {
 		scrollBy({ behavior: 'smooth', top: 560 });
 		return;
 	}
 
 	scrollTo({
 		behavior: 'smooth',
-		top: videoPreview.offsetTop - 104,
+		top: videoPreviewSection.offsetTop - 104,
 	});
 }
 
