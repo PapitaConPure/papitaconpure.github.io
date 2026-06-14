@@ -19,6 +19,7 @@ import {
 	stopAudioPlayer,
 	usePlayerTrack,
 } from '@/components/AudioPlayer';
+import SimpleTooltip from '@/components/SimpleTooltip';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { assetStylesArray } from '@/data/music';
 import type { Locale } from '@/lib/i18n';
@@ -281,38 +282,49 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 					</span>
 				</h2>
 				<div className='flex-grow' />
-				<button
-					type='button'
-					onClick={toggleDetailView}
-					className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'
-				>
-					{detailView ? (
+				<SimpleTooltip content={t.detailDownloadsBrowserSwitchView}>
+					<button
+						type='button'
+						onClick={toggleDetailView}
+						aria-label={t.detailDownloadsBrowserReset}
+						className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'
+					>
+						{detailView ? (
+							<FontAwesomeIcon
+								icon={faTableList}
+								className='aspect-square h-4 w-4 text-foreground/80 transition-all duration-150 group-hover:text-foreground group-focus:text-foreground group-active:text-secondary-300'
+								size='lg'
+							/>
+						) : (
+							<FontAwesomeIcon
+								icon={faTableCellsLarge}
+								className='aspect-square h-4 w-4 text-foreground/80 transition-all duration-150 group-hover:text-foreground group-focus:text-foreground group-active:text-secondary-300'
+								size='lg'
+							/>
+						)}
+					</button>
+				</SimpleTooltip>
+				<SimpleTooltip content={t.detailDownloadsBrowserReset}>
+					<button
+						type='button'
+						onClick={resetAssetBrowser}
+						aria-label={t.detailDownloadsBrowserReset}
+						className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'
+					>
 						<FontAwesomeIcon
-							icon={faTableList}
-							className='aspect-square h-4 w-4 text-foreground/80 transition-all duration-150 group-hover:text-foreground group-focus:text-foreground group-active:text-secondary-300'
+							icon={faRefresh}
+							className='aspect-square h-4 w-4 text-foreground/80 transition-colors duration-150 group-hover:rotate-180 group-hover:text-foreground group-hover:transition-all group-focus:rotate-180 group-focus:text-foreground group-focus:transition-all group-active:text-secondary-300'
 							size='lg'
 						/>
-					) : (
-						<FontAwesomeIcon
-							icon={faTableCellsLarge}
-							className='aspect-square h-4 w-4 text-foreground/80 transition-all duration-150 group-hover:text-foreground group-focus:text-foreground group-active:text-secondary-300'
-							size='lg'
-						/>
-					)}
-				</button>
-				<button
-					onClick={resetAssetBrowser}
-					className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'
-				>
-					<FontAwesomeIcon
-						icon={faRefresh}
-						className='aspect-square h-4 w-4 text-foreground/80 transition-colors duration-150 group-hover:rotate-180 group-hover:text-foreground group-hover:transition-all group-focus:rotate-180 group-focus:text-foreground group-focus:transition-all group-active:text-secondary-300'
-						size='lg'
-					/>
-				</button>
+					</button>
+				</SimpleTooltip>
 				<Popover>
 					<PopoverTrigger asChild>
-						<button className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'>
+						<button
+							type='button'
+							aria-label={t.detailDownloadsBrowserFilter}
+							className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'
+						>
 							<FontAwesomeIcon
 								icon={faFilter}
 								className='aspect-square h-4 w-4 text-accent-400 transition-all duration-150 group-hover:text-accent-100 group-focus:text-foreground group-active:text-accent-500'
@@ -321,6 +333,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 						</button>
 					</PopoverTrigger>
 					<PopoverContent className='flex flex-col space-y-6' align='end'>
+						<h1 className='font-semibold text-lg'>{t.detailDownloadsBrowserFilter}</h1>
 						<div className='flex justify-center space-x-4'>
 							{assetStylesArray
 								.filter((assetStyle) =>
