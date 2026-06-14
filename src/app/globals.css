@@ -71,6 +71,23 @@
 	}
 }
 
+@layer utilities {
+	.temp-scrollbar::-webkit-scrollbar {
+		width: 0.5rem;
+		height: 0.5rem;
+	}
+
+	.temp-scrollbar::-webkit-scrollbar-track {
+		border-radius: 100vh;
+		background-color: rgba(43, 33, 34, 0.3);
+	}
+
+	.temp-scrollbar::-webkit-scrollbar-thumb {
+		border-radius: 100vh;
+		background-color: #9c162d;
+	}
+}
+
 .title {
 	@apply mb-2 text-center font-default-sans text-4xl font-black text-foreground;
 }
