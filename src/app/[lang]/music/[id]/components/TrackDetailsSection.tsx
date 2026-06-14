@@ -1,17 +1,17 @@
+import { faCompactDisc } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { itemsById } from '@/data/music';
+import { sourceStyles } from '@/data/sources';
 import { formatDateUTC } from '@/lib/date';
 import getRoot from '@/lib/getroot';
 import { Locale } from '@/lib/i18n';
 import { localizableCategories, resolveLocalizableField } from '@/lib/music';
-import { MusicItem } from '@/types/music';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { CreditedArtist } from './CreditedArtist';
-import { itemsById } from '@/data/music';
 import { SectionAcrossLocales } from '@/types/i18n';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCompactDisc } from '@fortawesome/free-solid-svg-icons';
-import { sourceStyles } from '@/data/sources';
+import { MusicItem } from '@/types/music';
+import { CreditedArtist } from './CreditedArtist';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -29,7 +29,8 @@ interface TrackListItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
 const TrackListItem = ({ n, children, className, digits = 2, ...props }: TrackListItemProps) => (
 	<li
 		{...props}
-		className={`flex items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900 ${className || ''}`}>
+		className={`flex items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900 ${className || ''}`}
+	>
 		{digits > 0 && (
 			<span className='w-6 flex-shrink-0 select-none text-right text-secondary-400'>
 				{`${n}`.padStart(digits, '0')}.
@@ -110,7 +111,8 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 						{item.categories.map((category, index) => (
 							<div
 								key={index}
-								className='mb-2 rounded-full border border-primary-500 px-2 py-0.5 text-primary-400'>
+								className='mb-2 rounded-full border border-primary-500 px-2 py-0.5 text-primary-400'
+							>
 								{resolveLocalizableField(
 									localizableCategories[category],
 									lang,
@@ -132,8 +134,12 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 											rel='noopener noreferrer'
 											target='_blank'
 											className={`social-btn flex border-transparent transition-colors duration-75 !mx-0 sm:gap-x-2 md:px-4 ${sourceStyles[link.source].className} !w-full`}
-											aria-label={resolveLocalizableField(link.label, lang)}>
-											<FontAwesomeIcon icon={sourceStyles[link.source].icon} fontSize={24} />
+											aria-label={resolveLocalizableField(link.label, lang)}
+										>
+											<FontAwesomeIcon
+												icon={sourceStyles[link.source].icon}
+												fontSize={24}
+											/>
 											{resolveLocalizableField(link.label, lang)}
 										</a>
 									</li>
@@ -152,7 +158,8 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 											<TrackListItem
 												key={index}
 												n={index + 1}
-												className='flex cursor-default items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'>
+												className='flex cursor-default items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'
+											>
 												<TrackListItemContent className='text-foreground hover:opacity-90'>
 													{resolveLocalizableField(child.data, lang)}
 												</TrackListItemContent>
@@ -167,11 +174,13 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 										<TrackListItem
 											key={index}
 											n={index + 1}
-											className='flex items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'>
+											className='flex items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'
+										>
 											<TrackListItemContent className='text-accent-400 hover:text-accent-500'>
 												<Link
 													href={`${lang}/music/detail?id=${childItem.id}`}
-													className='w-full'>
+													className='w-full'
+												>
 													{resolveLocalizableField(childItem.title, lang)}
 												</Link>
 											</TrackListItemContent>
@@ -191,7 +200,8 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 										<TrackListItem
 											key={index}
 											n={index + 1}
-											className='flex cursor-default items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'>
+											className='flex cursor-default items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'
+										>
 											<TrackListItemContent className='text-foreground hover:opacity-90'>
 												{resolveLocalizableField(childTitle, lang)}
 											</TrackListItemContent>
