@@ -86,7 +86,7 @@ export function MenuItem({
 			<li role='menuitem' className='flex'>
 				<Link
 					href={href as Url}
-					className='flex self-stretch rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
+					className='flex self-stretch rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 outline-none ring-0 ring-primary-main transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100 focus-visible:duration-150 focus-visible:ring-2'
 					tabIndex={0}
 					{...props}
 				>

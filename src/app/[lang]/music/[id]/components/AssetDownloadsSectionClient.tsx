@@ -52,20 +52,26 @@ export function DirectDownloadButton({
 }: DirectDownloadButtonProps) {
 	const [downloading, setDownloading] = useState(false);
 
+	const handleClick = () => {
+		setDownloading(true);
+
+		const a = document.createElement('a');
+		a.href = props.href ?? '';
+		a.download = '';
+		a.click();
+
+		setTimeout(() => setDownloading(false), 2000);
+	};
+
 	return (
-		// biome-ignore lint/a11y/useValidAnchor: Small cute animation while loading link
-		<a
-			href='#'
-			{...props}
+		<button
+			type='button'
 			rel='noopener noreferrer'
 			className={`${className} ${downloading ? 'pointer-events-none opacity-60' : ''}`}
-			onClick={() => {
-				setDownloading(true);
-				setTimeout(() => setDownloading(false), 2000);
-			}}
+			onClick={handleClick}
 		>
 			{downloading ? downloadStageChildren : children}
-		</a>
+		</button>
 	);
 }
 

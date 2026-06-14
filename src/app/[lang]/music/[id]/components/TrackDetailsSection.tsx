@@ -17,7 +17,7 @@ const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-80
 
 const TrackList = ({ children }: React.OlHTMLAttributes<HTMLDataListElement>) => (
 	<div className='relative'>
-		<ol className='temp-scrollbar flex flex-col space-y-1 rounded-md border border-secondary-800 px-6 py-5 max-h-[36.25rem] overflow-y-auto'>
+		<ol className='temp-scrollbar flex flex-col space-y-1 rounded-md border border-secondary-800 outline-none ring-0 ring-primary-main duration-150 transition-all px-6 py-5 max-h-[36.25rem] overflow-y-auto focus-visible:ring-2'>
 			{children}
 		</ol>
 	</div>

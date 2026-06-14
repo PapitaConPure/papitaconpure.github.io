@@ -175,7 +175,7 @@ function Select<TValue extends OptionValue = undefined>({
 				aria-label={ariaLabel}
 				aria-labelledby={selectLabelId}
 				onClick={handleButtonClick}
-				className='inline-flex items-center justify-between space-x-2 rounded-md py-2 pl-4 pr-3.5 text-sm shadow-sm ring-0 ring-primary-main transition-all duration-150 focus:outline-none focus:ring-2'
+				className='inline-flex items-center justify-between space-x-2 rounded-md py-2 pl-4 pr-3.5 outline-none text-sm shadow-sm ring-0 ring-primary-main transition-all duration-150 focus:ring-2'
 				onKeyDown={handleButtonKeydown}>
 				{icon}
 				{noPickedDisplay ? (
