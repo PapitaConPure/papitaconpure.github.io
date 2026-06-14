@@ -1,12 +1,12 @@
-import { AssetKind, FullArtistCredit, License, MusicItem } from '@/types/music';
 import {
 	faFile,
 	faFileAlt,
 	faImage,
 	faMusic,
 	faVideo,
-	IconDefinition,
+	type IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
+import type { AssetKind, FullArtistCredit, License, MusicItem } from '@/types/music';
 
 export interface AssetStyle {
 	key: AssetKind;
@@ -42,10 +42,13 @@ export const assetStylesArray: AssetStyle[] = [
 	},
 ];
 
-export const assetStyles: Record<AssetKind, AssetStyle> = assetStylesArray.reduce((acc, style) => {
-	acc[style.key] = style
-	return acc;
-}, {} as Record<AssetKind, AssetStyle>);
+export const assetStyles: Record<AssetKind, AssetStyle> = assetStylesArray.reduce(
+	(acc, style) => {
+		acc[style.key] = style;
+		return acc;
+	},
+	{} as Record<AssetKind, AssetStyle>,
+);
 
 const cc0: License = {
 	label: 'CC0 1.0 Universal',
@@ -1916,15 +1919,15 @@ const items: MusicItem[] = [
 			ja: '未使用フィルムストリップ',
 		},
 		description:
-			'Character profile:' +
-			'\nEishoku Hakuro' +
-			'\n映色　白黒' +
-			'\n(えいしょく　はくろ)' +
-			'\n' +
-			'\nShe was once a film strip from the outside world that was thrown away by the author because of a failure during its recording. A hundred years had passed when the strip surpassed reality and reached Gensokyo, becoming a tsukumogami.' +
-			"\nShe's a surprisingly calm youkai, but if she finds something interesting in you she'll try to add you to her film. She doesn't know her strip got damaged, which could explain why she's trying to dump people into it." +
-			'\nHer film starts with an old, black and white Kabuki performance and then distorts into incomprehensible frames.' +
-			'\nAbility: Video Manipulation. This also allows her to add and remove people into and from her video.',
+			'Character profile:'
+			+ '\nEishoku Hakuro'
+			+ '\n映色　白黒'
+			+ '\n(えいしょく　はくろ)'
+			+ '\n'
+			+ '\nShe was once a film strip from the outside world that was thrown away by the author because of a failure during its recording. A hundred years had passed when the strip surpassed reality and reached Gensokyo, becoming a tsukumogami.'
+			+ "\nShe's a surprisingly calm youkai, but if she finds something interesting in you she'll try to add you to her film. She doesn't know her strip got damaged, which could explain why she's trying to dump people into it."
+			+ '\nHer film starts with an old, black and white Kabuki performance and then distorts into incomprehensible frames.'
+			+ '\nAbility: Video Manipulation. This also allows her to add and remove people into and from her video.',
 		date: new Date('2021-07-02'),
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/film-youkai/cover.png',
@@ -5299,7 +5302,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley.png',
 			},
 			{
 				kind: 'audio',
@@ -5315,7 +5319,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley.png',
 			},
 			{
 				kind: 'audio',
@@ -5331,7 +5336,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_lh.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_lh.png',
 			},
 			{
 				kind: 'audio',
@@ -5347,7 +5353,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_lh.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_lh.png',
 			},
 			{
 				kind: 'audio',
@@ -5363,7 +5370,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_rh.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_rh.png',
 			},
 			{
 				kind: 'audio',
@@ -5379,7 +5387,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_rh.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/FULL/th20medley_rh.png',
 			},
 			{
 				kind: 'file',
@@ -7685,7 +7694,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x00_title.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x00_title.png',
 			},
 			{
 				kind: 'audio',
@@ -7701,7 +7711,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x00_title.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x00_title.png',
 			},
 			{
 				kind: 'audio',
@@ -7717,7 +7728,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x01_stage1.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x01_stage1.png',
 			},
 			{
 				kind: 'audio',
@@ -7733,7 +7745,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x01_stage1.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x01_stage1.png',
 			},
 			{
 				kind: 'audio',
@@ -7748,7 +7761,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x02_ubame.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x02_ubame.png',
 			},
 			{
 				kind: 'audio',
@@ -7763,7 +7777,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x02_ubame.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x02_ubame.png',
 			},
 			{
 				kind: 'audio',
@@ -7779,7 +7794,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x03_stage2.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x03_stage2.png',
 			},
 			{
 				kind: 'audio',
@@ -7795,7 +7811,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x03_stage2.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x03_stage2.png',
 			},
 			{
 				kind: 'audio',
@@ -7810,7 +7827,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x04_chimi.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x04_chimi.png',
 			},
 			{
 				kind: 'audio',
@@ -7825,7 +7843,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x04_chimi.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x04_chimi.png',
 			},
 			{
 				kind: 'audio',
@@ -7841,7 +7860,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x05_stage3.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x05_stage3.png',
 			},
 			{
 				kind: 'audio',
@@ -7857,7 +7877,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x05_stage3.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x05_stage3.png',
 			},
 			{
 				kind: 'audio',
@@ -7872,7 +7893,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x06_nareko.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x06_nareko.png',
 			},
 			{
 				kind: 'audio',
@@ -7887,7 +7909,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x06_nareko.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x06_nareko.png',
 			},
 			{
 				kind: 'audio',
@@ -7903,7 +7926,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x07_stage4.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x07_stage4.png',
 			},
 			{
 				kind: 'audio',
@@ -7919,7 +7943,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x07_stage4.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x07_stage4.png',
 			},
 			{
 				kind: 'audio',
@@ -7934,7 +7959,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x08_yuiman.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x08_yuiman.png',
 			},
 			{
 				kind: 'audio',
@@ -7949,7 +7975,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x08_yuiman.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x08_yuiman.png',
 			},
 			{
 				kind: 'audio',
@@ -7965,7 +7992,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x09_stage5.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x09_stage5.png',
 			},
 			{
 				kind: 'audio',
@@ -7981,7 +8009,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x09_stage5.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x09_stage5.png',
 			},
 			{
 				kind: 'audio',
@@ -7996,7 +8025,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x10_toyohime.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x10_toyohime.png',
 			},
 			{
 				kind: 'audio',
@@ -8011,7 +8041,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x10_toyohime.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x10_toyohime.png',
 			},
 			{
 				kind: 'audio',
@@ -8027,7 +8058,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x11_stage6.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x11_stage6.png',
 			},
 			{
 				kind: 'audio',
@@ -8043,7 +8075,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x11_stage6.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x11_stage6.png',
 			},
 			{
 				kind: 'audio',
@@ -8058,7 +8091,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x12_ariya.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x12_ariya.png',
 			},
 			{
 				kind: 'audio',
@@ -8073,7 +8107,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x12_ariya.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x12_ariya.png',
 			},
 			{
 				kind: 'audio',
@@ -8089,7 +8124,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x13_ed1.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x13_ed1.png',
 			},
 			{
 				kind: 'audio',
@@ -8105,7 +8141,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x13_ed1.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x13_ed1.png',
 			},
 			{
 				kind: 'audio',
@@ -8121,7 +8158,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x14_ed2.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x14_ed2.png',
 			},
 			{
 				kind: 'audio',
@@ -8137,7 +8175,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x14_ed2.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x14_ed2.png',
 			},
 			{
 				kind: 'audio',
@@ -8153,7 +8192,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x15_stagex.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x15_stagex.png',
 			},
 			{
 				kind: 'audio',
@@ -8169,7 +8209,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x15_stagex.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x15_stagex.png',
 			},
 			{
 				kind: 'audio',
@@ -8184,7 +8225,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x16_bossx.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x16_bossx.png',
 			},
 			{
 				kind: 'audio',
@@ -8199,7 +8241,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x16_bossx.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x16_bossx.png',
 			},
 			{
 				kind: 'audio',
@@ -8215,7 +8258,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x17_staffroll.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x17_staffroll.png',
 			},
 			{
 				kind: 'audio',
@@ -8231,7 +8275,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x17_staffroll.png',
+				previewUrl:
+					'https://archive.org/download/th20-piano-medley/Touhou%2020%20Piano%20Medley%20by%20PapaPur%C3%A9/PARTS/x17_staffroll.png',
 			},
 
 			{
@@ -8287,7 +8332,7 @@ const items: MusicItem[] = [
 				ja: '愛おしき塵の住処',
 			},
 			{
-				es: 'Even if it\'s Forgotten by the World',
+				es: "Even if it's Forgotten by the World",
 				ja: '例え世界から忘れられても',
 			},
 			{
@@ -8319,7 +8364,7 @@ const items: MusicItem[] = [
 				ja: '記憶の深海に沈む少女',
 			},
 			{
-				es: 'Watatsuki\'s Spell Card ~ Divine Sea Battle',
+				es: "Watatsuki's Spell Card ~ Divine Sea Battle",
 				ja: '綿月のスペルカード　～ 神海戦',
 			},
 			{
@@ -8327,7 +8372,7 @@ const items: MusicItem[] = [
 				ja: 'ピラミッドの神域',
 			},
 			{
-				es: 'Because I\'m Used to Being the Last One Left ~ Stone Goddess',
+				es: "Because I'm Used to Being the Last One Left ~ Stone Goddess",
 				ja: '最後の一人は慣れてるから　～ Stone Goddess',
 			},
 			{
@@ -8488,7 +8533,7 @@ const items: MusicItem[] = [
 				url: '/images/music/dream-satellite/thumb.webp',
 			},
 		],
-		tags: ['dateless bar old adam', 'dr. latency\'s freak report', 'zun style'],
+		tags: ['dateless bar old adam', "dr. latency's freak report", 'zun style'],
 	},
 	{
 		id: 'shinjidai',
@@ -8496,8 +8541,8 @@ const items: MusicItem[] = [
 		displayArtist: 'Shrine of Legacy',
 		artists: [karlCredit, tewaCredit, papitaCredit],
 		title: {
-			es: "Touhou Youhishi Chou ~ New Era",
-			en: "Touhou Youhishi Chou ~ New Era",
+			es: 'Touhou Youhishi Chou ~ New Era',
+			en: 'Touhou Youhishi Chou ~ New Era',
 			ja: '東方羊皮紙兆　～ New Era',
 		},
 		date: new Date('2026-06-03'),
@@ -8524,31 +8569,24 @@ const items: MusicItem[] = [
 						url: 'https://www.pixiv.net/users/4920496',
 					},
 				],
-				background: [
-					papitaCredit,
-					billGPCredit,
-				],
+				background: [papitaCredit, billGPCredit],
 				cover: [
 					{
 						name: 'Schnelligkeit',
 						clarification: 'Swift',
 					},
 				],
-				thumbnail: [
-					papitaCredit,
-					karlCredit,
-					billGPCredit,
-				],
+				thumbnail: [papitaCredit, karlCredit, billGPCredit],
 			},
 			localization: {
-				'English': [
+				English: [
 					papitaCredit,
 					{
 						name: 'Sassafras',
 						clarification: 'Doya!',
 					},
 				],
-				'日本語': [
+				日本語: [
 					{
 						name: 'Doga',
 					},
@@ -8556,9 +8594,7 @@ const items: MusicItem[] = [
 				],
 			},
 			misc: {
-				writing: [
-					karlCredit,
-				],
+				writing: [karlCredit],
 				qa: [
 					karlCredit,
 					papitaCredit,
@@ -8736,7 +8772,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/1.%20The%20Imminent%2C%20Chaotic%20Scheming%20of%20the%20Fairies.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/1.%20The%20Imminent%2C%20Chaotic%20Scheming%20of%20the%20Fairies.png',
 			},
 			{
 				kind: 'audio',
@@ -8752,7 +8789,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/1.%20The%20Imminent%2C%20Chaotic%20Scheming%20of%20the%20Fairies.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/1.%20The%20Imminent%2C%20Chaotic%20Scheming%20of%20the%20Fairies.png',
 			},
 			{
 				kind: 'audio',
@@ -8768,7 +8806,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/2.%20Maiden%20and%20Mistress%20United%20with%20a%20Crimson%20Purpose.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/2.%20Maiden%20and%20Mistress%20United%20with%20a%20Crimson%20Purpose.png',
 			},
 			{
 				kind: 'audio',
@@ -8784,7 +8823,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/2.%20Maiden%20and%20Mistress%20United%20with%20a%20Crimson%20Purpose.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/2.%20Maiden%20and%20Mistress%20United%20with%20a%20Crimson%20Purpose.png',
 			},
 			{
 				kind: 'audio',
@@ -8800,7 +8840,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/3.%20A%20Strange%20and%20Colorful%20Friendship.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/3.%20A%20Strange%20and%20Colorful%20Friendship.png',
 			},
 			{
 				kind: 'audio',
@@ -8816,7 +8857,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/3.%20A%20Strange%20and%20Colorful%20Friendship.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/3.%20A%20Strange%20and%20Colorful%20Friendship.png',
 			},
 			{
 				kind: 'audio',
@@ -8832,7 +8874,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/4.%20Mischievous%20Fairies%20Looking%20for%20Answers.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/4.%20Mischievous%20Fairies%20Looking%20for%20Answers.png',
 			},
 			{
 				kind: 'audio',
@@ -8848,7 +8891,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/4.%20Mischievous%20Fairies%20Looking%20for%20Answers.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/4.%20Mischievous%20Fairies%20Looking%20for%20Answers.png',
 			},
 			{
 				kind: 'audio',
@@ -8864,7 +8908,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/5.%20A%20Secret%20Plan%20~%20Forced%20Attack.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/5.%20A%20Secret%20Plan%20~%20Forced%20Attack.png',
 			},
 			{
 				kind: 'audio',
@@ -8880,7 +8925,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/5.%20A%20Secret%20Plan%20~%20Forced%20Attack.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/5.%20A%20Secret%20Plan%20~%20Forced%20Attack.png',
 			},
 			{
 				kind: 'audio',
@@ -8896,7 +8942,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/6.%20The%20Warm%20Embrace%20of%20a%20Swampy%20Lake.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/6.%20The%20Warm%20Embrace%20of%20a%20Swampy%20Lake.png',
 			},
 			{
 				kind: 'audio',
@@ -8912,7 +8959,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/6.%20The%20Warm%20Embrace%20of%20a%20Swampy%20Lake.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/6.%20The%20Warm%20Embrace%20of%20a%20Swampy%20Lake.png',
 			},
 			{
 				kind: 'audio',
@@ -8928,7 +8976,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/7.%20Floral%20Fragrance.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/7.%20Floral%20Fragrance.png',
 			},
 			{
 				kind: 'audio',
@@ -8944,7 +8993,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/7.%20Floral%20Fragrance.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/7.%20Floral%20Fragrance.png',
 			},
 			{
 				kind: 'audio',
@@ -8960,7 +9010,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/8.%20An%20Eternal%20Loop%20Never%20Seen%20Before.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/8.%20An%20Eternal%20Loop%20Never%20Seen%20Before.png',
 			},
 			{
 				kind: 'audio',
@@ -8976,7 +9027,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/8.%20An%20Eternal%20Loop%20Never%20Seen%20Before.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/8.%20An%20Eternal%20Loop%20Never%20Seen%20Before.png',
 			},
 			{
 				kind: 'audio',
@@ -8992,7 +9044,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/9.%20Approaching%20Storm%20~%20Mysterious%20Rumbling.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/9.%20Approaching%20Storm%20~%20Mysterious%20Rumbling.png',
 			},
 			{
 				kind: 'audio',
@@ -9008,7 +9061,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/9.%20Approaching%20Storm%20~%20Mysterious%20Rumbling.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/9.%20Approaching%20Storm%20~%20Mysterious%20Rumbling.png',
 			},
 			{
 				kind: 'audio',
@@ -9024,7 +9078,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/10.%20Ghostly%20Passage.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/10.%20Ghostly%20Passage.png',
 			},
 			{
 				kind: 'audio',
@@ -9040,7 +9095,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/10.%20Ghostly%20Passage.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/10.%20Ghostly%20Passage.png',
 			},
 			{
 				kind: 'audio',
@@ -9056,7 +9112,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/11.%20Mirrored%20Madness.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/11.%20Mirrored%20Madness.png',
 			},
 			{
 				kind: 'audio',
@@ -9072,7 +9129,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/11.%20Mirrored%20Madness.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/11.%20Mirrored%20Madness.png',
 			},
 			{
 				kind: 'audio',
@@ -9088,7 +9146,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/12.%20Alternate%20Ascent.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/12.%20Alternate%20Ascent.png',
 			},
 			{
 				kind: 'audio',
@@ -9104,7 +9163,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/12.%20Alternate%20Ascent.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/12.%20Alternate%20Ascent.png',
 			},
 			{
 				kind: 'audio',
@@ -9120,7 +9180,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/13.%20Interseasonal%20Sunset.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/13.%20Interseasonal%20Sunset.png',
 			},
 			{
 				kind: 'audio',
@@ -9136,7 +9197,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/13.%20Interseasonal%20Sunset.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/13.%20Interseasonal%20Sunset.png',
 			},
 			{
 				kind: 'audio',
@@ -9152,7 +9214,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/14.%20A%20Season%20of%20Gathered%20Emotions%20~%20Seasonal%20Magic%21.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/14.%20A%20Season%20of%20Gathered%20Emotions%20~%20Seasonal%20Magic%21.png',
 			},
 			{
 				kind: 'audio',
@@ -9168,7 +9231,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/14.%20A%20Season%20of%20Gathered%20Emotions%20~%20Seasonal%20Magic%21.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/14.%20A%20Season%20of%20Gathered%20Emotions%20~%20Seasonal%20Magic%21.png',
 			},
 			{
 				kind: 'audio',
@@ -9184,7 +9248,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/15.%20The%20Furious%20Starred%20Sky.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/15.%20The%20Furious%20Starred%20Sky.png',
 			},
 			{
 				kind: 'audio',
@@ -9200,7 +9265,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/15.%20The%20Furious%20Starred%20Sky.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/15.%20The%20Furious%20Starred%20Sky.png',
 			},
 			{
 				kind: 'audio',
@@ -9216,7 +9282,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/16.%20Prologue%20On%20The%20High%20Seas.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/16.%20Prologue%20On%20The%20High%20Seas.png',
 			},
 			{
 				kind: 'audio',
@@ -9232,7 +9299,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/16.%20Prologue%20On%20The%20High%20Seas.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/16.%20Prologue%20On%20The%20High%20Seas.png',
 			},
 			{
 				kind: 'audio',
@@ -9248,7 +9316,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/17.%20New%20Era%20Rises%21%20~%20The%20Truth%20Behind%20an%20Egoistic%20Plan.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/17.%20New%20Era%20Rises%21%20~%20The%20Truth%20Behind%20an%20Egoistic%20Plan.png',
 			},
 			{
 				kind: 'audio',
@@ -9264,14 +9333,15 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/17.%20New%20Era%20Rises%21%20~%20The%20Truth%20Behind%20an%20Egoistic%20Plan.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/17.%20New%20Era%20Rises%21%20~%20The%20Truth%20Behind%20an%20Egoistic%20Plan.png',
 			},
 			{
 				kind: 'audio',
 				format: 'flac',
 				label: {
 					es: 'Sellando los Dominios de la Misma Muerte ~ ¡Fluctuación al 99%! (16-bit int)',
-					en: 'Sealing the Domains of One\'s Own Death ~ 99% Fluctuation! (16-bit int)',
+					en: "Sealing the Domains of One's Own Death ~ 99% Fluctuation! (16-bit int)",
 					ja: '己が死の領域を封じて　～ 99% Fluctuation! (16-bit int)',
 				},
 				size: '30.8 MB',
@@ -9280,14 +9350,15 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/18.%20Sealing%20the%20Domains%20of%20One%27s%20Own%20Death%20~%2099%25%20Fluctuation%21.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/18.%20Sealing%20the%20Domains%20of%20One%27s%20Own%20Death%20~%2099%25%20Fluctuation%21.png',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
 				label: {
 					es: 'Sellando los Dominios de la Misma Muerte ~ ¡Fluctuación al 99%! (320 Kbps)',
-					en: 'Sealing the Domains of One\'s Own Death ~ 99% Fluctuation! (320 Kbps)',
+					en: "Sealing the Domains of One's Own Death ~ 99% Fluctuation! (320 Kbps)",
 					ja: '己が死の領域を封じて　～ 99% Fluctuation! (320 Kbps)',
 				},
 				size: '10.3 MB',
@@ -9296,7 +9367,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/18.%20Sealing%20the%20Domains%20of%20One%27s%20Own%20Death%20~%2099%25%20Fluctuation%21.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/18.%20Sealing%20the%20Domains%20of%20One%27s%20Own%20Death%20~%2099%25%20Fluctuation%21.png',
 			},
 			{
 				kind: 'audio',
@@ -9312,7 +9384,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/19.%20Princess%20Fantasy.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/19.%20Princess%20Fantasy.png',
 			},
 			{
 				kind: 'audio',
@@ -9328,7 +9401,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/19.%20Princess%20Fantasy.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/19.%20Princess%20Fantasy.png',
 			},
 			{
 				kind: 'audio',
@@ -9344,7 +9418,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/20.%20Colorless%20Emotions.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/20.%20Colorless%20Emotions.png',
 			},
 			{
 				kind: 'audio',
@@ -9360,7 +9435,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/20.%20Colorless%20Emotions.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/20.%20Colorless%20Emotions.png',
 			},
 			{
 				kind: 'audio',
@@ -9376,7 +9452,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/21.%20Little%20Magic%20Creatures.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/21.%20Little%20Magic%20Creatures.png',
 			},
 			{
 				kind: 'audio',
@@ -9392,7 +9469,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/21.%20Little%20Magic%20Creatures.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/21.%20Little%20Magic%20Creatures.png',
 			},
 			{
 				kind: 'audio',
@@ -9408,7 +9486,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/22.%20Little%20Box%20of%20Memories.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/22.%20Little%20Box%20of%20Memories.png',
 			},
 			{
 				kind: 'audio',
@@ -9424,7 +9503,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/22.%20Little%20Box%20of%20Memories.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/22.%20Little%20Box%20of%20Memories.png',
 			},
 			{
 				kind: 'audio',
@@ -9440,7 +9520,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/23.%20The%20Boundaries%20of%20Himeji%20Castle.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/23.%20The%20Boundaries%20of%20Himeji%20Castle.png',
 			},
 			{
 				kind: 'audio',
@@ -9456,7 +9537,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/23.%20The%20Boundaries%20of%20Himeji%20Castle.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/23.%20The%20Boundaries%20of%20Himeji%20Castle.png',
 			},
 			{
 				kind: 'audio',
@@ -9472,7 +9554,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/24.%20A%20Playful%20Problem%20~%20Daishin%20Rules%21.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/24.%20A%20Playful%20Problem%20~%20Daishin%20Rules%21.png',
 			},
 			{
 				kind: 'audio',
@@ -9488,14 +9571,15 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/24.%20A%20Playful%20Problem%20~%20Daishin%20Rules%21.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/24.%20A%20Playful%20Problem%20~%20Daishin%20Rules%21.png',
 			},
 			{
 				kind: 'audio',
 				format: 'flac',
 				label: {
 					es: 'Los Cuentos Sibilantes de Daishin (16-bit int)',
-					en: 'Daishin\'s Hissing Tales (16-bit int)',
+					en: "Daishin's Hissing Tales (16-bit int)",
 					ja: '大心の囁く物語 (16-bit int)',
 				},
 				size: '53.4 MB',
@@ -9504,14 +9588,15 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/25.%20Daishin%27s%20Hissing%20Tales.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/25.%20Daishin%27s%20Hissing%20Tales.png',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
 				label: {
 					es: 'Los Cuentos Sibilantes de Daishin (320 Kbps)',
-					en: 'Daishin\'s Hissing Tales (320 Kbps)',
+					en: "Daishin's Hissing Tales (320 Kbps)",
 					ja: '大心の囁く物語 (320 Kbps)',
 				},
 				size: '14.1 MB',
@@ -9520,7 +9605,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/25.%20Daishin%27s%20Hissing%20Tales.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/25.%20Daishin%27s%20Hissing%20Tales.png',
 			},
 			{
 				kind: 'audio',
@@ -9536,7 +9622,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/26.%20Alternate%20Descent.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/26.%20Alternate%20Descent.png',
 			},
 			{
 				kind: 'audio',
@@ -9552,7 +9639,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/26.%20Alternate%20Descent.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/26.%20Alternate%20Descent.png',
 			},
 			{
 				kind: 'audio',
@@ -9568,7 +9656,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/27.%20Glimpse%20of%20the%20Sunrise.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/27.%20Glimpse%20of%20the%20Sunrise.png',
 			},
 			{
 				kind: 'audio',
@@ -9584,7 +9673,8 @@ const items: MusicItem[] = [
 				direct: true,
 				provider: 'archive.org',
 				previewFormat: 'png',
-				previewUrl: 'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/27.%20Glimpse%20of%20the%20Sunrise.png',
+				previewUrl:
+					'https://archive.org/download/touhou-shinjidai/%E3%80%90Touhou%20Style%20Album%E3%80%91%20%E6%9D%B1%E6%96%B9%E7%BE%8A%E7%9A%AE%E7%B4%99%E5%85%86%20~%20New%20Era%20%28FLAC%29/27.%20Glimpse%20of%20the%20Sunrise.png',
 			},
 
 			{
@@ -10933,7 +11023,7 @@ const items: MusicItem[] = [
 				kind: 'name',
 				data: {
 					es: 'Sellando los Dominios de la Misma Muerte ~ ¡Fluctuación al 99%!',
-					en: 'Sealing the Domains of One\'s Own Death ~ 99% Fluctuation!',
+					en: "Sealing the Domains of One's Own Death ~ 99% Fluctuation!",
 					ja: '己が死の領域を封じて　～ 99% Fluctuation!',
 				},
 			},
@@ -10989,7 +11079,7 @@ const items: MusicItem[] = [
 				kind: 'name',
 				data: {
 					es: 'Los Cuentos Sibilantes de Daishin',
-					en: 'Daishin\'s Hissing Tales',
+					en: "Daishin's Hissing Tales",
 					ja: '大心の囁く物語',
 				},
 			},
