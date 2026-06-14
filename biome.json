@@ -10,7 +10,7 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"includes": ["src/**/*.ts"],
+		"includes": ["src/**/*.ts","src/**/*.tsx"],
 		"indentStyle": "tab",
 		"indentWidth": 4,
 		"attributePosition": "auto",
