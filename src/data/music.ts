@@ -8545,7 +8545,7 @@ const items: MusicItem[] = [
 			en: 'Touhou Youhishi Chou ~ New Era',
 			ja: '東方羊皮紙兆　～ New Era',
 		},
-		date: new Date('2026-06-03'),
+		date: new Date('2026-06-05'),
 		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/shinjidai/cover.jpg',
 		thumbnailUrl: '/images/music/shinjidai/thumb1.webp',
