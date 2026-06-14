@@ -1,4 +1,3 @@
-import { faCompactDisc } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,13 +11,16 @@ import { localizableCategories, resolveLocalizableField } from '@/lib/music';
 import { SectionAcrossLocales } from '@/types/i18n';
 import { MusicItem } from '@/types/music';
 import { CreditedArtist } from './CreditedArtist';
+import LeadDownwardsPanel from './TrackDetailsSectionClient';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
 const TrackList = ({ children }: React.OlHTMLAttributes<HTMLDataListElement>) => (
-	<ol className='flex flex-col space-y-0.5 rounded-md border border-secondary-800 px-6 py-3'>
-		{children}
-	</ol>
+	<div className='relative'>
+		<ol className='temp-scrollbar flex flex-col space-y-1 rounded-md border border-secondary-800 px-6 py-5 max-h-96 overflow-y-scroll'>
+			{children}
+		</ol>
+	</div>
 );
 
 interface TrackListItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
@@ -29,7 +31,7 @@ interface TrackListItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
 const TrackListItem = ({ n, children, className, digits = 2, ...props }: TrackListItemProps) => (
 	<li
 		{...props}
-		className={`flex items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900 ${className || ''}`}
+		className={`flex items-start space-x-2 rounded-sm py-1 ${className || ''}`}
 	>
 		{digits > 0 && (
 			<span className='w-6 flex-shrink-0 select-none text-right text-secondary-400'>
@@ -82,13 +84,7 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 						/>
 					</div>
 					{(item.kind === 'album' || item.kind === 'compilation') && (
-						<div className='mt-4 hidden flex-grow items-center justify-center md:flex'>
-							<FontAwesomeIcon
-								icon={faCompactDisc}
-								size='10x'
-								className='text-accent-main opacity-30'
-							/>
-						</div>
+						<LeadDownwardsPanel />
 					)}
 				</div>
 				<div className='mx-auto flex-grow md:mx-0'>
@@ -158,9 +154,9 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 											<TrackListItem
 												key={index}
 												n={index + 1}
-												className='flex cursor-default items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'
+												className='flex cursor-default items-start space-x-2 rounded-sm'
 											>
-												<TrackListItemContent className='text-foreground hover:opacity-90'>
+												<TrackListItemContent className='text-foreground'>
 													{resolveLocalizableField(child.data, lang)}
 												</TrackListItemContent>
 											</TrackListItem>
@@ -174,7 +170,7 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 										<TrackListItem
 											key={index}
 											n={index + 1}
-											className='flex items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'
+											className='flex items-start space-x-2 rounded-sm'
 										>
 											<TrackListItemContent className='text-accent-400 hover:text-accent-500'>
 												<Link
@@ -200,9 +196,9 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 										<TrackListItem
 											key={index}
 											n={index + 1}
-											className='flex cursor-default items-start space-x-2 rounded-sm py-0.5 hover:bg-secondary-900'
+											className='flex cursor-default items-start space-x-2 rounded-sm'
 										>
-											<TrackListItemContent className='text-foreground hover:opacity-90'>
+											<TrackListItemContent className='text-foreground'>
 												{resolveLocalizableField(childTitle, lang)}
 											</TrackListItemContent>
 										</TrackListItem>
