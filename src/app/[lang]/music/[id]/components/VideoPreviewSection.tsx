@@ -11,7 +11,7 @@ export default function VideoPreviewSection({ item, t }: VideoPreviewSectionProp
 	if (!item.videoUrl) return;
 
 	return (
-		<section>
+		<section id='video-preview'>
 			<h2 className='section-h2'>{t.detailVideoTitle}</h2>
 			<div className='mt-4 w-full'>
 				<YouTubeVideo

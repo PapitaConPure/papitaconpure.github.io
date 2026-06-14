@@ -4,11 +4,27 @@ import { faAngleDown, faCompactDisc } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
+function scrollToVideo() {
+	const videoPreview = document.getElementById('video-preview');
+
+	videoPreview?.focus();
+
+	if(!videoPreview) {
+		scrollBy({ behavior: 'smooth', top: 560 });
+		return;
+	}
+
+	scrollTo({
+		behavior: 'smooth',
+		top: videoPreview.offsetTop - 104,
+	});
+}
+
 function LeadDownwardsPanel() {
 	return (
 		<button
 			type='button'
-			onClick={() => scrollBy({ top: 800, behavior: 'smooth' })}
+			onClick={scrollToVideo}
 			className='group mt-4 hidden items-center justify-center h-full md:flex flex-col'
 		>
 			<FontAwesomeIcon
