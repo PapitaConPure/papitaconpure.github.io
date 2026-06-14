@@ -1,5 +1,5 @@
-import { faSoundcloud, faSpotify, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLink, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { faSoundcloud, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faExternalLink, type IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 export type SourceKind = 'youtube' | 'soundcloud' | 'spotify' | 'other';
 
@@ -22,7 +22,8 @@ export const sourceStylesArray: SourceStyle[] = [
 	},
 	{
 		key: 'spotify',
-		className: '!text-[#181413] font-semibold bg-[#1ed760] hover:bg-[#19b14e] active:bg-[#20ff6e]',
+		className:
+			'!text-[#181413] font-semibold bg-[#1ed760] hover:bg-[#19b14e] active:bg-[#20ff6e]',
 		icon: faSpotify,
 	},
 	{
@@ -32,7 +33,10 @@ export const sourceStylesArray: SourceStyle[] = [
 	},
 ];
 
-export const sourceStyles: Record<SourceKind, SourceStyle> = sourceStylesArray.reduce((acc, style) => {
-	acc[style.key] = style
-	return acc;
-}, {} as Record<SourceKind, SourceStyle>);
+export const sourceStyles: Record<SourceKind, SourceStyle> = sourceStylesArray.reduce(
+	(acc, style) => {
+		acc[style.key] = style;
+		return acc;
+	},
+	{} as Record<SourceKind, SourceStyle>,
+);
