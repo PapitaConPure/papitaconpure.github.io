@@ -2737,7 +2737,7 @@ const items: MusicItem[] = [
 				format: 'png',
 				label: {
 					es: 'Escena (Quieto Salida 4) (1080p)',
-					en: 'Scene (Still Salida 4) (1080p)',
+					en: 'Scene (Still Out 4) (1080p)',
 					ja: 'シーン (静止アウト4) (1080p)',
 				},
 				size: '2.63 MB',
