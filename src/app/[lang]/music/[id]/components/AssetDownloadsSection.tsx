@@ -61,6 +61,7 @@ function AssetDownloadCardThumbnail({
 }: Readonly<AssetDownloadCardThumbnailProps>) {
 	const shouldOverlay = !noOverlay;
 	const lightThemedPreview = download.previewTheme === 'light';
+	const isImageOrVideo = download.kind === 'image' || download.kind === 'video';
 
 	return (
 		<div
@@ -117,7 +118,7 @@ function AssetDownloadCardThumbnail({
 					)}
 				</div>
 			)}
-			{(shouldOverlay || !download.previewUrl) && download.kind !== 'image' && download.kind !== 'video' && (
+			{(!isImageOrVideo || (shouldOverlay && isImageOrVideo && !download.previewUrl && !download.url)) && (
 				<div className='absolute flex w-full flex-col items-center space-y-1'>
 					<FontAwesomeIcon
 						icon={assetStyles[download.kind].icon}
@@ -130,7 +131,7 @@ function AssetDownloadCardThumbnail({
 					)}
 				</div>
 			)}
-			{shouldOverlay && (download.kind === 'image' || download.kind === 'video') && (
+			{shouldOverlay && isImageOrVideo && (
 				<div className='absolute bottom-1 left-1 flex p-1 pr-1.5 flex-row items-center rounded-md bg-secondary-900/70 backdrop-blur-md space-x-1'>
 					<FontAwesomeIcon
 						icon={assetStyles[download.kind].icon}
