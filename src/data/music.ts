@@ -8547,7 +8547,7 @@ const items: MusicItem[] = [
 		},
 		date: new Date('2026-06-05'),
 		categories: ['collab', 'original', 'touhou'],
-		coverUrl: '/images/music/shinjidai/cover.jpg',
+		coverUrl: '/images/music/shinjidai/cover.webp',
 		thumbnailUrl: '/images/music/shinjidai/thumb1.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=qmyuzag_nd0',
 		credits: {
@@ -8752,6 +8752,8 @@ const items: MusicItem[] = [
 				},
 				size: '5.39 MB',
 				url: '/images/music/shinjidai/cover.jpg',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/cover.webp',
 			},
 			{
 				kind: 'image',
@@ -8763,6 +8765,8 @@ const items: MusicItem[] = [
 				},
 				size: '2.95 MB',
 				url: '/images/music/shinjidai/logo.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/logo.webp',
 			},
 			{
 				kind: 'image',
@@ -8774,6 +8778,8 @@ const items: MusicItem[] = [
 				},
 				size: '2.25 MB',
 				url: '/images/music/shinjidai/thumb1.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/thumb1.webp',
 			},
 			{
 				kind: 'image',
@@ -9715,6 +9721,8 @@ const items: MusicItem[] = [
 				},
 				size: '5.20 MB',
 				url: '/images/music/shinjidai/suseri.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/suseri.webp',
 			},
 			{
 				kind: 'image',
@@ -9726,6 +9734,8 @@ const items: MusicItem[] = [
 				},
 				size: '4.89 MB',
 				url: '/images/music/shinjidai/kyouko.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/kyouko.webp',
 			},
 			{
 				kind: 'image',
@@ -9737,6 +9747,8 @@ const items: MusicItem[] = [
 				},
 				size: '3.18 MB',
 				url: '/images/music/shinjidai/kie.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/kie.webp',
 			},
 			{
 				kind: 'image',
@@ -9748,6 +9760,8 @@ const items: MusicItem[] = [
 				},
 				size: '3.40 MB',
 				url: '/images/music/shinjidai/watatsumi_1.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/watatsumi_1.webp',
 			},
 			{
 				kind: 'image',
@@ -9759,6 +9773,8 @@ const items: MusicItem[] = [
 				},
 				size: '4.58 MB',
 				url: '/images/music/shinjidai/watatsumi_2.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/watatsumi_2.webp',
 			},
 			{
 				kind: 'image',
@@ -9770,6 +9786,8 @@ const items: MusicItem[] = [
 				},
 				size: '2.13 MB',
 				url: '/images/music/shinjidai/daishin.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/daishin.webp',
 			},
 
 			{
@@ -10779,6 +10797,7 @@ const items: MusicItem[] = [
 				},
 				size: '680 KB',
 				url: '/images/music/shinjidai/ed_t1l.png',
+				previewTheme: 'light',
 			},
 			{
 				kind: 'image',
@@ -10801,6 +10820,7 @@ const items: MusicItem[] = [
 				},
 				size: '638 KB',
 				url: '/images/music/shinjidai/ed_t2l.png',
+				previewTheme: 'light',
 			},
 			{
 				kind: 'image',
@@ -10823,6 +10843,7 @@ const items: MusicItem[] = [
 				},
 				size: '380 KB',
 				url: '/images/music/shinjidai/ed_t3l.png',
+				previewTheme: 'light',
 			},
 			{
 				kind: 'image',
@@ -10856,6 +10877,7 @@ const items: MusicItem[] = [
 				},
 				size: '450 KB',
 				url: '/images/music/shinjidai/ed_xl.png',
+				previewTheme: 'light',
 			},
 
 			{
@@ -10868,6 +10890,8 @@ const items: MusicItem[] = [
 				},
 				size: '2.77 MB',
 				url: '/images/music/shinjidai/thumb2.png',
+				previewFormat: 'webp',
+				previewUrl: '/images/music/shinjidai/thumb2.webp',
 			},
 			{
 				kind: 'image',
