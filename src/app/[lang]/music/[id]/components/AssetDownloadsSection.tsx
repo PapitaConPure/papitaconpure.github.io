@@ -40,7 +40,7 @@ import type {
 	SectionAcrossLocales,
 	SectionComponentProps,
 } from '@/types/i18n';
-import type { DownloadUrl, MusicItem } from '@/types/music';
+import type { AssetPreviewTheme, DownloadUrl, MusicItem } from '@/types/music';
 
 interface PropsWithDownload {
 	download: DownloadUrl;
@@ -50,6 +50,7 @@ interface AssetDownloadCardThumbnailProps
 	extends React.HTMLAttributes<HTMLDivElement>,
 		PropsWithDownload {
 	noOverlay?: boolean;
+	previewTheme?: AssetPreviewTheme;
 }
 
 function AssetDownloadCardThumbnail({
@@ -58,14 +59,17 @@ function AssetDownloadCardThumbnail({
 	noOverlay = false,
 	...props
 }: Readonly<AssetDownloadCardThumbnailProps>) {
+	const shouldOverlay = !noOverlay;
+	const lightThemedPreview = download.previewTheme === 'light';
+
 	return (
 		<div
-			className={`relative mb-2 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md bg-secondary-900 ${className}`}
+			className={`relative mb-2 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md ${lightThemedPreview ? 'bg-secondary-50' : 'bg-secondary-900'} ${className}`}
 			{...props}
 		>
 			{download.kind === 'audio' && download.previewUrl && (
 				<div
-					className={`absolute inset-0 ${noOverlay ? '' : 'bg-gradient-to-b from-accent-800 via-primary-main to-accent-800 opacity-40'}`}
+					className={`absolute inset-0 ${shouldOverlay ? 'bg-gradient-to-b from-accent-800 via-primary-main to-accent-800 opacity-40' : ''}`}
 				>
 					<Image
 						src={getRoot(download.previewUrl)}
@@ -77,7 +81,7 @@ function AssetDownloadCardThumbnail({
 				</div>
 			)}
 			{download.kind === 'image' && (download.previewUrl || download.url) && (
-				<div className={`absolute inset-0 ${noOverlay ? '' : 'opacity-25'}`}>
+				<div className='absolute inset-0'>
 					<Image
 						src={getRoot(download.previewUrl || download.url)}
 						alt='Preview Backdrop'
@@ -95,7 +99,7 @@ function AssetDownloadCardThumbnail({
 				</div>
 			)}
 			{download.kind === 'video' && (
-				<div className={`absolute inset-0 ${noOverlay ? '' : 'opacity-25'}`}>
+				<div className='absolute inset-0'>
 					{download.previewUrl ? (
 						<VideoPreview
 							url={download.previewUrl}
@@ -113,12 +117,7 @@ function AssetDownloadCardThumbnail({
 					)}
 				</div>
 			)}
-			{(!noOverlay
-				|| !(
-					download.previewUrl
-					|| download.kind === 'image'
-					|| download.kind === 'video'
-				)) && (
+			{(shouldOverlay || !download.previewUrl) && download.kind !== 'image' && download.kind !== 'video' && (
 				<div className='absolute flex w-full flex-col items-center space-y-1'>
 					<FontAwesomeIcon
 						icon={assetStyles[download.kind].icon}
@@ -126,6 +125,19 @@ function AssetDownloadCardThumbnail({
 					/>
 					{download.format !== '' && (
 						<div className='text-2xl font-bold sm:text-4xl md:text-3xl'>
+							{download.format.toUpperCase()}
+						</div>
+					)}
+				</div>
+			)}
+			{shouldOverlay && (download.kind === 'image' || download.kind === 'video') && (
+				<div className='absolute bottom-1 left-1 flex p-1 pr-1.5 flex-row items-center rounded-md bg-secondary-900/70 backdrop-blur-md space-x-1'>
+					<FontAwesomeIcon
+						icon={assetStyles[download.kind].icon}
+						className={`text-base md:text-sm ${assetStyles[download.kind].className || ''}`}
+					/>
+					{(
+						<div className='text-base font-semibold md:text-sm'>
 							{download.format.toUpperCase()}
 						</div>
 					)}
@@ -200,7 +212,7 @@ export function AssetDownloadCard({
 }: Readonly<AssetDownloadCardProps>) {
 	return (
 		<div
-			className={`relative flex flex-col items-center justify-start rounded-md border border-secondary-700 bg-secondary-800 p-4 transition-transform duration-500 md:hover:scale-105 md:hover:motion-reduce:scale-100 ${className}`}
+			className={`relative flex flex-col items-center justify-start rounded-md border border-secondary-700 bg-secondary-800 p-4 transition-transform duration-500 md:hover:brightness-105 ${className}`}
 			{...props}
 		>
 			<AssetDownloadCardThumbnail download={download} />
