@@ -15,7 +15,7 @@ function SimpleTooltip({ content, side = 'top', className = '', children }: Simp
 			<TooltipContent
 				side={side}
 				className={cn(
-					'text-base font-default-sans min-w-12 max-w-[50vw] border border-secondary-800 bg-background bg-opacity-10 px-3 py-2 shadow-none shadow-black outline-none ring-0 backdrop-blur-md transition-all sm:bottom-20 sm:right-4 md:bottom-20 md:right-8 md:inline-flex md:min-h-9 md:min-w-9 md:rounded-md',
+					'text-base font-default-sans min-w-12 max-w-[50vw] border border-secondary-400/20 bg-background bg-opacity-10 px-3 py-2 shadow-none shadow-black outline-none ring-0 backdrop-blur-md transition-all sm:bottom-20 sm:right-4 md:bottom-20 md:right-8 md:inline-flex md:min-h-9 md:min-w-9 md:rounded-md',
 					className,
 				)}
 			>
