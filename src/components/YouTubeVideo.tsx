@@ -13,7 +13,7 @@ interface VideoMockProps extends React.HTMLAttributes<HTMLDivElement> {
 function YouTubeVideoMock({ thumbnailUrl, className = '', ...props }: VideoMockProps) {
 	return (
 		<div
-			className={`group relative cursor-pointer outline-none ring-0 ring-primary-main transition-all focus:ring-2 ${className}`}
+			className={`group relative cursor-pointer outline-none ring-0 ring-primary-main transition-all focus-visible:ring-2 ${className}`}
 			{...props}
 		>
 			{thumbnailUrl && (

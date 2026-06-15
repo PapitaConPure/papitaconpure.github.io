@@ -271,7 +271,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 
 	if (!allDownloads || allDownloads.length <= 0) return;
 
-	//TODO: Añadir ordenamiento y selector de vista de miniaturas/listado
+	//TODO: Añadir ordenamiento
 
 	return (
 		<section>
@@ -292,8 +292,8 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 					<button
 						type='button'
 						onClick={toggleDetailView}
-						aria-label={t.detailDownloadsBrowserReset}
-						className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'
+						aria-label={t.detailDownloadsBrowserSwitchView}
+						className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus-visible:ring-2 active:bg-secondary-900'
 					>
 						{detailView ? (
 							<FontAwesomeIcon
@@ -315,7 +315,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 						type='button'
 						onClick={resetAssetBrowser}
 						aria-label={t.detailDownloadsBrowserReset}
-						className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'
+						className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus-visible:ring-2 active:bg-secondary-900'
 					>
 						<FontAwesomeIcon
 							icon={faRefresh}
@@ -329,7 +329,7 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 						<button
 							type='button'
 							aria-label={t.detailDownloadsBrowserFilter}
-							className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus:ring-2 active:bg-secondary-900'
+							className='group rounded-md p-1.5 outline-none ring-primary-main transition-all hover:bg-secondary-800 focus-visible:ring-2 active:bg-secondary-900'
 						>
 							<FontAwesomeIcon
 								icon={faFilter}
