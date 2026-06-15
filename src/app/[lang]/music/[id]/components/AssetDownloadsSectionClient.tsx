@@ -22,6 +22,7 @@ import {
 import SimpleTooltip from '@/components/SimpleTooltip';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { assetStylesArray } from '@/data/music';
+import { decodePercentsAndEntities } from '@/lib/encoding';
 import type { Locale } from '@/lib/i18n';
 import {
 	allAssetFormats,
@@ -44,6 +45,20 @@ interface DirectDownloadButtonProps extends AnchorHTMLAttributes<HTMLAnchorEleme
 	downloadingClassName?: string;
 }
 
+const httpMatch = /(http|https):\/\//i;
+const extMatch = /\.[a-z0-9]{1,12}$/i;
+
+const filenameFromUri = (uri: string) => {
+	const indexOfParams = uri.indexOf('?');
+
+	uri = indexOfParams < 0 ? uri : uri.slice(0, indexOfParams);
+
+	if (httpMatch.test(uri) && !extMatch.test(uri)) return uri;
+
+	const arr = uri.split('/');
+	return arr[arr.length - 1];
+};
+
 export function DirectDownloadButton({
 	downloadStageChildren,
 	className,
@@ -63,7 +78,7 @@ export function DirectDownloadButton({
 		setTimeout(() => setDownloading(false), 2000);
 	};
 
-	return (
+	const button = (
 		<button
 			type='button'
 			rel='noopener noreferrer'
@@ -72,6 +87,14 @@ export function DirectDownloadButton({
 		>
 			{downloading ? downloadStageChildren : children}
 		</button>
+	);
+
+	return props.href ? (
+		<SimpleTooltip content={filenameFromUri(decodePercentsAndEntities(props.href))}>
+			{button}
+		</SimpleTooltip>
+	) : (
+		button
 	);
 }
 
