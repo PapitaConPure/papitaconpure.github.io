@@ -1,5 +1,5 @@
+import type { ClassValue } from 'class-variance-authority/types';
 import clsx from 'clsx';
-import { ClassValue } from 'class-variance-authority/types';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function linearToExponential(linear: number): number {
-	return Math.pow(10, (linear - 1) * 2);
+	return 10 ** ((linear - 1) * 2);
 }
 
 export function exponentialToLinear(audioVol: number): number {
@@ -30,11 +30,11 @@ export function clamp(value: number, min: number, max: number): number {
  * @see http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
  */
 export function simpleHash(str: string) {
-    let hash = 0;
-    for (let i = 0, len = str.length; i < len; i++) {
-        const chr = str.charCodeAt(i);
-        hash = (hash << 5) - hash + chr;
-        hash |= 0; // Convert to 32bit integer
-    }
-    return hash;
+	let hash = 0;
+	for (let i = 0, len = str.length; i < len; i++) {
+		const chr = str.charCodeAt(i);
+		hash = (hash << 5) - hash + chr;
+		hash |= 0; // Convert to 32bit integer
+	}
+	return hash;
 }
