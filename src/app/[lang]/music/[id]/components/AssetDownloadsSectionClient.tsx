@@ -90,7 +90,10 @@ export function DirectDownloadButton({
 	);
 
 	return props.href ? (
-		<SimpleTooltip content={filenameFromUri(decodePercentsAndEntities(props.href))}>
+		<SimpleTooltip
+			side='bottom'
+			content={filenameFromUri(decodePercentsAndEntities(props.href))}
+		>
 			{button}
 		</SimpleTooltip>
 	) : (
