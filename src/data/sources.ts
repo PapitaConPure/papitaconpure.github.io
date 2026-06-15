@@ -5,30 +5,29 @@ export type SourceKind = 'youtube' | 'soundcloud' | 'spotify' | 'other';
 
 export interface SourceStyle {
 	key: SourceKind;
-	className: string;
+	iconClassName: string;
 	icon: IconDefinition;
 }
 
 export const sourceStylesArray: SourceStyle[] = [
 	{
 		key: 'youtube',
-		className: 'bg-[#ff0000] hover:bg-[#d70000] active:bg-[#bc0000]',
+		iconClassName: 'text-youtube',
 		icon: faYoutube,
 	},
 	{
 		key: 'soundcloud',
-		className: 'bg-[#fc4003] hover:bg-[#d13400] active:bg-[#b92e00]',
+		iconClassName: 'text-soundcloud',
 		icon: faSoundcloud,
 	},
 	{
 		key: 'spotify',
-		className:
-			'!text-[#181413] font-semibold bg-[#1ed760] hover:bg-[#19b14e] active:bg-[#20ff6e]',
+		iconClassName: 'text-spotify',
 		icon: faSpotify,
 	},
 	{
 		key: 'other',
-		className: 'bg-secondary-700 hover:bg-secondary-600 active:bg-secondary-800',
+		iconClassName: '',
 		icon: faExternalLink,
 	},
 ];

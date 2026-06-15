@@ -1,3 +1,4 @@
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,10 +30,7 @@ interface TrackListItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
 }
 
 const TrackListItem = ({ n, children, className, digits = 2, ...props }: TrackListItemProps) => (
-	<li
-		{...props}
-		className={`flex items-start space-x-2 rounded-sm py-1 ${className || ''}`}
-	>
+	<li {...props} className={`flex items-start space-x-2 rounded-sm py-1 ${className || ''}`}>
 		{digits > 0 && (
 			<span className='w-6 flex-shrink-0 select-none text-right text-secondary-400'>
 				{`${n}`.padStart(digits, '0')}.
@@ -129,14 +127,20 @@ function TrackDetailsSection({ lang, item, t }: Readonly<TrackDetailsSectionProp
 											href={link.url}
 											rel='noopener noreferrer'
 											target='_blank'
-											className={`social-btn flex border-transparent transition-colors duration-75 !mx-0 sm:gap-x-2 md:px-4 ${sourceStyles[link.source].className} !w-full`}
+											className='select-none items-center justify-between !mx-0 my-1 px-8 py-2.5 sm:px-6 sm:py-2 w-full border text-white lg:mx-1 border-secondary-800 bg-secondary-900 flex rounded-lg outline-none ring-0 ring-primary-main transition-colors duration-100 sm:pl-2 sm:pr-3 sm:bg-secondary-900/30 sm:gap-x-2 hover:bg-secondary-700 focus-visible:ring-2 [&_*]:select-none'
 											aria-label={resolveLocalizableField(link.label, lang)}
 										>
 											<FontAwesomeIcon
 												icon={sourceStyles[link.source].icon}
+												className={`!w-8 ${sourceStyles[link.source].iconClassName}`}
 												fontSize={24}
 											/>
 											{resolveLocalizableField(link.label, lang)}
+											<FontAwesomeIcon
+												icon={faExternalLinkAlt}
+												className='text-white/70'
+												size='xs'
+											/>
 										</a>
 									</li>
 								))}
