@@ -2637,10 +2637,7 @@ const items: MusicItem[] = [
 		id: 'gyptos',
 		kind: 'single',
 		artists: [papitaCredit, karlCredit],
-		title: {
-			es: 'Gyptos ~ Symphony of Opposing Forces',
-			ja: 'Gyptos　～ 対抗勢力のシンフォニー',
-		},
+		title: 'Gyptos',
 		description: {
 			es: 'Base y composición general: Papita con Puré (I. Z.)\n\nArreglo y composición extendida: Karl Zuñiga\n\nMezcla base: Papita con Puré (I. Z.)\n\nMezcla final y masterización: Karl Zuñiga',
 			en: 'Base and general composition: Papita con Pure (I. Z.)\n\nArrangement and extended composition: Karl Zuñiga\n\nBase mix: Papita con Puré (I. Z.)\n\nFinal mix and mastering: Karl Zuñiga',
