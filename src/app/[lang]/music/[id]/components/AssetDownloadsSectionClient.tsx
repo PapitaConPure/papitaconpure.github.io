@@ -180,6 +180,8 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 	const [maxDisplayedAssets, setMaxDisplayedAssets] = useState(MAX_DISPLAYED_ASSETS_DEFAULT);
 	const [detailView, setDetailView] = useState(false);
 
+
+
 	const allDownloads = item.downloadUrls;
 	const trueMaximum = allDownloads?.length || 0;
 	const allKinds = new Set(
@@ -216,7 +218,9 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 	};
 
 	const toggleDetailView = () => {
-		setDetailView(!detailView);
+		const newDetailView = !detailView;
+		setDetailView(newDetailView);
+		localStorage.setItem('assetDownloadsBrowserView', `${newDetailView ? 'Detail' : 'Thumbnail'}`);
 	};
 
 	const toggleKindFilter = (kind: AssetKind) => {
@@ -282,6 +286,12 @@ export function AssetDownloadsBrowser({ item, lang, t, ...props }: AssetDownload
 
 	useEffect(() => {
 		setMaxDisplayedAssets(() => MAX_DISPLAYED_ASSETS_DEFAULT);
+	}, []);
+
+	useEffect(() => {
+		const adbView = localStorage?.getItem('assetDownloadsBrowserView');
+		if(adbView)
+			setDetailView(adbView === 'Detail');
 	}, []);
 
 	useEffect(() => {
