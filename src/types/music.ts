@@ -30,6 +30,8 @@ export type AssetFormat =
 
 export type AssetKind = keyof typeof assetMappings;
 
+export type AssetPreviewTheme = 'dark' | 'light';
+
 interface AssetSpecificationTemplate<TKind extends AssetKind, TFormat extends AssetFormat> {
 	kind: TKind;
 	format: TFormat;
@@ -45,6 +47,7 @@ export type AssetSpecification =
 export interface AssetPreviewData {
 	previewUrl?: string;
 	previewFormat?: AssetFormat;
+	previewTheme?: AssetPreviewTheme;
 }
 
 type DownloadSizeMagnitude =
