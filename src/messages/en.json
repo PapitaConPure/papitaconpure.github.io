@@ -98,6 +98,7 @@
         "subtitle": "Pieces I've worked on",
         "errorLoading": "Error loading music",
         "musicCardCTA": "Click to see more...",
+        "detailLeadDownwardsTooltip": "Scroll Down",
         "detailLinksTitle": "Links",
         "detailTracklistTitle": "Tracklist",
         "detailVideoTitle": "Video",
