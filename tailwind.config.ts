@@ -130,6 +130,7 @@ const config: Config = {
 		'text-green-300',
 		'text-purple-400',
 		'text-orange-400',
+		'text-teal-500',
 		'text-blue-400',
 		'bg-[#ff0000]',
 		'hover:bg-[#d70000]',

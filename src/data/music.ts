@@ -1,6 +1,7 @@
 import {
 	faFile,
 	faFileAlt,
+	faFileZipper,
 	faImage,
 	faMusic,
 	faVideo,
@@ -34,6 +35,11 @@ export const assetStylesArray: AssetStyle[] = [
 		key: 'document',
 		className: 'text-orange-400',
 		icon: faFileAlt,
+	},
+	{
+		key: 'zip',
+		className: 'text-teal-500',
+		icon: faFileZipper,
 	},
 	{
 		key: 'file',
@@ -1823,7 +1829,7 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2007,7 +2013,7 @@ const items: MusicItem[] = [
 				url: '/images/music/film-youkai/miniatura.webp',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2098,7 +2104,7 @@ const items: MusicItem[] = [
 				url: '/images/music/heart-cup/thumbnail.webp',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2237,7 +2243,7 @@ const items: MusicItem[] = [
 				url: '/images/music/kaisouressha/thumbnail.webp',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2358,7 +2364,7 @@ const items: MusicItem[] = [
 				url: '/images/music/izanagi-bloom/thumbnail.webp',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2516,7 +2522,7 @@ const items: MusicItem[] = [
 				url: '/images/music/kanako-sb-piano/thumbnail.webp',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2610,7 +2616,7 @@ const items: MusicItem[] = [
 				url: '/images/music/spols/spols.webp',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2760,7 +2766,7 @@ const items: MusicItem[] = [
 				url: '/images/music/gyptos/gyptos.webp',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2863,7 +2869,7 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -2974,7 +2980,7 @@ const items: MusicItem[] = [
 				url: '/video/music/th19-cute-world-piano/01_battle1_loop.mp4',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -3730,7 +3736,7 @@ const items: MusicItem[] = [
 				url: '/music-item-misc/th19-piano/8_zanmu.mscz',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -3856,7 +3862,7 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -4306,7 +4312,7 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
 				label: {
 					es: 'Paquete completo',
@@ -4616,8 +4622,9 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'audio',
 				label: {
 					es: 'Paquete de música',
 					en: 'Music Pack',
@@ -4630,8 +4637,9 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'video',
 				label: {
 					es: 'Paquete de animación (incluye animación de jefa 3)',
 					en: 'Animation Pack (Boss 3 animation included)',
@@ -4855,8 +4863,9 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'audio',
 				label: {
 					es: 'Paquete de música',
 					en: 'Music Pack',
@@ -4869,8 +4878,9 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'video',
 				label: {
 					es: 'Paquete de animación (incluye animación de nivel 3)',
 					en: 'Animation Pack (Stage 3 animation included)',
@@ -5031,8 +5041,9 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'audio',
 				label: {
 					es: 'Paquete de música',
 					en: 'Music Pack',
@@ -5045,8 +5056,9 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'video',
 				label: {
 					es: 'Paquete de animación',
 					en: 'Animation Pack',
@@ -8280,8 +8292,9 @@ const items: MusicItem[] = [
 			},
 
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'audio',
 				label: {
 					es: 'Paquete de música',
 					en: 'Music Pack',
@@ -8294,8 +8307,10 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'video',
+				ofFormat: 'mp4',
 				label: {
 					es: 'Paquete de animación (h.264 / 4k@60)',
 					en: 'Animation Pack (h.264 / 4k@60)',
@@ -8308,8 +8323,10 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'video',
+				ofFormat: 'mov',
 				label: {
 					es: 'Paquete de animación (DNxHR HQ / 4k@60)',
 					en: 'Animation Pack (DNxHR HQ / 4k@60)',
@@ -8658,12 +8675,14 @@ const items: MusicItem[] = [
 		],
 		downloadUrls: [
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'audio',
+				ofFormat: 'flac',
 				label: {
-					es: 'Paquete de música (FLAC / 16-bit int)',
-					en: 'Music Pack (FLAC / 16-bit int)',
-					ja: '音楽パック (FLAC / 16-bit int)',
+					es: 'Paquete de música (16-bit int)',
+					en: 'Music Pack (16-bit int)',
+					ja: '音楽パック (16-bit int)',
 				},
 				size: '1.60 GB',
 				url: 'https://drive.google.com/file/d/1GfyPsnFJyMqh_utUvLfwudji7LyCPXYn/view?usp=drive_link',
@@ -8672,12 +8691,14 @@ const items: MusicItem[] = [
 				provider: 'Google Drive',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'audio',
+				ofFormat: 'mp3',
 				label: {
-					es: 'Paquete de música (MP3 / 320 Kbps)',
-					en: 'Music Pack (MP3 / 320 Kbps)',
-					ja: '音楽パック (MP3 / 320 Kbps)',
+					es: 'Paquete de música (320 Kbps)',
+					en: 'Music Pack (320 Kbps)',
+					ja: '音楽パック (320 Kbps)',
 				},
 				size: '442 MB',
 				url: 'https://drive.google.com/file/d/1YxThbIvjJHgS-ovJN28nXNcq1urgjI-A/view?usp=drive_link',
@@ -8686,12 +8707,14 @@ const items: MusicItem[] = [
 				provider: 'Google Drive',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'video',
+				ofFormat: 'mp4',
 				label: {
-					es: 'Paquete de animación (MP4 / h.264 / 4k@60)',
-					en: 'Animation Pack (MP4 / h.264 / 4k@60)',
-					ja: 'アニメーションパック (MP4 / h.264 / 4k@60)',
+					es: 'Paquete de animación (h.264 / 4k@60)',
+					en: 'Animation Pack (h.264 / 4k@60)',
+					ja: 'アニメーションパック (h.264 / 4k@60)',
 				},
 				size: '953 MB',
 				url: 'https://archive.org/compress/shinjidai-animations-by-papita-pure/formats=H.264&file=/shinjidai-animations-by-papita-pure.zip',
@@ -8700,12 +8723,14 @@ const items: MusicItem[] = [
 				provider: 'archive.org',
 			},
 			{
-				kind: 'file',
+				kind: 'zip',
 				format: 'zip',
+				ofKind: 'video',
+				ofFormat: 'mov',
 				label: {
-					es: 'Paquete de animación (MOV / DNxHR HQ / 4k@60)',
-					en: 'Animation Pack (MOV / DNxHR HQ / 4k@60)',
-					ja: 'アニメーションパック (MOV / DNxHR HQ / 4k@60)',
+					es: 'Paquete de animación (DNxHR HQ / 4k@60)',
+					en: 'Animation Pack (DNxHR HQ / 4k@60)',
+					ja: 'アニメーションパック (DNxHR HQ / 4k@60)',
 				},
 				size: '19.6 GB',
 				url: 'https://archive.org/compress/shinjidai-animations-by-papita-pure/formats=QUICKTIME&file=/shinjidai-animations-by-papita-pure.zip',

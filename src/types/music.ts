@@ -5,6 +5,7 @@ import type {
 	imageAssetFormats,
 	otherAssetFormats,
 	videoAssetFormats,
+	zippedAssetFormats,
 } from '@/lib/music';
 import type { LocalizableField } from './i18n';
 import type { Digit, ElementsOf } from './utils';
@@ -19,6 +20,7 @@ export type AudioAssetFormat = ElementsOf<typeof audioAssetFormats>;
 export type ImageAssetFormat = ElementsOf<typeof imageAssetFormats>;
 export type VideoAssetFormat = ElementsOf<typeof videoAssetFormats>;
 export type DocumentAssetFormat = ElementsOf<typeof documentAssetFormats>;
+export type ZippedAssetFormat = ElementsOf<typeof zippedAssetFormats> | '';
 export type OtherAssetFormat = ElementsOf<typeof otherAssetFormats> | '';
 
 export type AssetFormat =
@@ -26,6 +28,7 @@ export type AssetFormat =
 	| ImageAssetFormat
 	| VideoAssetFormat
 	| DocumentAssetFormat
+	| ZippedAssetFormat
 	| OtherAssetFormat;
 
 export type AssetKind = keyof typeof assetMappings;
@@ -37,11 +40,21 @@ interface AssetSpecificationTemplate<TKind extends AssetKind, TFormat extends As
 	format: TFormat;
 }
 
+interface ZippedAssetSpecification<TKind extends AssetKind, TFormat extends AssetFormat> extends AssetSpecificationTemplate<'zip', ZippedAssetFormat> {
+	ofKind?: TKind;
+	ofFormat?: TFormat;
+}
+
 export type AssetSpecification =
 	| AssetSpecificationTemplate<'audio', AudioAssetFormat>
 	| AssetSpecificationTemplate<'image', ImageAssetFormat>
 	| AssetSpecificationTemplate<'video', VideoAssetFormat>
 	| AssetSpecificationTemplate<'document', DocumentAssetFormat>
+	| ZippedAssetSpecification<'audio', AudioAssetFormat>
+	| ZippedAssetSpecification<'image', ImageAssetFormat>
+	| ZippedAssetSpecification<'video', VideoAssetFormat>
+	| ZippedAssetSpecification<'document', DocumentAssetFormat>
+	| ZippedAssetSpecification<'file', OtherAssetFormat>
 	| AssetSpecificationTemplate<'file', OtherAssetFormat>;
 
 export interface AssetPreviewData {

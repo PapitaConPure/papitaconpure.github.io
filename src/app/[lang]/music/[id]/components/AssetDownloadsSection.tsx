@@ -1,4 +1,5 @@
 import {
+	faBoxOpen,
 	faCheck,
 	faClock,
 	faDownload,
@@ -118,7 +119,8 @@ function AssetDownloadCardThumbnail({
 					)}
 				</div>
 			)}
-			{(!isImageOrVideo || (shouldOverlay && isImageOrVideo && !download.previewUrl && !download.url)) && (
+			{(!isImageOrVideo
+				|| (shouldOverlay && isImageOrVideo && !download.previewUrl && !download.url)) && (
 				<div className='absolute flex w-full flex-col items-center space-y-1'>
 					<FontAwesomeIcon
 						icon={assetStyles[download.kind].icon}
@@ -137,11 +139,39 @@ function AssetDownloadCardThumbnail({
 						icon={assetStyles[download.kind].icon}
 						className={`text-base md:text-sm ${assetStyles[download.kind].className || ''}`}
 					/>
-					{(
+					{
 						<div className='text-base font-semibold md:text-sm'>
 							{download.format.toUpperCase()}
 						</div>
-					)}
+					}
+				</div>
+			)}
+			{download.kind === 'zip' && download.ofKind && (
+				<div className='absolute bottom-1 left-1 flex p-1 pr-1.5 flex-row items-center rounded-md bg-secondary-800 backdrop-blur-md space-x-1'>
+					<FontAwesomeIcon
+						icon={faBoxOpen}
+						className={`${assetStyles[download.kind].className || ''}`}
+					/>
+					<span>»</span>
+					<div className='flex flex-col items-center'>
+						<div className='flex flex-row'>
+							<FontAwesomeIcon
+								icon={assetStyles[download.ofKind].icon}
+								className={`text-sm md:text-xs ${assetStyles[download.ofKind].className || ''}`}
+							/>
+							<FontAwesomeIcon
+								icon={assetStyles[download.ofKind].icon}
+								className={`text-sm md:text-xs ${assetStyles[download.ofKind].className || ''}`}
+							/>
+						</div>
+						<FontAwesomeIcon
+							icon={assetStyles[download.ofKind].icon}
+							className={`text-sm md:text-xs ${assetStyles[download.ofKind].className || ''}`}
+						/>
+					</div>
+					<div className='text-base font-semibold md:text-sm'>
+						{download.ofFormat?.toUpperCase() || ''}
+					</div>
 				</div>
 			)}
 		</div>
@@ -325,13 +355,34 @@ export function AssetDownloadDetail({
 	return (
 		<TableRow {...props}>
 			<TableCell className='text-center text-xs font-medium md:text-sm'>
-				<div className='flex items-center justify-center space-x-2 rounded-md bg-secondary-900 py-1 pl-2.5 pr-3'>
-					<span className={cn('mt-[0.5px]', assetStyles[download.kind].className)}>
-						<FontAwesomeIcon icon={assetStyles[download.kind].icon} />
-					</span>
-					<span className='mb-[0.5px] flex-grow select-none'>
-						{download.format.toUpperCase()}
-					</span>
+				<div className='rounded-md bg-secondary-900 py-1 pl-2.5 pr-3'>
+					<div className='flex items-center justify-center space-x-2'>
+						<span className={cn('mt-[0.5px]', assetStyles[download.kind].className)}>
+							<FontAwesomeIcon icon={assetStyles[download.kind].icon} />
+						</span>
+						<span className='mb-[0.5px] flex-grow select-none'>
+							{download.format.toUpperCase()}
+						</span>
+					</div>
+					{download.kind === 'zip' && (
+						<div className='flex items-center justify-center space-x-2'>
+							{download.ofKind && (
+								<span
+									className={cn(
+										'mt-[0.5px]',
+										assetStyles[download.ofKind].className,
+									)}
+								>
+									<FontAwesomeIcon icon={assetStyles[download.ofKind].icon} />
+								</span>
+							)}
+							{download.ofFormat && (
+								<span className='mb-[0.5px] flex-grow select-none'>
+									{download.ofFormat.toUpperCase()}
+								</span>
+							)}
+						</div>
+					)}
 				</div>
 			</TableCell>
 			<TableCell>
